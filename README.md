@@ -4,6 +4,7 @@ A web app for rehearsing difficult workplace conversations. Built with React/Vin
 
 ## What works now
 
+- Avatar calls with three original animated characters, in-call captions, transcript, typed turns, replay/mute/stop, and an optional local-only camera preview. A text-only experience remains available before joining.
 - An AI-partner home screen for Alex, Jordan, and Sam, with text/voice conversation entry points.
 - Four separate skill-drill modes: missing words, sentence building, response choices, and sentence writing. Each contains three authored exercises, retry feedback, optional examples, and a 15 XP completion reward. Writing checks phrase/length only, not semantic quality.
 - Three scenario briefs: missed deadlines, managing a former peer, and teammate conflict.
@@ -13,13 +14,13 @@ A web app for rehearsing difficult workplace conversations. Built with React/Vin
 - Device/browser speech synthesis with mute/stop controls, retryable requests, short recording limits.
 - Local browser practice history, repeat attempts, scenario filters, and responsive layouts.
 
-Live inference and audio transcription require a running Brev instance. No AI quality, GPU throughput, or latency results have been measured yet. Browser voices vary. This version has manual stop controls; automatic interruption detection, expressive TTS, and vocal-delivery analysis are not implemented.
+Live inference and audio transcription require a running Brev instance. No AI quality, GPU throughput, or latency results have been measured yet. Browser voices vary. Avatar mouth animation follows playback state, not phonemes. Camera video stays on the device and is not sent to the server or recorded. The call takes turns: record, review the transcript, and send; it is not a continuous real-time video conversation. This version has manual stop controls; automatic interruption detection, expressive TTS, and vocal-delivery analysis are not implemented.
 
 ## Practice rewards
 
 The secondary conversation path has six optional lessons, a daily XP goal (30/60/90), local-calendar streaks, levels, and five persistent effort badges. One or two turns plus a reflection earn 10 XP; three or more earn 30 XP. The first completion of a named path lesson adds 10 XP. Replays do not duplicate that bonus. A streak day requires a completed three-turn practice; yesterday remains current until today ends. Historical best streaks keep earned badges. Sample sessions count as effort, not assessed skill. Existing session history is preserved; old sessions earn base XP but do not imply completion of the new lessons. Drill rewards add to total XP, levels, and daily goals, but never conversation streaks, badges, or path completion. Drill history uses a separate validated browser store; hints and retries do not reduce completion XP. All rewards derive from saved attempts and clear together with history.
 
-Run `node --test tests/*.test.mjs` for reward boundary, date, duplicate, legacy-history, and gateway and drill-answer tests.
+Run `node --test tests/*.test.mjs` for reward boundary, date, duplicate, legacy-history, and gateway, drill-answer, and speech cancellation tests.
 
 ## Local development
 
