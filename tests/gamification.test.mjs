@@ -1,0 +1,15 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { gameStats, dayNumber } from '../lib/gamification.ts';
+const now=new Date(2026,10,14,14);
+let id=0;
+const session=(day,turns=3,lessonId='open',scenario='deadlines')=>({id:String(++id),date:new Date(2026,10,day,12).toISOString(),turns,lessonId,scenario,mode:'sample',feedback:{}});
+test('new visitor has no invented progress',()=>{const s=gameStats([],now);assert.equal(s.xp,0);assert.equal(s.streak,0);assert.equal(s.level,1);assert.equal(s.completed.size,0);assert.equal(s.badges.filter(b=>b.earned).length,0);});
+test('short reflection earns XP without lesson completion or streak',()=>{const s=gameStats([session(14,1)],now);assert.equal(s.xp,10);assert.equal(s.streak,0);assert.equal(s.completed.size,0);});
+test('first lesson bonus once; repeated attempts reward effort',()=>{const a=session(14),b=session(14);const s=gameStats([b,a,a],now);assert.equal(s.xp,70);assert.equal(s.completed.size,1);assert.equal(s.streak,1);assert.equal(s.todayFull,2);assert.equal(s.badges.find(b=>b.id==='again').earned,true);});
+test('legacy sessions count without inventing path completion',()=>{const s=gameStats([session(14,3,undefined)],now);assert.equal(s.xp,40);const legacy={...session(14),lessonId:undefined};assert.equal(gameStats([legacy],now).xp,30);assert.equal(gameStats([legacy],now).completed.size,0);});
+test('streak has grace today, resets after a missed full day',()=>{assert.equal(gameStats([session(12),session(13)],now).streak,2);assert.equal(gameStats([session(11),session(12)],now).streak,0);assert.equal(gameStats([session(12),session(13),session(14)],now).streak,3);});
+test('earned streak badge survives a later gap',()=>{const s=gameStats([session(8),session(9),session(10)],now);assert.equal(s.streak,0);assert.equal(s.bestStreak,3);assert.equal(s.badges.find(b=>b.id==='streak').earned,true);});
+test('daily XP uses local dates, future and malformed dates ignored',()=>{const s=gameStats([session(13),session(14),session(15),{...session(14),date:'bad'}],now);assert.equal(s.todayXP,30);assert.equal(s.xp,70);assert.equal(dayNumber(new Date(2026,10,14,0)),dayNumber(new Date(2026,10,14,23)));});
+test('level and goal boundary are exact',()=>{const s=gameStats([session(14),session(14),session(14)],now,90);assert.equal(s.xp,100);assert.equal(s.level,2);assert.equal(s.levelXP,0);assert.equal(s.goalMet,true);});
+test('all path lessons award Pathfinder; all scenarios award explorer',()=>{const ids=['open','listen','boundary','pushback','perspective','agreement'];const h=ids.map((l,i)=>session(14,3,l,['deadlines','promotion','tension'][Math.floor(i/2)]));const s=gameStats(h,now);assert.equal(s.completed.size,6);assert.equal(s.xp,240);assert.equal(s.badges.find(b=>b.id==='path').earned,true);assert.equal(s.badges.find(b=>b.id==='explorer').earned,true);});

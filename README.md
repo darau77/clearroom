@@ -13,6 +13,12 @@ A web app for rehearsing difficult workplace conversations. Built with React/Vin
 
 Live inference and audio transcription require a running Brev instance. No AI quality, GPU throughput, or latency results have been measured yet. Browser voices vary. This version has manual stop controls; automatic interruption detection, expressive TTS, and vocal-delivery analysis are not implemented.
 
+## Practice rewards
+
+The home screen has six optional lessons, a daily XP goal (30/60/90), local-calendar streaks, levels, and five persistent effort badges. One or two turns plus a reflection earn 10 XP; three or more earn 30 XP. The first completion of a named path lesson adds 10 XP. Replays do not duplicate that bonus. A streak day requires a completed three-turn practice; yesterday remains current until today ends. Historical best streaks keep earned badges. Sample sessions count as effort, not assessed skill. Existing session history is preserved; old sessions earn base XP but do not imply completion of the new lessons. All rewards derive from saved sessions and clear together with history.
+
+Run `node --test tests/*.test.mjs` for reward boundary, date, duplicate, legacy-history, and gateway tests.
+
 ## Local development
 
 Requires Node 22.13+ (24 recommended). Use the Sites dependency/build helpers with that Node on PATH, or:
