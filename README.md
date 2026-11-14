@@ -4,6 +4,8 @@ A web app for rehearsing difficult workplace conversations. Built with React/Vin
 
 ## What works now
 
+- An AI-partner home screen for Alex, Jordan, and Sam, with text/voice conversation entry points.
+- Four separate skill-drill modes: missing words, sentence building, response choices, and sentence writing. Each contains three authored exercises, retry feedback, optional examples, and a 15 XP completion reward. Writing checks phrase/length only, not semantic quality.
 - Three scenario briefs: missed deadlines, managing a former peer, and teammate conflict.
 - Personalization: experience, practice goal, and difficulty.
 - Clearly marked sample mode with authored replies and a guided reflection (never represented as AI).
@@ -15,9 +17,9 @@ Live inference and audio transcription require a running Brev instance. No AI qu
 
 ## Practice rewards
 
-The home screen has six optional lessons, a daily XP goal (30/60/90), local-calendar streaks, levels, and five persistent effort badges. One or two turns plus a reflection earn 10 XP; three or more earn 30 XP. The first completion of a named path lesson adds 10 XP. Replays do not duplicate that bonus. A streak day requires a completed three-turn practice; yesterday remains current until today ends. Historical best streaks keep earned badges. Sample sessions count as effort, not assessed skill. Existing session history is preserved; old sessions earn base XP but do not imply completion of the new lessons. All rewards derive from saved sessions and clear together with history.
+The secondary conversation path has six optional lessons, a daily XP goal (30/60/90), local-calendar streaks, levels, and five persistent effort badges. One or two turns plus a reflection earn 10 XP; three or more earn 30 XP. The first completion of a named path lesson adds 10 XP. Replays do not duplicate that bonus. A streak day requires a completed three-turn practice; yesterday remains current until today ends. Historical best streaks keep earned badges. Sample sessions count as effort, not assessed skill. Existing session history is preserved; old sessions earn base XP but do not imply completion of the new lessons. Drill rewards add to total XP, levels, and daily goals, but never conversation streaks, badges, or path completion. Drill history uses a separate validated browser store; hints and retries do not reduce completion XP. All rewards derive from saved attempts and clear together with history.
 
-Run `node --test tests/*.test.mjs` for reward boundary, date, duplicate, legacy-history, and gateway tests.
+Run `node --test tests/*.test.mjs` for reward boundary, date, duplicate, legacy-history, and gateway and drill-answer tests.
 
 ## Local development
 
