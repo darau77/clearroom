@@ -1,15 +1,23 @@
 """Validate the downloaded model and check GPU residency before advertising readiness."""
 from config import MODEL, OLLAMA_URL, CONTEXT_TOKENS, KEEP_ALIVE
 
+SUPPORTED_MODEL_SIZES = {
+    'qwen3:8b-q4_K_M': '8.',
+    'qwen3:14b-q4_K_M': '14.',
+}
+
 class RuntimeCheckError(Exception):
     pass
 
 
 def check_model(data):
+    expected_size = SUPPORTED_MODEL_SIZES.get(MODEL)
+    if expected_size is None:
+        raise RuntimeCheckError('unsupported_model_selection')
     details = data.get('details', {})
     if details.get('family') != 'qwen3' or details.get('quantization_level') != 'Q4_K_M':
         raise RuntimeCheckError('wrong_model_format')
-    if not str(details.get('parameter_size', '')).startswith('8.'):
+    if not str(details.get('parameter_size', '')).startswith(expected_size):
         raise RuntimeCheckError('wrong_model_size')
 
 

@@ -1,0 +1,15 @@
+node_modules
+.next
+.git
+.env*
+**/.env
+**/.env.*
+.dev.vars*
+.sites-runtime
+.wrangler
+.vinext
+dist
+outputs
+work
+backend/.venv
+**/__pycache__

@@ -1,39 +1,66 @@
 # Clearroom
 
-A web app for rehearsing difficult workplace conversations. Built with React/Vinext and an authenticated FastAPI → Ollama gateway for a single 16 GB NVIDIA GPU on Brev. The current deployment target is a T4 with 16 GiB system RAM and four vCPUs.
+A web app for rehearsing difficult conversations at work and in personal relationships. The public website runs as a standard Next.js app on Vercel, with an authenticated FastAPI → Ollama gateway on Brev. No ChatGPT account or visitor sign-in is needed. Qwen runs on a T4 with 16 GiB system RAM and four vCPUs.
+
+Public submission URL: **https://clearroom-beta.vercel.app/**. On 14 November 2026, anonymous requests (without cookies, authorization headers, or deployment bypass tokens) passed checks for the homepage, live readiness, streamed Qwen replies, coaching feedback, and synthetic audio transcription. A browser avatar call also received a live reply on this origin. Keep the Brev instance and its current tunnel running throughout judging; the Vercel website alone cannot provide live inference.
 
 ## What works now
 
 - Avatar calls with three original animated characters, in-call captions, transcript, typed turns, replay/mute/stop, and an optional local-only camera preview. A text-only experience remains available before joining.
 - An AI-partner home screen for Alex, Jordan, and Sam, with text/voice conversation entry points.
-- Four separate skill-drill modes: missing words, sentence building, response choices, and sentence writing. Each contains three authored exercises, retry feedback, optional examples, and a 15 XP completion reward. Writing checks phrase/length only, not semantic quality.
+- Four separate skill-drill modes: missing words, sentence building, response choices, and sentence writing. Each contains three authored exercises, retry feedback, optional examples, and a 15 XP completion reward. The authored trail checks patterns; optional adaptive writing exercises are generated for the chosen partner and assess meaning against a rubric. The other three modes remain authored after live tests exposed unreliable generated distractors.
 - Three scenario briefs: missed deadlines, managing a former peer, and teammate conflict.
 - Personalization: experience, practice goal, and difficulty.
-- Clearly marked sample mode with authored replies and a guided reflection (never represented as AI).
-- Live Qwen streaming, grounded structured feedback, and microphone recording/transcript review once the backend is connected.
+- Generated openings and every partner reply from live Qwen; explicit AI-unavailable state when disconnected. Authored drills remain separate and work offline.
+- Two-pass Qwen checks for speaker/task ownership and requested language before displaying a reply. Coaching audits the full transcript for actions already completed.
 - Device/browser speech synthesis with mute/stop controls, retryable requests, short recording limits.
-- Local browser practice history, repeat attempts, scenario filters, and responsive layouts.
+- Resumable drafts, full saved reflections/transcripts, real screen URLs, Back/Forward navigation, synchronized browser tabs, and optional same-partner memory (off by default).
 
-Live inference and audio transcription require a running Brev instance. The T4 backend passed live smoke checks on 14 November 2026: all three partners generated replies and structured feedback, and a synthetic speech sample transcribed correctly. Single warm requests made from the server began returning text in 0.10–0.25 seconds and completed in 1.2–1.8 seconds. A three-second speech sample took 2.74 seconds to transcribe. These small smoke checks are not browser latency, multi-user capacity, or a general AI-quality/accuracy benchmark. Browser voices vary. Avatar mouth animation follows playback state, not phonemes. Camera video stays on the device and is not sent to the server or recorded. The call takes turns: record, review the transcript, and send; it is not a continuous real-time video conversation. This version has manual stop controls; automatic interruption detection, expressive TTS, and vocal-delivery analysis are not implemented.
+Live inference and audio transcription require a running Brev instance. The November 14 audit checks used real Qwen: hotel/flight ownership was preserved across follow-up turns, Russian/Spanish/Kazakh language requests produced replies in those languages, and coaching acknowledged the learner's final owner/time agreement. Warm checked replies took about 2.7–3.7 seconds; full feedback now includes learner-evidence checks and may take roughly 20–65 seconds, with a repair pass when validation fails. A six-request simultaneous chat test completed four requests in 3.2–11.4 seconds and rejected two immediately with HTTP 429 and Retry-After. This is a bounded prototype capacity check, not a sustained multi-user benchmark or guarantee of AI correctness.
+
+Multilingual Whisper small uses automatic language detection or a selected language. A synthetic Russian sample detected Russian in both modes and transcribed in about 3.7–6.1 seconds, with a minor word/spacing error. Users review transcripts before sending. Device speech uses matching installed voices; missing voices produce an explicit notice and captions remain available. Browser voices vary. Avatar animation follows playback state, not phonemes. Camera video stays on the device. Calls take turns: record, review, send; automatic interruptions, expressive TTS, and vocal-delivery analysis are not implemented.
+
+## Custom partners and practice trail
+
+**AI partners → Create your own partner** saves up to 12 fictional characters on this browser. Set a name, role, relationship, personality, situation, conversation goal, optional opening, and avatar appearance. Edit or remove a partner from their card, then choose Chat or Avatar call. Both experiences send the validated character background to the same Qwen backend. All AI partners require a live connection; authored skill drills remain available offline. The avatar is animated, with optional device speech and a local camera preview, not a real person's video feed.
+
+IndexedDB `clearroom.practice` stores partners, immutable completed attempts, drafts, and preferences in per-record transactions. Legacy localStorage collections migrate once. BroadcastChannel synchronizes open tabs; stale profile edits are rejected and conflicting conversation drafts are forked rather than overwritten. Clearing practice invalidates older in-flight draft saves. Completed reflections store a title snapshot, so they remain identifiable if a partner is edited or deleted. Clear practice history resets rewards and reflections while keeping partner profiles. The API accepts a bounded `custom_partner` object only with `scenario: custom`; character data stays outside system instructions and counts toward the token budget. Custom coaching labels the user LEARNER and character PARTNER without assuming a manager/employee relationship. Custom conversations earn normal effort rewards but do not complete built-in scenario lessons or the three-scenario explorer badge.
+
+**Practice trail** adds four sequential lesson goals using the existing missing-word, sentence-building, response-choice, and writing drills. Completing one drill in each mode completes the bronze round; three per mode earns silver, and five per mode earns gold. Each mode also has its own bronze/silver/gold trophy. Higher rounds revisit the same authored exercises. Every completed attempt earns 15 XP, with no extra trophy XP; hints and retries still count. The next trail step unlocks after the previous goal, and all modes also remain available as free practice. Trophies derive from validated, deduplicated completed drill history and appear on the trail, completion screen, and My progress.
 
 ## Practice rewards
 
-The secondary conversation path has six optional lessons, a daily XP goal (30/60/90), local-calendar streaks, levels, and five persistent effort badges. One or two turns plus a reflection earn 10 XP; three or more earn 30 XP. The first completion of a named path lesson adds 10 XP. Replays do not duplicate that bonus. A streak day requires a completed three-turn practice; yesterday remains current until today ends. Historical best streaks keep earned badges. Sample sessions count as effort, not assessed skill. Existing session history is preserved; old sessions earn base XP but do not imply completion of the new lessons. Drill rewards add to total XP, levels, and daily goals, but never conversation streaks, badges, or path completion. Drill history uses a separate validated browser store; hints and retries do not reduce completion XP. All rewards derive from saved attempts and clear together with history.
+The secondary conversation path has six optional lessons, a daily XP goal (30/60/90), local-calendar streaks, levels, and five persistent effort badges. One or two turns plus a reflection earn 10 XP; three or more earn 30 XP. The first completion of a named path lesson adds 10 XP. Replays do not duplicate that bonus. A streak day requires a completed three-turn practice; yesterday remains current until today ends. Historical best streaks keep earned badges. Sample sessions count as effort, not assessed skill. Existing session history is preserved; old sessions earn base XP but do not imply completion of the new lessons. Drill rewards add to total XP, levels, daily goals, and the drill trophy trail, but never conversation streaks, conversation badges, or conversation-path completion. Drill history uses a separate validated browser store; hints and retries do not reduce completion XP. All rewards derive from saved attempts and clear together with history.
 
 Run `node --test tests/*.test.mjs` for reward boundary, date, duplicate, legacy-history, and gateway, drill-answer, and speech cancellation tests.
 
 ## Local development
 
-Requires Node 22.13+ (24 recommended). Use the Sites dependency/build helpers with that Node on PATH, or:
+Requires Node 22.13+ (24 recommended):
 
 ```sh
-npm install
+npm ci
 npm run dev
-npx tsc --noEmit
-node --test tests/proxy.test.mjs
+npm run build
+node --test tests/*.test.mjs
 ```
 
-Without server environment variables, the app is explicitly in sample mode. The worker reads `BREV_API_URL` and `BREV_API_KEY` as server-only environment bindings. For local Cloudflare preview, set them in an ignored `.dev.vars` file. Never put the key in browser code or `NEXT_PUBLIC_` variables. Production values must be set through Sites environment settings.
+Without server environment variables, the app shows AI unavailable. Next.js route handlers read `BREV_API_URL` and `BREV_API_KEY` from server environment variables. For local testing, set them in an ignored `.env.local` file. Never put the key in browser code or `NEXT_PUBLIC_` variables. Production values belong in the hosting provider's environment settings. Vercel handles `/api/status` and `/api/engine/*` on Node.js; the client requires the final NDJSON completion signal before committing or speaking a reply. The gateway returns text only after both model passes complete. Audio uploads are limited to 4 MiB, below Vercel's 4.5 MB function payload limit.
+
+The production build uses Webpack because the local environment blocks a subprocess port required by Turbopack's CSS compiler. `web.Dockerfile` also builds a standalone Node server for optional self-hosting; its runtime receives the same server-only environment variables. The legacy Sites/Vinext files are unused by the standard Next.js build and are not required to run the website.
+
+## Deploy the public website on Vercel
+
+The owner signs in to the Vercel CLI once. Jury members use the production URL without accounts. The project uses Next.js, Node 24, and the `iad1` function region near the Brev server.
+
+```sh
+vercel link --project clearroom --scope darau77s-projects
+vercel env add BREV_API_URL --environment production --no-sensitive
+vercel env add BREV_API_KEY --environment production --sensitive
+vercel deploy --prod
+```
+
+Enter environment values at the private prompt or via stdin, not in shell arguments. Use the stable production alias for the submission, not a protected preview URL. Check the production home page and `/api/status` without cookies or authorization headers; a successful owner-browser visit alone does not prove public access. No paid plan upgrade is required by this configuration.
 
 ## Launch the inference backend on Brev
 
@@ -47,7 +74,7 @@ python3 deploy.py --preflight
 python3 deploy.py
 ```
 
-The launcher creates a private `.env` once, starts Ollama, pulls `qwen3:8b-q4_K_M` (approximately 5.2 GB), builds the gateway, and waits for Qwen, its tokenizer, and Whisper to warm up. It then tests authorization, streaming chat, structured feedback, and a silent WAV upload. The key is never printed and survives reruns. Initial image/model downloads can take several minutes. Docker containers restart automatically; the API also attempts to recover if Qwen unloads or restarts.
+The launcher creates a private `.env` once, starts Ollama, pulls `qwen3:14b-q4_K_M` (approximately 9.3 GB), builds the gateway, and waits for Qwen, its tokenizer, and Whisper to warm up. It then tests authorization, streaming chat, structured feedback, and a silent WAV upload. The key is never printed and survives reruns. Initial image/model downloads can take several minutes. Docker containers restart automatically; the API also attempts to recover if Qwen unloads or restarts.
 
 Ollama is pinned to `0.40.16`; the optional tunnel is pinned to `2026.11.0`. Qwen's tokenizer is pinned to a published model revision. Ollama stays on the internal Docker network. The gateway binds only to `127.0.0.1:8000` on the host. No browser receives its API key.
 
@@ -58,21 +85,21 @@ python3 verify.py
 docker compose exec ollama ollama ps
 ```
 
-A shared lock processes one model/transcription request at a time, with a three-second queue timeout. Whisper `small.en` uses CPU int8 with four threads, leaving GPU memory for Qwen. Qwen uses an 8,192-token context with thinking disabled, up to 180 response tokens for roleplay and 700 for feedback. Requests are checked with Qwen's tokenizer, including space reserved for feedback, as well as limits of 12 user turns and 24,000 characters. Oversized requests are rejected before generation rather than silently dropping conversation history. Start by testing one active session.
+One inference worker admits at most four active/queued jobs in FIFO order with a 45-second queue timeout. Extra or timed-out jobs receive 429 plus Retry-After; the client preserves the input for retry. Keep one Uvicorn worker. Whisper `small` uses CPU int8 with four threads, leaving GPU memory for Qwen. Qwen uses an 8,192-token context with thinking disabled. Replies use structured planning and review passes (950/550 token ceilings); feedback uses two passes up to 1,600 tokens each, plus one repair pass when evidence or language validation fails. Every strength cites a validated learner turn. A separate comparison checks whether the proposed next step repeats an action already present in the learner’s turns; if it does, no additional gap is shown and the generated rewrite becomes the rehearsal prompt. Each improvement acknowledges a quoted action before proposing an additional refinement. All actual model calls count the full serialized context and schema before inference. Conversations remain limited to 12 learner turns and 24,000 characters. Oversized context returns an explicit error; history is not silently truncated. Optional memory supplies up to ten messages from the last two saved sessions with that partner, clearly separated from the current transcript.
 
 Authenticated `/health` returns `ready: true` only after a successful Qwen generation, validation of its quantization, GPU residency and context length, and loading of the tokenizer and voice model. Typical startup phases are `warming_qwen`, `loading_tokenizer`, and `warming_voice`. Failure phases include `model_not_on_gpu`, `wrong_model_format`, and a stage ending in `_failed`. Inspect `docker compose logs --tail 100 api ollama` if startup stalls. The readiness check is not an AI-quality or speech-accuracy benchmark.
 
-Coach input labels the human as MANAGER and the simulated partner as EMPLOYEE. The quote field uses constrained decoding over exact manager excerpts of up to 300 characters. Runtime validation also checks the returned quote against the original manager messages. This prevents employee speech being presented as evidence of the learner's skill; the remaining coaching text still needs human judgment.
+Both reply and coach context label the human LEARNER and the simulated partner PARTNER with immutable turn numbers. The coach audits the complete transcript, including final agreements, before returning advice. The quote field uses constrained decoding over exact manager excerpts of up to 300 characters. Runtime validation also checks the returned quote against the original manager messages. This prevents employee speech being presented as evidence of the learner's skill; the remaining coaching text still needs human judgment.
 
 ## Connect the website
 
 1. For a temporary development endpoint, run `python3 deploy.py --tunnel`. It starts an outbound Cloudflare Quick Tunnel after local tests pass, checks the remote endpoints, and prints its HTTPS origin. All gateway routes require the key. The hostname changes on tunnel restart and Quick Tunnels have no uptime guarantee; use a managed tunnel/domain for a stable deployment. Chat uses newline-delimited JSON, not SSE. Streaming latency through the tunnel must still be measured on the live host.
-2. Read the generated key from `backend/.env` privately on the server. Set `BREV_API_URL` to the HTTPS origin and `BREV_API_KEY` to the same key in Sites server environment settings. Do not paste it into chat or commit `.env`.
-3. Redeploy the Site if its environment settings require it, then click **Your preferences → Check connection**.
+2. Read the generated key from `backend/.env` privately on the server. Set `BREV_API_URL` to the HTTPS origin and `BREV_API_KEY` to the same key in Vercel's production environment. Do not paste it into chat or commit `.env`.
+3. Redeploy the website after environment changes, then click **Your preferences → Check connection**.
 4. The status becomes **Qwen connected** only after authenticated readiness checks confirm that Qwen is loaded on the GPU and voice transcription has initialized.
 5. Test a conversation, its feedback, a 10-second microphone recording, and a cancelled/failed request before inviting other users.
 
-New Sites are private by default. Keep the gateway key secret even when the website is private. Before sharing publicly, add durable per-user/IP quotas at the gateway or edge; the single-process lock bounds concurrency but is not a long-term abuse quota. Keep one Uvicorn worker while relying on the shared lock.
+The website is public; the inference gateway still requires its secret key. SQLite counters on a Docker volume enforce shared ceilings of 60 authenticated inference requests per minute and 1,000 per UTC day across openings, chat, feedback, transcription, exercise generation and assessment. These counters survive API-container restarts and store no visitor identities or transcripts. These are global demo limits, not per-person guarantees: heavy use can consume the shared allowance. The single-process lock also limits concurrent GPU/transcription work. Keep one Uvicorn worker while relying on that lock. Health checks do not consume the allowance.
 
 ## Backend tests (without GPU or model download)
 
@@ -87,7 +114,7 @@ Tests mock inference and tokenization, not their quality. They cover authenticat
 
 ## Data and privacy
 
-Progress and feedback are saved in localStorage on this device, with a clear-history control. In live mode messages and recordings go through the Site proxy to Brev. Audio is processed in memory and is not intentionally persisted; access logs are disabled for the backend. Browser speech synthesis may use platform-provided remote voices. No vocal emotions, personality, or confidence scores are inferred.
+Progress, complete feedback, transcripts, custom profiles, and drafts are saved in IndexedDB on this browser, with a clear-history control. They synchronize across tabs on the same origin, not between devices. Memory is opt-in and clearing history removes its source transcripts. In live mode messages and recordings go through the Vercel server to Brev. Audio is processed in memory and is not intentionally persisted; access logs are disabled for the backend. Browser speech synthesis may use platform-provided remote voices. No vocal emotions, personality, or confidence scores are inferred.
 
 ## Next milestones
 
@@ -95,3 +122,9 @@ Progress and feedback are saved in localStorage on this device, with a clear-his
 2. Add a streaming transcription wrapper and sentence speech queue with playback-aware history.
 3. Add automatic interruption detection with echo cancellation and cancellation of stale output.
 4. Compare Kokoro/Chatterbox for expressive speech, then add evidence-based delivery measures such as pace and pauses.
+
+### Dialogue quality checks
+
+The actor receives native conversation turns with an explicit character identity, the human's separate goal, and the situation viewpoint. Qwen plans the character position and latest conversational need, then a second pass keeps or repairs the reply. Repeated substantive lines, cosmetic copies, wrong-language output, and flagged-but-unchanged reviews trigger one bounded regeneration; failed attempts return a retryable error rather than canned dialogue. Short confirmations, requested repetition, and meaningful owner/date/name corrections remain allowed.
+
+The T4 preset uses Qwen3 14B Q4_K_M, an 8,192-token context, and one inference worker. The measured 14B model fits fully on the 16 GB T4. Sampling follows [Qwen's non-thinking guidance](https://huggingface.co/Qwen/Qwen3-14B#best-practices); the actor adds a mild repeat penalty. Quality checks reduce model mistakes but do not guarantee perfect factual or conversational judgment.

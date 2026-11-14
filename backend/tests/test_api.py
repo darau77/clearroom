@@ -12,10 +12,17 @@ import main
 
 HEADERS={'Authorization':'Bearer '+os.environ['BREV_API_KEY']}
 BODY={'scenario':'deadlines','profile':{'experience':'New manager','goal':'Give clearer feedback','difficulty':'Balanced'},'messages':[{'role':'assistant','content':'You wanted to talk?'},{'role':'user','content':'The last two handoffs were late. What got in the way?'}]}
-GOOD={'summary':'A specific opening.','strengths':['Named the last two handoffs.'],'improvements':['Agree on a time.'],'quote':'The last two handoffs were late.','rewrite':'The last two handoffs arrived after Friday. What can we change?','next_step':'Agree on a named owner and date.'}
+def model_reply(r,text='I feel overloaded.'):
+ data=json.loads(r.content)
+ props=data['format']['properties']
+ body={'partner_position':'Alex is the employee who missed handoffs because of overload.','latest_user_need':'The manager asks what got in the way of the handoffs.','language':'en','responsibilities':[],'reply':text} if 'responsibilities' in props else {'problem':'none','reason':'The draft answers the question in the correct character.','language':'en','reply':text,'ownership_checked':True,'language_checked':True}
+ return httpx.Response(200,json={'done':True,'message':{'content':json.dumps(body)}})
+
+GOOD={'summary':'A specific opening.','strengths':[{'observation':'You named the last two handoffs.','turn':2,'evidence_quote':BODY['messages'][1]['content']}],'improvements':[{'acknowledgement':'You already named the specific handoffs.','evidence_quote':BODY['messages'][1]['content'],'refinement':'Agree on a time.'}],'quote':'The last two handoffs were late.','rewrite':'The last two handoffs arrived after Friday. What can we change?','next_step':'Agree on a named owner and date.'}
 class API(unittest.TestCase):
  def setUp(self):
   main.lock=asyncio.Lock()
+  main.work_queue=main.WorkQueue(capacity=4,timeout=1)
   self.client=TestClient(main.app)
   self.client.__enter__()
   self.original=main.app.state.http
@@ -54,8 +61,8 @@ class API(unittest.TestCase):
   def handler(r):
    data=json.loads(r.content)
    self.assertFalse(data['think'])
-   self.assertIn('Alex',data['messages'][0]['content'])
-   return httpx.Response(200,text='{"message":{"content":"I feel "}}\n{"message":{"content":"overloaded."},"done":true}\n')
+   self.assertIn('Alex',json.dumps(data['messages']))
+   return model_reply(r)
   self.mock_model(handler)
   r=self.client.post('/chat',json=BODY,headers=HEADERS)
   self.assertEqual(r.status_code,200)
@@ -64,16 +71,14 @@ class API(unittest.TestCase):
  def test_stream_failure_reports_error(self):
   self.mock_model(lambda r:httpx.Response(500))
   r=self.client.post('/chat',json=BODY,headers=HEADERS)
-  self.assertIn('error',json.loads(r.text.splitlines()[0]))
+  self.assertEqual(r.status_code,502)
   self.assertFalse(main.lock.locked())
  def test_incomplete_stream_never_reports_success(self):
-  for stream in ['{"message":{"content":"Unfinished"}}\n','{"done":true}\n']:
-   self.mock_model(lambda r:httpx.Response(200,text=stream))
-   r=self.client.post('/chat',json=BODY,headers=HEADERS)
-   events=[json.loads(line) for line in r.text.splitlines()]
-   self.assertIn('error',events[-1])
-   self.assertFalse(any(event.get('done') for event in events))
-   self.assertFalse(main.lock.locked())
+  for result in [{'done':False,'message':{'content':'unfinished'}},{'done':True,'done_reason':'length','message':{'content':'{}'}},{'done':True,'message':{'content':''}}]:
+   self.mock_model(lambda r:httpx.Response(200,json=result))
+   response=self.client.post('/chat',json=BODY,headers=HEADERS)
+   self.assertEqual(response.status_code,502)
+   self.assertEqual(main.work_queue.depth,0)
    self.client.portal.call(main.app.state.http.aclose)
  def test_token_budget_rejects_before_upstream(self):
   main.app.state.tokenizer=SimpleNamespace(encode=lambda *args,**kwargs:SimpleNamespace(ids=[1]*8192))
@@ -90,10 +95,12 @@ class API(unittest.TestCase):
  def test_valid_feedback(self):
   def handler(r):
    payload=json.loads(r.content)
-   self.assertEqual(payload['format']['properties']['quote']['enum'],[BODY['messages'][1]['content']])
-   self.assertIn('"speaker": "MANAGER"',payload['messages'][1]['content'])
-   self.assertIn('"speaker": "EMPLOYEE"',payload['messages'][1]['content'])
-   return httpx.Response(200,json={'done':True,'message':{'content':json.dumps(GOOD)}})
+   self.assertEqual(payload['format']['properties']['quote']['enum'],[BODY['messages'][1]['content']]) if 'quote' in payload['format']['properties'] else None
+   self.assertIn('"speaker": "LEARNER"',payload['messages'][1]['content'])
+   self.assertIn('"speaker": "PARTNER"',payload['messages'][1]['content']) if 'is_new' not in payload['format']['properties'] else None
+   properties=payload['format']['properties']
+   response={'is_new':True,'existing_evidence':'','reason':'No time agreed yet.'} if 'is_new' in properties else {'preserved_words':'The last two handoffs were late.','new_words_to_say':'What time would work to review the next one?','practice_note':''} if 'preserved_words' in properties else GOOD
+   return httpx.Response(200,json={'done':True,'message':{'content':json.dumps(response)}})
   self.mock_model(handler)
   r=self.client.post('/feedback',json=BODY,headers=HEADERS)
   self.assertEqual(r.status_code,200)
@@ -113,7 +120,7 @@ class API(unittest.TestCase):
   r=self.client.post('/transcribe',files={'file':('test.webm',b'','audio/webm')},headers=HEADERS)
   self.assertEqual(r.status_code,413)
  def test_transcript_contract(self):
-  with patch('main.transcribe_audio',new=AsyncMock(return_value='Could we talk?')):
+  with patch('main.transcribe_audio',new=AsyncMock(return_value={'text':'Could we talk?','language':'en'})):
    r=self.client.post('/transcribe',files={'file':('test.webm',b'test','audio/webm')},headers=HEADERS)
-   self.assertEqual(r.json(),{'text':'Could we talk?'})
+   self.assertEqual(r.json(),{'text':'Could we talk?','language':'en'})
 if __name__=='__main__':unittest.main()

@@ -3,6 +3,7 @@ from pathlib import Path
 import tempfile
 from types import SimpleNamespace
 import unittest
+from unittest.mock import patch
 import httpx
 from budget import fits_context
 from config import MODEL, CONTEXT_TOKENS
@@ -13,22 +14,37 @@ from verify import Gateway
 
 class Runtime(unittest.IsolatedAsyncioTestCase):
     async def test_warmup_requires_real_completion_and_gpu_residency(self):
-        paths = []
-        def handler(request):
-            paths.append(request.url.path)
-            payload = json.loads(request.content) if request.content else {}
-            if request.url.path == '/api/show':
-                self.assertEqual(payload['model'], MODEL)
-                return httpx.Response(200, json={'details': {'family': 'qwen3', 'quantization_level': 'Q4_K_M', 'parameter_size': '8.2B'}})
-            if request.url.path == '/api/chat':
-                self.assertFalse(payload['think'])
-                self.assertEqual(payload['keep_alive'], -1)
-                self.assertEqual(payload['options']['num_ctx'], CONTEXT_TOKENS)
-                return httpx.Response(200, json={'done': True, 'message': {'content': 'ready'}})
-            return httpx.Response(200, json={'models': [{'name': MODEL, 'size': 6000, 'size_vram': 6000, 'context_length': CONTEXT_TOKENS}]})
-        async with httpx.AsyncClient(transport=httpx.MockTransport(handler)) as client:
-            self.assertEqual((await warm_model(client))['context_tokens'], CONTEXT_TOKENS)
-        self.assertEqual(paths, ['/api/show', '/api/chat', '/api/ps'])
+        for selected, parameters in [('qwen3:8b-q4_K_M', '8.2B'), ('qwen3:14b-q4_K_M', '14.8B')]:
+            with self.subTest(model=selected), patch('runtime.MODEL', selected):
+                paths = []
+                def handler(request):
+                    paths.append(request.url.path)
+                    payload = json.loads(request.content) if request.content else {}
+                    if request.url.path == '/api/show':
+                        self.assertEqual(payload['model'], selected)
+                        return httpx.Response(200, json={'details': {'family': 'qwen3', 'quantization_level': 'Q4_K_M', 'parameter_size': parameters}})
+                    if request.url.path == '/api/chat':
+                        self.assertEqual(payload['model'], selected)
+                        self.assertFalse(payload['think'])
+                        self.assertEqual(payload['keep_alive'], -1)
+                        self.assertEqual(payload['options']['num_ctx'], CONTEXT_TOKENS)
+                        return httpx.Response(200, json={'done': True, 'message': {'content': 'ready'}})
+                    return httpx.Response(200, json={'models': [{'name': selected, 'size': 6000, 'size_vram': 6000, 'context_length': CONTEXT_TOKENS}]})
+                async with httpx.AsyncClient(transport=httpx.MockTransport(handler)) as client:
+                    self.assertEqual((await warm_model(client))['context_tokens'], CONTEXT_TOKENS)
+                self.assertEqual(paths, ['/api/show', '/api/chat', '/api/ps'])
+
+    def test_downloaded_size_must_match_the_selected_model(self):
+        for selected, wrong_size in [('qwen3:8b-q4_K_M', '14.8B'), ('qwen3:14b-q4_K_M', '8.2B')]:
+            with self.subTest(model=selected), patch('runtime.MODEL', selected):
+                with self.assertRaisesRegex(RuntimeCheckError, 'wrong_model_size'):
+                    check_model({'details': {'family': 'qwen3', 'quantization_level': 'Q4_K_M', 'parameter_size': wrong_size}})
+
+    def test_unsupported_model_selection_cannot_fall_back_to_8b(self):
+        for selected in ['qwen3:32b-q4_K_M', 'qwen3:8b', 'qwen3:14b-fp16', 'other:8b-q4_K_M']:
+            with self.subTest(model=selected), patch('runtime.MODEL', selected):
+                with self.assertRaisesRegex(RuntimeCheckError, 'unsupported_model_selection'):
+                    check_model({'details': {'family': 'qwen3', 'quantization_level': 'Q4_K_M', 'parameter_size': '8.2B'}})
 
     def test_wrong_quantization_is_not_ready(self):
         for details in [{}, {'family': 'qwen3', 'quantization_level': 'F16', 'parameter_size': '8.2B'}, {'family': 'qwen3', 'quantization_level': 'Q4_K_M', 'parameter_size': '32.8B'}]:
@@ -38,6 +54,16 @@ class Runtime(unittest.IsolatedAsyncioTestCase):
     def test_partial_offload_is_not_ready(self):
         with self.assertRaisesRegex(RuntimeCheckError, 'model_not_on_gpu'):
             gpu_status({'models': [{'name': MODEL, 'size': 6000, 'size_vram': 3000, 'context_length': 8192}]})
+
+    def test_both_models_still_require_95_percent_gpu_residency_and_exact_context(self):
+        for selected in ['qwen3:8b-q4_K_M', 'qwen3:14b-q4_K_M']:
+            with self.subTest(model=selected), patch('runtime.MODEL', selected):
+                loaded = {'name': selected, 'size': 10000, 'size_vram': 9500, 'context_length': CONTEXT_TOKENS}
+                self.assertEqual(gpu_status({'models': [loaded]})['gpu_memory_bytes'], 9500)
+                with self.assertRaisesRegex(RuntimeCheckError, 'model_not_on_gpu'):
+                    gpu_status({'models': [{**loaded, 'size_vram': 9499}]})
+                with self.assertRaisesRegex(RuntimeCheckError, 'wrong_context_length'):
+                    gpu_status({'models': [{**loaded, 'context_length': CONTEXT_TOKENS // 2}]})
 
 
 class Deployment(unittest.TestCase):

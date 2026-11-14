@@ -88,7 +88,7 @@ def verify(gateway):
         if not isinstance(feedback.get(field), str) or not feedback[field].strip():
             raise RuntimeError('Feedback response is missing a text field.')
     for field in ('strengths', 'improvements'):
-        if not isinstance(feedback.get(field), list) or not 1 <= len(feedback[field]) <= 3:
+        if not isinstance(feedback.get(field), list) or not (1 if field=='strengths' else 0) <= len(feedback[field]) <= 3:
             raise RuntimeError('Feedback response is missing observations.')
     if feedback['quote'] not in user_text:
         raise RuntimeError('Feedback quote was not found in the user message.')

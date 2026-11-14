@@ -31,3 +31,9 @@ test('credential is sent only upstream; stream stays unbuffered',async()=>{
  assert.equal(r.headers.get('Authorization'),null);
  }finally{globalThis.fetch=original;}
 });
+
+test('original browser host is accepted behind the local Next server and busy retry is preserved',async()=>{
+ const original=globalThis.fetch;try{globalThis.fetch=async()=>new Response(JSON.stringify({detail:'Busy; retry.'}),{status:429,headers:{'Retry-After':'5'}});
+ const r=await engineProxy(new Request('http://localhost:3101/api/engine/chat',{method:'POST',headers:{Host:'127.0.0.1:3101',Origin:'http://127.0.0.1:3101','Content-Type':'application/json'},body:'{}'}),env);assert.equal(r.status,429);assert.equal(r.headers.get('Retry-After'),'5');
+ }finally{globalThis.fetch=original;}
+});

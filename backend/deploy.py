@@ -11,9 +11,9 @@ import time
 from urllib.error import HTTPError
 from setup import ensure_secret, read_secret
 from verify import Gateway, verify
+from config import MODEL
 
 ROOT = Path(__file__).resolve().parent
-MODEL = 'qwen3:8b-q4_K_M'
 
 
 def run(args, capture=False, timeout=120):
@@ -112,7 +112,7 @@ def main():
     ensure_secret()
     key = read_secret()
     compose('config', '--quiet', capture=True)
-    print('Starting Ollama and downloading the 5.2 GB Qwen model if needed…', flush=True)
+    print('Starting Ollama and downloading the 9.3 GB Qwen model if needed…', flush=True)
     compose('up', '-d', 'ollama', timeout=600)
     wait_for_ollama()
     compose('exec', '-T', 'ollama', 'nvidia-smi', capture=True)

@@ -2,6 +2,9 @@
 import json
 from config import CONTEXT_TOKENS
 
+# Qwen3-8B and Qwen3-14B use byte-identical tokenizer.json files
+# (SHA256 aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4).
+# Retain the pinned, cached tokenizer across the 14B upgrade.
 TOKENIZER_REPO = 'Qwen/Qwen3-8B'
 TOKENIZER_REVISION = '47719a242beab8f9aecc40ce3928b034dd5dd559'
 

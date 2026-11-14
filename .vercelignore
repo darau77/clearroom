@@ -1,0 +1,11 @@
+.env*
+.dev.vars*
+backend
+.sites-runtime
+.wrangler
+.vinext
+dist
+outputs
+work
+.git
+.next

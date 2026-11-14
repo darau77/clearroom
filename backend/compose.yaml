@@ -38,13 +38,15 @@ services:
     environment:
       BREV_API_KEY: ${BREV_API_KEY:?Run python3 setup.py first}
       OLLAMA_URL: http://ollama:11434
-      QWEN_MODEL: qwen3:8b-q4_K_M
+      QWEN_MODEL: qwen3:14b-q4_K_M
       CLEARROOM_WARMUP: "1"
-      WHISPER_MODEL: small.en
+      WHISPER_MODEL: small
+      CLEARROOM_QUOTA_DB: /data/usage.sqlite3
     ports:
       - "127.0.0.1:8000:8000"
     volumes:
       - whisper:/models/huggingface
+      - usage:/data
     healthcheck:
       test: ["CMD", "python", "healthcheck.py"]
       interval: 15s
@@ -70,3 +72,4 @@ services:
 volumes:
   ollama:
   whisper:
+  usage:

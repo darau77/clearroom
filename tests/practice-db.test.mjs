@@ -1,0 +1,24 @@
+import 'fake-indexeddb/auto';
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {saveRecord,allRecords,deleteRecord,clearPractice,migrateLegacy,StorageConflict,PracticeCleared} from '../lib/practice-db.ts';
+globalThis.localStorage={getItem:key=>key==='clearroom.sessions.v1'?JSON.stringify([{id:'legacy',feedback:{summary:'Original'}}]):null};
+test('transactional records merge tabs, preserve history, detect stale edits, and reject work after clearing',async()=>{
+ await Promise.all([migrateLegacy(),migrateLegacy()]);
+ await Promise.all(Array.from({length:12},(_,i)=>saveRecord('sessions',{id:`tab-${i}`,feedback:{summary:`${i}`}})));
+ assert.equal((await allRecords('sessions')).length,13);
+ await saveRecord('sessions',{id:'legacy',feedback:{summary:'Stale replacement'}});
+ assert.equal((await allRecords('sessions')).find(r=>r.id==='legacy').value.feedback.summary,'Original');
+ const partner=await saveRecord('partners',{id:'p',name:'Original'},0);
+ const edits=await Promise.allSettled([saveRecord('partners',{id:'p',name:'First'},partner.revision),saveRecord('partners',{id:'p',name:'Second'},partner.revision)]);
+ assert.equal(edits.filter(e=>e.status==='fulfilled').length,1);
+ assert.ok(edits.find(e=>e.status==='rejected').reason instanceof StorageConflict);
+ await deleteRecord('partners','p');
+ await assert.rejects(saveRecord('partners',{id:'p',name:'Deleted elsewhere'},partner.revision),StorageConflict);
+ await saveRecord('drafts',{id:'d',input:'Unsaved words'},0,0);
+ await clearPractice();
+ await assert.rejects(saveRecord('drafts',{id:'d',input:'Old tab'},undefined,0),PracticeCleared);
+ await assert.rejects(saveRecord('sessions',{id:'old-finish'},undefined,0),PracticeCleared);
+ assert.equal((await allRecords('sessions')).length,0);
+ await migrateLegacy();assert.equal((await allRecords('sessions')).length,0);
+});

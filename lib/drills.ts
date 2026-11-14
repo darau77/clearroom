@@ -1,7 +1,7 @@
 export type DrillKind = 'blank' | 'build' | 'choose' | 'write';
-export type DrillQuestion = { id:string; prompt:string; context:string; answer:string; explanation:string; options?:string[]; words?:string[]; phrase?:string; minWords?:number };
-export type DrillSet = { id:DrillKind; title:string; description:string; skill:string; color:string; questions:DrillQuestion[] };
-export type DrillSession = { id:string; date:string; kind:DrillKind; total:number; firstTry:number; xp:number };
+export type DrillQuestion = { id:string; rubric?:string; prompt:string; context:string; answer:string; explanation:string; options?:string[]; words?:string[]; phrase?:string; minWords?:number };
+export type DrillSet = { ai?:boolean; id:DrillKind; title:string; description:string; skill:string; color:string; questions:DrillQuestion[] };
+export type DrillSession = { source?:'authored'|'ai'; id:string; date:string; kind:DrillKind; total:number; firstTry:number; xp:number };
 export const DRILL_XP=15;
 export const drillSets:DrillSet[]=[
  {id:'blank',title:'Find the missing words',description:'A small change in wording can open a conversation.',skill:'Specific, curious language',color:'green',questions:[
@@ -41,3 +41,18 @@ export function validDrillSession(s:unknown):s is DrillSession{
  const d=s as DrillSession;
  return typeof d.id==='string'&&typeof d.date==='string'&&Number.isFinite(Date.parse(d.date))&&drillSets.some(set=>set.id===d.kind&&set.questions.length===d.total)&&d.xp===DRILL_XP&&Number.isInteger(d.firstTry)&&d.firstTry>=0&&d.firstTry<=d.total;
 }
+
+export const trophyTiers = [{name:'Bronze',target:1},{name:'Silver',target:3},{name:'Gold',target:5}] as const;
+export function drillProgress(history:DrillSession[],now=new Date()) {
+ const counts:Record<DrillKind,number>={blank:0,build:0,choose:0,write:0};
+ const seen=new Set<string>();
+ for(const s of history){if(!validDrillSession(s)||!s.id||seen.has(s.id)||Date.parse(s.date)>now.getTime())continue;seen.add(s.id);counts[s.kind]++;}
+ const trophies=drillSets.map(s=>{const count=counts[s.id];const tier=trophyTiers.filter(t=>count>=t.target).length;const next=trophyTiers[tier];return {id:s.id,title:s.title,count,tier,next,earned:tier>0};});
+ const rounds=trophyTiers.map(t=>({...t,completed:drillSets.filter(s=>counts[s.id]>=t.target).length}));
+ const currentRoundIndex=rounds.findIndex(r=>r.completed<drillSets.length);
+ const roundIndex=currentRoundIndex<0?rounds.length-1:currentRoundIndex;
+ const round=rounds[roundIndex];
+ const nextSet=drillSets.find(s=>counts[s.id]<round.target)||drillSets[0];
+ return {counts,trophies,rounds,roundIndex,round,nextSet,finished:currentRoundIndex<0,medals:trophies.reduce((sum,t)=>sum+t.tier,0),pathTrophies:rounds.filter(r=>r.completed===drillSets.length).length};
+}
+export type DrillProgress = ReturnType<typeof drillProgress>;
