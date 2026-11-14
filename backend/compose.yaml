@@ -1,0 +1,31 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    restart: unless-stopped
+    gpus: all
+    environment:
+      OLLAMA_NUM_PARALLEL: "1"
+      OLLAMA_MAX_LOADED_MODELS: "1"
+      OLLAMA_CONTEXT_LENGTH: "8192"
+      OLLAMA_FLASH_ATTENTION: "1"
+    volumes:
+      - ollama:/root/.ollama
+    # Deliberately not published: the unauthenticated model service stays internal.
+  api:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      - ollama
+    environment:
+      BREV_API_KEY: ${BREV_API_KEY:?Run python3 setup.py first}
+      OLLAMA_URL: http://ollama:11434
+      QWEN_MODEL: qwen3:8b
+      WHISPER_MODEL: small.en
+      WHISPER_DEVICE: cpu
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - whisper:/models/huggingface
+volumes:
+  ollama:
+  whisper:
