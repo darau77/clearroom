@@ -1,7 +1,9 @@
 export type DrillKind = 'blank' | 'build' | 'choose' | 'write';
-export type DrillQuestion = { id:string; rubric?:string; prompt:string; context:string; answer:string; explanation:string; options?:string[]; words?:string[]; phrase?:string; minWords?:number };
-export type DrillSet = { ai?:boolean; id:DrillKind; title:string; description:string; skill:string; color:string; questions:DrillQuestion[] };
-export type DrillSession = { source?:'authored'|'ai'; id:string; date:string; kind:DrillKind; total:number; firstTry:number; xp:number };
+export type SkillId = 'observations'|'curiosity'|'empathy'|'boundaries'|'agreements'|'repair';
+export type DrillQuestion = { id:string; kind?:DrillKind; skill?:SkillId; level?:number; hint?:string; rubric?:string; prompt:string; context:string; answer:string; explanation:string; options?:string[]; optionFeedback?:Record<string,string>; words?:string[]; acceptedAnswers?:string[]; phrase?:string; minWords?:number };
+export type DrillSet = { ai?:boolean; lessonId?:string; unitId?:SkillId; mode?:'course'|'free'|'review'; id:DrillKind; title:string; description:string; skill:string; color:string; questions:DrillQuestion[] };
+export type DrillOutcome = { questionId:string; skill:SkillId; attempts:number; hintUsed:boolean; firstTry:boolean; assessment:'rule'|'ai'|'self'; resolved:boolean };
+export type DrillSession = { source?:'authored'|'ai'; lessonId?:string; unitId?:SkillId; mode?:'course'|'free'|'review'; outcomes?:DrillOutcome[]; questions?:DrillQuestion[]; id:string; date:string; kind:DrillKind; total:number; firstTry:number; xp:number };
 export const DRILL_XP=15;
 export const drillSets:DrillSet[]=[
  {id:'blank',title:'Find the missing words',description:'A small change in wording can open a conversation.',skill:'Specific, curious language',color:'green',questions:[
@@ -29,17 +31,27 @@ export function normaliseAnswer(value:string){return value.normalize('NFKC').toL
 export function checkDrillAnswer(kind:DrillKind,q:DrillQuestion,value:string):{correct:boolean;message:string}{
  const answer=normaliseAnswer(value);
  if(kind==='write'){
+  if(!q.phrase){
+   // Segment words in languages that do not separate them with spaces, too.
+   const count=typeof Intl.Segmenter==='function'?[...new Intl.Segmenter(undefined,{granularity:'word'}).segment(answer)].filter(part=>part.isWordLike&&/\p{L}/u.test(part.segment)).length:(answer.match(/[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]|[^\s\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]+/gu)||[]).filter(w=>/\p{L}/u.test(w)).length;
+   return {correct:count>=(q.minWords||4),message:count<(q.minWords||4)?'Add enough detail for someone to understand your response.':'Ready for review. Check your meaning against the goal; length alone does not assess your answer.'};
+  }
   const phrase=normaliseAnswer(q.phrase||'');
   const starts=answer===phrase||answer.startsWith(phrase+' ');
   const count=answer.split(' ').filter(w=>/[a-z]/i.test(w)).length;
   return {correct:starts&&count>=(q.minWords||1),message:!starts?`Start your sentence with “${q.phrase}”.`:count<(q.minWords||1)?`Add a little context: use at least ${q.minWords} words.`:'Pattern complete. This checks the opening and length, not the quality of your full sentence.'};
  }
- return {correct:answer===normaliseAnswer(q.answer),message:answer===normaliseAnswer(q.answer)?'That’s the intended response.':'Not quite. Read the explanation, then give it another try.'};
+ const correct=[q.answer,...(q.acceptedAnswers||[])].some(option=>answer===normaliseAnswer(option));
+ return {correct,message:correct?'That response meets this exercise’s goal.':q.optionFeedback?.[value]||'Take another look at the goal. We’ll revisit this question after the others.'};
 }
 export function validDrillSession(s:unknown):s is DrillSession{
  if(!s||typeof s!=='object')return false;
  const d=s as DrillSession;
- return typeof d.id==='string'&&typeof d.date==='string'&&Number.isFinite(Date.parse(d.date))&&drillSets.some(set=>set.id===d.kind&&set.questions.length===d.total)&&d.xp===DRILL_XP&&Number.isInteger(d.firstTry)&&d.firstTry>=0&&d.firstTry<=d.total;
+ const base=typeof d.id==='string'&&!!d.id&&typeof d.date==='string'&&Number.isFinite(Date.parse(d.date))&&drillSets.some(set=>set.id===d.kind&&set.questions.length===d.total)&&d.xp===DRILL_XP&&Number.isInteger(d.firstTry)&&d.firstTry>=0&&d.firstTry<=d.total;
+ if(!base)return false;
+ if(d.questions!==undefined&&(!Array.isArray(d.questions)||d.questions.length!==3||d.questions.some(q=>!q||typeof q!=='object'||typeof q.id!=='string'||!q.id)))return false;
+ if(d.outcomes!==undefined){if(!Array.isArray(d.outcomes)||d.outcomes.length!==3||new Set(d.outcomes.map(o=>o?.questionId)).size!==3)return false;for(const o of d.outcomes){if(!o||typeof o.questionId!=='string'||!o.questionId||o.questionId.length>160||!['observations','curiosity','empathy','boundaries','agreements','repair'].includes(o.skill)||!Number.isInteger(o.attempts)||o.attempts<1||o.attempts>100||typeof o.hintUsed!=='boolean'||typeof o.firstTry!=='boolean'||!['rule','ai','self'].includes(o.assessment)||o.resolved!==true)return false;if(o.firstTry&&(o.hintUsed||o.attempts!==1||o.assessment==='self'))return false;}if(d.firstTry!==d.outcomes.filter(o=>o.firstTry).length)return false;}
+ return true;
 }
 
 export const trophyTiers = [{name:'Bronze',target:1},{name:'Silver',target:3},{name:'Gold',target:5}] as const;

@@ -1,6 +1,11 @@
 .env*
 .dev.vars*
-backend
+backend/.env
+backend/.env.*
+backend/.venv
+backend/__pycache__
+backend/tests
+backend/data/*.sqlite3*
 .sites-runtime
 .wrangler
 .vinext

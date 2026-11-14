@@ -1,0 +1,9 @@
+{
+  "component": "Qwen3 14B Q4_K_M",
+  "ollamaModel": "qwen3:14b-q4_K_M",
+  "captured": "2026-11-15",
+  "source": "Output of ollama show --license on the deployed Brev Ollama instance; no inference performed",
+  "file": "Qwen3-14B-LICENSE.txt",
+  "sha256": "b87250e4478f8f0673bc61cd397e402ac33ca3a6f23a7ad9512618ab33f18fbe",
+  "upstream": "https://huggingface.co/Qwen/Qwen3-14B/blob/main/LICENSE"
+}

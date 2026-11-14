@@ -3,7 +3,8 @@ WORKDIR /app
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 HF_HOME=/models/huggingface
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-COPY main.py policy.py config.py runtime.py budget.py healthcheck.py quota.py conversation.py intelligence.py work_queue.py exercises.py ./
+COPY main.py policy.py config.py runtime.py budget.py healthcheck.py quota.py conversation.py intelligence.py work_queue.py exercises.py question_bank.py ./
+COPY data/drill-bank.json ./data/drill-bank.json
 RUN useradd -m -u 10001 app && mkdir -p /models/huggingface /data && chown -R app:app /models /data
 USER app
 EXPOSE 8000

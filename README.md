@@ -28,10 +28,21 @@ Open it directly. No visitor account or sign-in is required.
 
 | Have the conversation | Build the habit |
 | --- | --- |
-| Chat with an AI partner who responds to your situation. | Follow a lesson trail with four short exercise modes. |
+| Chat with an AI partner who responds to your situation. | Follow six skill units across 24 guided lessons. |
 | Join an animated avatar call with captions and spoken replies. | Fill missing words, build sentences, choose responses, and write your own. |
 | Create a partner's role, relationship, personality, and goal. | Earn XP, work toward daily goals, and unlock bronze, silver, and gold trophies. |
-| Finish a chat or call to get a reflection grounded in the transcript. | Try optional AI-generated writing exercises with feedback on meaning. |
+| Finish a chat or call to get a reflection grounded in the transcript. | Ask Qwen for new variations in all four exercise modes. |
+
+### Practice that grows with you
+
+The course starts with **120 original questions** covering observations, curiosity, empathy, boundaries, agreements, and repair. Each unit moves from **missing words → choosing a response → building a sentence → writing in your own words**.
+
+- **A bank to build on.** Questions rotate by skill, level, and what you have already seen. Qwen retrieves examples from the same bank to create variations for your selected partner and situation.
+- **A second chance to remember.** Missed questions and answers completed with hints return after the other questions. Later review prioritizes difficult and due material.
+- **Meaningful writing.** Connected writing practice uses Qwen to assess the response against a specific goal. An explicit self-review option keeps practice available when AI is unavailable.
+- **A guide beside you.** Your selected partner appears as an animated practice guide, with optional original sound cues and a completion celebration.
+
+See [how questions are authored, selected, and checked](docs/PRACTICE_DESIGN.md).
 
 ### A conversation worth trying
 
@@ -64,6 +75,7 @@ These checks reduce mistakes; AI feedback can still be imperfect. Coaching uses 
 | Conversation model | Qwen3 14B, Q4_K_M · Ollama |
 | Voice | Multilingual Whisper `small` · browser/device speech synthesis |
 | Progress | IndexedDB · BroadcastChannel |
+| Exercise bank | Versioned JSON · SQLite reference database |
 | Hosting | Vercel for the website · NVIDIA Brev with a 16 GB T4 for inference |
 
 <details>
@@ -75,10 +87,11 @@ flowchart LR
     Web <--> API["Authenticated FastAPI gateway · Brev"]
     API <--> Model["Qwen3 14B · Ollama"]
     API <--> Voice["Whisper · transcription"]
+    API <--> Bank["SQLite · authored exercise references"]
     Browser <--> Progress["IndexedDB · saved practice"]
 ```
 
-The browser calls the Next.js server, which keeps the backend key private. Qwen generates dialogue and coaching; Whisper transcribes recordings. Speech playback uses available device voices, and the optional camera preview stays on the device.
+The browser calls the Next.js server, which keeps the backend key private. Qwen generates dialogue, coaching, and checked exercise variations; Whisper transcribes recordings. The same authored question bank powers immediate browser practice and the server's reference database. Speech playback uses available device voices, and the optional camera preview stays on the device.
 
 </details>
 
@@ -131,18 +144,23 @@ clearroom/
 
 ## 🌱 Current scope
 
-Clearroom is a working prototype. Avatar calls are turn-based: **record → review → send → listen**. Voices depend on the device, and automatic interruptions are a future improvement. Authored drills use a fixed exercise set; adaptive writing is the AI-generated mode. Rewards celebrate practice effort.
+Clearroom is a working prototype. Avatar calls are turn-based: **record → review → send → listen**. Voices depend on the device, and automatic interruptions are a future improvement. The maintained question bank is currently in English; optional Qwen variations use the selected language and situation. Exercise checks and review intervals support practice, but do not measure real-world communication ability. Rewards celebrate effort, and self-reviewed writing is labeled separately from AI-checked work.
 
 Progress is saved in this browser and shared across its tabs, rather than across devices. Live text and recordings are processed through Vercel and Brev. Live AI also depends on the Brev server being available and has shared usage limits. The [data and privacy notes](docs/TECHNICAL_GUIDE.md#data-and-privacy) explain the details.
 
 ## 📖 Go deeper
 
+- [Question creation, Qwen variations, and spaced review](docs/PRACTICE_DESIGN.md)
 - [Custom partners and practice trails](docs/TECHNICAL_GUIDE.md#custom-partners-and-practice-trail)
 - [Rewards and progression](docs/TECHNICAL_GUIDE.md#practice-rewards)
 - [Deploy the public website](docs/TECHNICAL_GUIDE.md#deploy-the-public-website-on-vercel)
 - [Launch the Qwen backend](docs/TECHNICAL_GUIDE.md#launch-the-inference-backend-on-brev)
 - [Connect the website and backend](docs/TECHNICAL_GUIDE.md#connect-the-website)
 - [Next milestones](docs/TECHNICAL_GUIDE.md#next-milestones)
+
+## 📜 License
+
+Clearroom's original code is available under the [MIT License](LICENSE). Dependencies, model weights, fonts, and vendored components retain their own licenses; see [third-party notices and license inventory](THIRD_PARTY_NOTICES.md).
 
 ---
 

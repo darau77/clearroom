@@ -1,0 +1,205 @@
+[
+  {
+    "name": "Qwen3-14B",
+    "license": "Apache-2.0",
+    "url": "https://huggingface.co/Qwen/Qwen3-14B/raw/40c069824f4251a91eefaf281ebe4c544efd3e18/LICENSE",
+    "file": "upstream/Qwen3-14B-LICENSE.txt",
+    "fetchError": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "Ollama",
+    "license": "MIT",
+    "url": "https://raw.githubusercontent.com/ollama/ollama/v0.40.16/LICENSE",
+    "file": "upstream/Ollama-LICENSE.txt",
+    "fetchError": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "Whisper code and weights",
+    "license": "MIT",
+    "url": "https://raw.githubusercontent.com/openai/whisper/main/LICENSE",
+    "file": "upstream/Whisper-LICENSE.txt",
+    "fetchError": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "faster-whisper",
+    "license": "MIT",
+    "url": "https://raw.githubusercontent.com/SYSTRAN/faster-whisper/master/LICENSE",
+    "file": "upstream/faster-whisper-LICENSE.txt",
+    "fetchError": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "DM Sans",
+    "license": "OFL-1.1",
+    "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/dmsans/OFL.txt",
+    "file": "upstream/DM-Sans-OFL.txt",
+    "fetchError": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "Manrope",
+    "license": "OFL-1.1",
+    "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/manrope/OFL.txt",
+    "file": "upstream/Manrope-OFL.txt",
+    "fetchError": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "cloudflared",
+    "license": "Apache-2.0",
+    "url": "https://raw.githubusercontent.com/cloudflare/cloudflared/2026.11.0/LICENSE",
+    "file": "upstream/cloudflared-LICENSE.txt",
+    "fetchError": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "CPython 3.11",
+    "license": "PSF-2.0 and historical notices",
+    "url": "https://raw.githubusercontent.com/python/cpython/3.11/LICENSE",
+    "file": "upstream/Python-LICENSE.txt",
+    "fetchError": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "Cloudflare Workers SDK MIT option",
+    "license": "MIT",
+    "url": "https://raw.githubusercontent.com/cloudflare/workers-sdk/main/LICENSE-MIT",
+    "file": "upstream/workers-sdk-LICENSE-MIT.txt",
+    "fetchError": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "Cloudflare Workers SDK Apache option",
+    "license": "Apache-2.0",
+    "url": "https://raw.githubusercontent.com/cloudflare/workers-sdk/main/LICENSE-APACHE",
+    "file": "upstream/workers-sdk-LICENSE-APACHE.txt",
+    "fetchError": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "Cloudflare workerd",
+    "license": "Apache-2.0",
+    "url": "https://raw.githubusercontent.com/cloudflare/workerd/main/LICENSE",
+    "file": "upstream/workerd-LICENSE.txt",
+    "fetchError": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "brocli",
+    "license": "Apache-2.0",
+    "url": "https://raw.githubusercontent.com/drizzle-team/brocli/main/LICENSE",
+    "file": "upstream/brocli-LICENSE.txt",
+    "fetchError": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "esbuild",
+    "license": "MIT",
+    "url": "https://raw.githubusercontent.com/evanw/esbuild/main/LICENSE.md",
+    "file": "upstream/esbuild-LICENSE.txt",
+    "fetchError": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "Next.js",
+    "license": "MIT",
+    "url": "https://raw.githubusercontent.com/vercel/next.js/canary/license.md",
+    "file": "upstream/Nextjs-LICENSE.txt",
+    "fetchError": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "Radix UI primitives",
+    "license": "MIT",
+    "url": "https://raw.githubusercontent.com/radix-ui/primitives/main/LICENSE",
+    "file": "upstream/Radix-LICENSE.txt",
+    "fetchError": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "Rolldown",
+    "license": "MIT",
+    "url": "https://raw.githubusercontent.com/rolldown/rolldown/main/LICENSE",
+    "file": "upstream/Rolldown-LICENSE.txt",
+    "fetchError": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "wasm-util",
+    "license": "MIT",
+    "url": "https://raw.githubusercontent.com/toyobayashi/wasm-util/master/LICENSE",
+    "file": "upstream/wasm-util-LICENSE.txt",
+    "fetchError": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "DefinitelyTyped",
+    "license": "MIT",
+    "url": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/LICENSE",
+    "file": "upstream/DefinitelyTyped-LICENSE.txt",
+    "fetchError": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "Unpic image components",
+    "license": "MIT",
+    "url": "https://raw.githubusercontent.com/ascorbic/unpic-img/main/LICENSE",
+    "file": "upstream/Unpic-components-LICENSE.txt",
+    "fetchError": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "unrs-resolver",
+    "license": "MIT",
+    "url": "https://raw.githubusercontent.com/unrs/unrs-resolver/main/LICENSE",
+    "file": "upstream/unrs-resolver-LICENSE.txt",
+    "fetchError": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "Drizzle ORM",
+    "license": "Apache-2.0",
+    "url": "https://raw.githubusercontent.com/drizzle-team/drizzle-orm/main/LICENSE",
+    "file": "upstream/Drizzle-ORM-LICENSE.txt",
+    "fetchError": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "Drizzle Kit",
+    "license": "MIT",
+    "url": "https://raw.githubusercontent.com/drizzle-team/drizzle-orm/main/drizzle-kit/LICENSE",
+    "file": "upstream/Drizzle-Kit-LICENSE.txt",
+    "fetchError": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "Embla Carousel",
+    "license": "MIT",
+    "url": "https://raw.githubusercontent.com/davidjerleke/embla-carousel/master/LICENSE",
+    "file": "upstream/Embla-LICENSE.txt",
+    "fetchError": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "input-otp",
+    "license": "MIT",
+    "url": "https://raw.githubusercontent.com/guilhermerodz/input-otp/master/LICENSE",
+    "file": "upstream/input-otp-LICENSE.txt",
+    "fetchError": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "language-subtag-registry",
+    "license": "CC0-1.0",
+    "url": "https://raw.githubusercontent.com/mattcg/language-subtag-registry/master/LICENSE",
+    "file": "upstream/language-subtag-registry-LICENSE.txt",
+    "fetchError": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "language-tags",
+    "license": "MIT",
+    "url": "https://raw.githubusercontent.com/mattcg/language-tags/master/LICENSE",
+    "file": "upstream/language-tags-LICENSE.txt",
+    "fetchError": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "natural-compare",
+    "license": "MIT",
+    "url": "https://raw.githubusercontent.com/litejs/natural-compare-lite/master/README.md",
+    "file": "upstream/natural-compare-README.txt",
+    "fetchError": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "Unpic URL library",
+    "license": "MIT",
+    "url": "https://raw.githubusercontent.com/ascorbic/unpic/main/LICENSE",
+    "file": "upstream/Unpic-LICENSE.txt",
+    "fetchError": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "name": "Yoga",
+    "license": "MIT",
+    "url": "https://raw.githubusercontent.com/facebook/yoga/main/LICENSE",
+    "file": "upstream/Yoga-LICENSE.txt",
+    "fetchError": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  }
+]

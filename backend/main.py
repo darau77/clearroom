@@ -6,7 +6,7 @@ import json
 import os
 import sqlite3
 from contextlib import asynccontextmanager, suppress
-from typing import Literal
+from typing import Annotated, Literal
 import httpx
 from fastapi import Depends, FastAPI, File, Form, Header, HTTPException, Request, UploadFile
 from fastapi.responses import StreamingResponse
@@ -304,19 +304,25 @@ async def transcribe(file:UploadFile=File(...),language:Language=Form('auto')):
             # No recording or exception detail is logged or returned to visitors.
             raise HTTPException(422,'Could not transcribe this recording. Try a shorter, clearer message.') from exc
 
-from exercises import Kind, AssessmentRequest, create_exercise, assess_writing
+from exercises import Kind, Skill, AssessmentRequest, create_exercise, assess_writing
+EXERCISE_TIMEOUT = 125
 
 class ExerciseRequest(Conversation):
-    kind: Literal['write']
+    kind: Kind
     previous_feedback: str = Field(default='',max_length=800)
+    skill: Skill | None = None
+    level: int = Field(default=1,ge=1,le=3)
+    exclude_ids: list[Annotated[str,Field(min_length=1,max_length=70)]] = Field(default_factory=list,max_length=60)
+    recent_prompts: list[Annotated[str,Field(min_length=1,max_length=500)]] = Field(default_factory=list,max_length=6)
 
 @app.post('/exercise',dependencies=[Depends(auth),Depends(require_ready),Depends(public_usage)])
 async def exercise(c:ExerciseRequest,request:Request):
     async with slot():
         try:
-            result=await create_exercise(request.app,c,c.kind,c.previous_feedback)
-            return {'id':c.kind,'title':result.title,'description':result.description,'skill':'AI adaptive practice','color':{'blank':'green','build':'blue','choose':'purple','write':'peach'}[c.kind],'questions':[q.model_dump(exclude_none=True) for q in result.questions],'ai':True}
-        except (httpx.HTTPError,ValueError,KeyError):
+            async with asyncio.timeout(EXERCISE_TIMEOUT):
+                result=await create_exercise(request.app,c,c.kind,c.previous_feedback,c.skill,c.level,c.exclude_ids,c.recent_prompts)
+            return {'id':c.kind,'title':result.title,'description':result.description,'skill':result.questions[0].skill or 'AI adaptive practice','color':{'blank':'green','build':'blue','choose':'purple','write':'peach'}[c.kind],'questions':[q.model_dump(exclude_none=True) for q in result.questions],'ai':True,'bankVersion':result.bank_version}
+        except (httpx.HTTPError,ValueError,KeyError,OSError,sqlite3.Error,TimeoutError):
             raise HTTPException(502,'The AI could not produce a reliable exercise. Please retry.') from None
 
 @app.post('/assess',dependencies=[Depends(auth),Depends(require_ready),Depends(public_usage)])

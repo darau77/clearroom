@@ -1,0 +1,2457 @@
+{
+  "version": 1,
+  "units": [
+    {
+      "id": "observations",
+      "title": "Start with what happened",
+      "description": "Separate what you noticed from the story you tell about it.",
+      "tip": "Name a specific event, date, or detail before guessing why it happened.",
+      "color": "green"
+    },
+    {
+      "id": "curiosity",
+      "title": "Make room for their side",
+      "description": "Ask questions that uncover useful information without hiding an accusation.",
+      "tip": "Ask one open question, then leave room for the answer.",
+      "color": "blue"
+    },
+    {
+      "id": "empathy",
+      "title": "Show you heard them",
+      "description": "Acknowledge a stated concern while keeping your own needs visible.",
+      "tip": "Reflect the concern they actually expressed; understanding does not require agreement.",
+      "color": "purple"
+    },
+    {
+      "id": "boundaries",
+      "title": "Be kind and clear",
+      "description": "State a limit and an available next step without making a threat.",
+      "tip": "Say what you can or cannot do, and offer a realistic option when one exists.",
+      "color": "peach"
+    },
+    {
+      "id": "agreements",
+      "title": "Make the next step usable",
+      "description": "Clarify actions, owners, timing, and what to do if the plan changes.",
+      "tip": "Check who will do what and when; a proposal becomes an agreement only after both people accept.",
+      "color": "green"
+    },
+    {
+      "id": "repair",
+      "title": "Find a way back",
+      "description": "Correct misunderstandings, own your part, and restart a difficult exchange.",
+      "tip": "Name what needs repairing, correct it plainly, and invite a useful next step.",
+      "color": "blue"
+    }
+  ],
+  "questions": [
+    {
+      "id": "observations-blank-01",
+      "skill": "observations",
+      "kind": "blank",
+      "level": 1,
+      "context": "You expected a design handoff on Friday. The file arrived on Monday.",
+      "prompt": "I noticed that the handoff ___.",
+      "answer": "arrived on Monday rather than Friday",
+      "explanation": "Naming the two dates gives both people a shared event to discuss.",
+      "hint": "Use the dates you can verify.",
+      "rubric": "Describe the actual arrival and the agreed date without assuming why the handoff was late.",
+      "options": [
+        "arrived on Monday rather than Friday",
+        "was not treated as a priority",
+        "might be late again next time"
+      ],
+      "optionFeedback": {
+        "arrived on Monday rather than Friday": "Naming the two dates gives both people a shared event to discuss.",
+        "was not treated as a priority": "That assigns a motive before you have asked what happened.",
+        "might be late again next time": "That predicts the future instead of describing this handoff."
+      }
+    },
+    {
+      "id": "observations-blank-02",
+      "skill": "observations",
+      "kind": "blank",
+      "level": 1,
+      "context": "You and your roommate agreed to clear the kitchen each evening. Four plates were still in the sink this morning.",
+      "prompt": "This morning, I saw ___ in the sink.",
+      "answer": "four plates left from last night",
+      "explanation": "The number and timing describe the situation without deciding who cares more.",
+      "hint": "Focus on what was physically there.",
+      "rubric": "State what was in the sink and when, without judging the roommate’s priorities.",
+      "options": [
+        "another sign that cleaning is not important",
+        "a problem we will probably never solve",
+        "four plates left from last night"
+      ],
+      "optionFeedback": {
+        "four plates left from last night": "The number and timing describe the situation without deciding who cares more.",
+        "another sign that cleaning is not important": "That turns the plates into a judgment about your roommate.",
+        "a problem we will probably never solve": "That predicts failure instead of naming what you saw."
+      }
+    },
+    {
+      "id": "observations-blank-03",
+      "skill": "observations",
+      "kind": "blank",
+      "level": 2,
+      "context": "Your friend arrived twenty minutes after the agreed time at your last two meetups.",
+      "prompt": "At our last two meetups, ___.",
+      "answer": "we started twenty minutes after the agreed time",
+      "explanation": "A recent pattern can be specific without becoming a claim about someone’s character.",
+      "hint": "Describe the two recent events, not the friendship.",
+      "rubric": "Describe the repeated timing difference using the two observed meetups.",
+      "options": [
+        "we both need to value friendship more",
+        "we started twenty minutes after the agreed time",
+        "you seemed less interested in meeting"
+      ],
+      "optionFeedback": {
+        "we started twenty minutes after the agreed time": "A recent pattern can be specific without becoming a claim about someone’s character.",
+        "you seemed less interested in meeting": "That interprets interest rather than describing arrival times.",
+        "we both need to value friendship more": "That makes a broad judgment about both people."
+      }
+    },
+    {
+      "id": "observations-blank-04",
+      "skill": "observations",
+      "kind": "blank",
+      "level": 2,
+      "context": "A client added three pages to a draft after you approved the original outline together.",
+      "prompt": "The latest draft ___.",
+      "answer": "has three pages beyond the agreed outline",
+      "explanation": "Naming the added pages creates a clear starting point for discussing scope.",
+      "hint": "Count the change against the shared outline.",
+      "rubric": "Identify the specific scope change without claiming why the client made it.",
+      "options": [
+        "has three pages beyond the agreed outline",
+        "shows that our agreement was not respected",
+        "will probably need a completely new contract"
+      ],
+      "optionFeedback": {
+        "has three pages beyond the agreed outline": "Naming the added pages creates a clear starting point for discussing scope.",
+        "shows that our agreement was not respected": "That assigns intent before discussing the change.",
+        "will probably need a completely new contract": "That jumps to a consequence before identifying the change."
+      }
+    },
+    {
+      "id": "observations-blank-05",
+      "skill": "observations",
+      "kind": "blank",
+      "level": 3,
+      "context": "During a family call, your sibling began speaking twice before you finished explaining your plans.",
+      "prompt": "During that call, ___.",
+      "answer": "I was interrupted twice while explaining my plans",
+      "explanation": "You can name interruptions directly while leaving their cause open for discussion.",
+      "hint": "Use the observable count and moment.",
+      "rubric": "Describe the interruptions without claiming to know the sibling’s intention.",
+      "options": [
+        "you wanted to control the conversation",
+        "we were unable to communicate at all",
+        "I was interrupted twice while explaining my plans"
+      ],
+      "optionFeedback": {
+        "I was interrupted twice while explaining my plans": "You can name interruptions directly while leaving their cause open for discussion.",
+        "you wanted to control the conversation": "That guesses at your sibling’s purpose.",
+        "we were unable to communicate at all": "That generalizes beyond the two interruptions."
+      }
+    },
+    {
+      "id": "observations-choose-01",
+      "skill": "observations",
+      "kind": "choose",
+      "level": 1,
+      "context": "Two Friday handoffs from a teammate arrived the following Monday. You are opening a conversation about them.",
+      "prompt": "Which opening gives you a shared fact to discuss?",
+      "answer": "The last two Friday handoffs arrived on Monday.",
+      "explanation": "Specific recent events are easier to examine together than judgments about commitment.",
+      "hint": "Look for an event and a date.",
+      "rubric": "Open with the two observed handoff dates without judging the teammate’s commitment.",
+      "options": [
+        "Could we avoid another disappointing handoff?",
+        "The last two Friday handoffs arrived on Monday.",
+        "I think deadlines matter more to me than to you."
+      ],
+      "optionFeedback": {
+        "The last two Friday handoffs arrived on Monday.": "Specific recent events are easier to examine together than judgments about commitment.",
+        "I think deadlines matter more to me than to you.": "That compares attitudes rather than describing the handoffs.",
+        "Could we avoid another disappointing handoff?": "That starts with an evaluation and leaves the recent facts unclear."
+      }
+    },
+    {
+      "id": "observations-choose-02",
+      "skill": "observations",
+      "kind": "choose",
+      "level": 1,
+      "context": "The kitchen bin was full on Tuesday and Thursday, the two days your roommate had agreed to empty it.",
+      "prompt": "Which observation stays closest to what you know?",
+      "answer": "The bin was still full on Tuesday and Thursday.",
+      "explanation": "The two dates identify a concrete pattern without deciding its cause.",
+      "hint": "Choose the line you could support with the calendar.",
+      "rubric": "Name the two missed bin-emptying days before discussing reasons or solutions.",
+      "options": [
+        "The bin was still full on Tuesday and Thursday.",
+        "It seems the cleaning schedule only matters to me.",
+        "I guess we need a stricter schedule from now on."
+      ],
+      "optionFeedback": {
+        "The bin was still full on Tuesday and Thursday.": "The two dates identify a concrete pattern without deciding its cause.",
+        "It seems the cleaning schedule only matters to me.": "That assumes what the schedule means to your roommate.",
+        "I guess we need a stricter schedule from now on.": "That moves to a solution before describing the missed tasks."
+      }
+    },
+    {
+      "id": "observations-choose-03",
+      "skill": "observations",
+      "kind": "choose",
+      "level": 2,
+      "context": "Your friend arrived at 7:25 for a dinner you had agreed would start at 7:00.",
+      "prompt": "Which line describes this event without adding a motive?",
+      "answer": "We agreed on seven, and you arrived at seven twenty-five.",
+      "explanation": "A time difference is a fact you can discuss; the reason for it still needs a question.",
+      "hint": "Keep the agreed and actual times.",
+      "rubric": "State the timing difference without interpreting the friend’s interest or care.",
+      "options": [
+        "I felt as if dinner was not important enough to you.",
+        "I would like you to try being more considerate.",
+        "We agreed on seven, and you arrived at seven twenty-five."
+      ],
+      "optionFeedback": {
+        "We agreed on seven, and you arrived at seven twenty-five.": "A time difference is a fact you can discuss; the reason for it still needs a question.",
+        "I felt as if dinner was not important enough to you.": "That describes an interpretation of the friend’s priorities.",
+        "I would like you to try being more considerate.": "That is a broad request rather than an observation about this dinner."
+      }
+    },
+    {
+      "id": "observations-choose-04",
+      "skill": "observations",
+      "kind": "choose",
+      "level": 2,
+      "context": "A client sent a revised proposal. Its pricing and delivery sections are both empty.",
+      "prompt": "What is the clearest observation to open with?",
+      "answer": "The pricing and delivery sections are empty in this version.",
+      "explanation": "Naming the empty sections makes the issue clear and gives the client something concrete to address.",
+      "hint": "Point to the specific sections.",
+      "rubric": "Identify the two missing sections without labeling the client’s effort or ability.",
+      "options": [
+        "I am not sure you understand what we need.",
+        "The pricing and delivery sections are empty in this version.",
+        "This proposal looks unfinished and a little careless."
+      ],
+      "optionFeedback": {
+        "The pricing and delivery sections are empty in this version.": "Naming the empty sections makes the issue clear and gives the client something concrete to address.",
+        "This proposal looks unfinished and a little careless.": "That adds a judgment about how the proposal was prepared.",
+        "I am not sure you understand what we need.": "That judges understanding rather than naming the missing information."
+      }
+    },
+    {
+      "id": "observations-choose-05",
+      "skill": "observations",
+      "kind": "choose",
+      "level": 3,
+      "context": "Your cousin borrowed your charger and agreed to return it on Sunday. It is Tuesday, and you have not received it.",
+      "prompt": "Which opening separates the missed agreement from a personal judgment?",
+      "answer": "We agreed on Sunday, and I have not received the charger yet.",
+      "explanation": "The agreed return day and current situation are enough to start the conversation.",
+      "hint": "Use the item and the missed agreement.",
+      "rubric": "Name the unreturned charger and agreed day without generalizing about the cousin.",
+      "options": [
+        "We agreed on Sunday, and I have not received the charger yet.",
+        "You seem to forget other people’s things quite easily.",
+        "I should probably stop lending anything to family."
+      ],
+      "optionFeedback": {
+        "We agreed on Sunday, and I have not received the charger yet.": "The agreed return day and current situation are enough to start the conversation.",
+        "You seem to forget other people’s things quite easily.": "That turns one missing item into a character pattern.",
+        "I should probably stop lending anything to family.": "That jumps to a broad rule before discussing this item."
+      }
+    },
+    {
+      "id": "observations-build-01",
+      "skill": "observations",
+      "kind": "build",
+      "level": 1,
+      "context": "A work file arrived after the deadline you had agreed on.",
+      "prompt": "Build an opening that names the observed timing.",
+      "answer": "I noticed the file arrived after our agreed deadline.",
+      "explanation": "This names the timing difference without guessing why it happened.",
+      "hint": "Start with your observation, then the file and timing.",
+      "rubric": "Describe the missed deadline without adding a motive.",
+      "words": [
+        "I",
+        "arrived",
+        "file",
+        "deadline.",
+        "our",
+        "agreed",
+        "the",
+        "noticed",
+        "after"
+      ]
+    },
+    {
+      "id": "observations-build-02",
+      "skill": "observations",
+      "kind": "build",
+      "level": 1,
+      "context": "You find last night’s dishes in the shared kitchen this morning.",
+      "prompt": "Build a statement about what is still there.",
+      "answer": "The kitchen sink still has dishes from last night.",
+      "explanation": "This points to a visible situation rather than judging the person responsible.",
+      "hint": "Start with the place, then what remains and when it is from.",
+      "rubric": "Describe the dishes and their timing without blaming a character trait.",
+      "words": [
+        "kitchen",
+        "dishes",
+        "still",
+        "from",
+        "night.",
+        "The",
+        "has",
+        "sink",
+        "last"
+      ]
+    },
+    {
+      "id": "observations-build-03",
+      "skill": "observations",
+      "kind": "build",
+      "level": 2,
+      "context": "A group activity began twenty minutes later than your agreed start time.",
+      "prompt": "Build a description of the actual start.",
+      "answer": "We started twenty minutes after the time we agreed.",
+      "explanation": "The sentence makes the difference between the plan and the event explicit.",
+      "hint": "Name the delay before referring to the agreement.",
+      "rubric": "State the observed twenty-minute delay compared with the agreed start.",
+      "words": [
+        "agreed.",
+        "started",
+        "after",
+        "time",
+        "twenty",
+        "the",
+        "we",
+        "minutes",
+        "We"
+      ]
+    },
+    {
+      "id": "observations-build-04",
+      "skill": "observations",
+      "kind": "build",
+      "level": 2,
+      "context": "You are reviewing the latest project brief, which has no delivery date.",
+      "prompt": "Build a statement about the missing detail.",
+      "answer": "The latest brief does not include a delivery date.",
+      "explanation": "Naming the missing field gives the conversation a clear subject.",
+      "hint": "Begin with the document, then the missing information.",
+      "rubric": "Identify the missing delivery date without judging the author.",
+      "words": [
+        "latest",
+        "date.",
+        "delivery",
+        "a",
+        "does",
+        "The",
+        "include",
+        "not",
+        "brief"
+      ]
+    },
+    {
+      "id": "observations-build-05",
+      "skill": "observations",
+      "kind": "build",
+      "level": 3,
+      "context": "A relative interrupted twice as you explained a plan.",
+      "prompt": "Build an observation about that exchange.",
+      "answer": "I was interrupted twice while explaining my plans.",
+      "explanation": "This identifies what happened and when, without claiming why it happened.",
+      "hint": "Use the count of interruptions and the activity.",
+      "rubric": "Name the two interruptions without assigning an intention.",
+      "words": [
+        "was",
+        "while",
+        "twice",
+        "explaining",
+        "I",
+        "interrupted",
+        "plans.",
+        "my"
+      ]
+    },
+    {
+      "id": "observations-write-01",
+      "skill": "observations",
+      "kind": "write",
+      "level": 1,
+      "context": "A client’s new proposal has removed the budget section that appeared in the previous version.",
+      "prompt": "Write one opening sentence that names the change without guessing why it was made.",
+      "answer": "The budget section that was in the previous proposal is missing from this version.",
+      "explanation": "Comparing the two versions identifies the change without making a claim about the client’s motives.",
+      "hint": "Refer to the section and the two versions.",
+      "rubric": "Name the removed budget section and compare versions; do not accuse the client of hiding costs.",
+      "minWords": 5
+    },
+    {
+      "id": "observations-write-02",
+      "skill": "observations",
+      "kind": "write",
+      "level": 1,
+      "context": "Your roommate’s alarm rang at 6:00 on three mornings this week and woke you each time.",
+      "prompt": "Describe the recent pattern and its effect on you in one or two sentences.",
+      "answer": "Your alarm rang at six on three mornings this week, and it woke me each time.",
+      "explanation": "The statement separates the observed pattern from its specific effect on you.",
+      "hint": "Use the time, frequency, and what happened to you.",
+      "rubric": "Mention the six-o’clock alarm or repeated mornings and being woken; avoid assumptions about consideration or intent.",
+      "minWords": 6
+    },
+    {
+      "id": "observations-write-03",
+      "skill": "observations",
+      "kind": "write",
+      "level": 2,
+      "context": "Your friend canceled two planned walks this month on the morning of each walk.",
+      "prompt": "Open a conversation by describing the two cancellations.",
+      "answer": "Our last two walks were canceled on the morning we had planned to meet.",
+      "explanation": "A specific pattern makes room to ask what is happening without labeling your friend unreliable.",
+      "hint": "Describe the plans and when they changed.",
+      "rubric": "Name the two recent walks and same-day cancellations without judging the friend’s character.",
+      "minWords": 5
+    },
+    {
+      "id": "observations-write-04",
+      "skill": "observations",
+      "kind": "write",
+      "level": 2,
+      "context": "In yesterday’s team meeting, the agenda moved to a new topic before you finished presenting your update.",
+      "prompt": "Write an observation about the meeting, without deciding why the topic changed.",
+      "answer": "Yesterday, the meeting moved to the next topic before I finished my update.",
+      "explanation": "The observation names the sequence of events without assuming you were deliberately ignored.",
+      "hint": "Describe what happened before your update was finished.",
+      "rubric": "Identify the topic change before the update ended; do not claim someone intended to dismiss the learner.",
+      "minWords": 5
+    },
+    {
+      "id": "observations-write-05",
+      "skill": "observations",
+      "kind": "write",
+      "level": 3,
+      "context": "Your brother borrowed your car and returned it with the fuel warning light on. You had handed it over with half a tank.",
+      "prompt": "Describe the difference between how the car left and how it returned.",
+      "answer": "The car had half a tank when you borrowed it, and the fuel warning light was on when it came back.",
+      "explanation": "The before-and-after detail is concrete and leaves the reason open for discussion.",
+      "hint": "Compare the fuel level at the two moments.",
+      "rubric": "Mention the changed fuel level without attributing selfishness or inventing a refueling agreement.",
+      "minWords": 6
+    },
+    {
+      "id": "curiosity-blank-01",
+      "skill": "curiosity",
+      "kind": "blank",
+      "level": 1,
+      "context": "A teammate says the new assignment is difficult, but has not explained which part.",
+      "prompt": "What part of the assignment ___?",
+      "answer": "is proving hardest to move forward",
+      "explanation": "An open question helps locate the obstacle before choosing a solution.",
+      "hint": "Ask about the difficulty itself.",
+      "rubric": "Ask which part is difficult without assuming a cause or taking control.",
+      "options": [
+        "did you leave until the last minute",
+        "should I simply take away from you",
+        "is proving hardest to move forward"
+      ],
+      "optionFeedback": {
+        "is proving hardest to move forward": "An open question helps locate the obstacle before choosing a solution.",
+        "did you leave until the last minute": "That assumes procrastination before you know the obstacle.",
+        "should I simply take away from you": "That jumps to taking over rather than understanding."
+      }
+    },
+    {
+      "id": "curiosity-blank-02",
+      "skill": "curiosity",
+      "kind": "blank",
+      "level": 1,
+      "context": "Your parent wants a large family gathering, while you were hoping for a quiet visit.",
+      "prompt": "What matters most to you about ___?",
+      "answer": "having everyone together this time",
+      "explanation": "Asking what matters can reveal a need that more than one plan could meet.",
+      "hint": "Explore the reason behind the preference.",
+      "rubric": "Ask about the parent’s underlying priority without judging the gathering.",
+      "options": [
+        "changing the plan I had in mind",
+        "having everyone together this time",
+        "making the visit so complicated"
+      ],
+      "optionFeedback": {
+        "having everyone together this time": "Asking what matters can reveal a need that more than one plan could meet.",
+        "making the visit so complicated": "That labels the parent’s preference as a problem.",
+        "changing the plan I had in mind": "That centers your plan before learning their reason."
+      }
+    },
+    {
+      "id": "curiosity-blank-03",
+      "skill": "curiosity",
+      "kind": "blank",
+      "level": 2,
+      "context": "A friend became quiet during a group conversation and later said it did not feel comfortable.",
+      "prompt": "If you feel like sharing, ___?",
+      "answer": "what part of that conversation felt uncomfortable",
+      "explanation": "The invitation lets your friend describe their experience in their own words.",
+      "hint": "Leave the reason open and the invitation optional.",
+      "rubric": "Invite the friend’s perspective without assuming a cause or demanding disclosure.",
+      "options": [
+        "what part of that conversation felt uncomfortable",
+        "was it because everyone disagreed with you",
+        "would it be easier to avoid the group"
+      ],
+      "optionFeedback": {
+        "what part of that conversation felt uncomfortable": "The invitation lets your friend describe their experience in their own words.",
+        "was it because everyone disagreed with you": "That supplies an unverified explanation for the discomfort.",
+        "would it be easier to avoid the group": "That proposes a solution before understanding the experience."
+      }
+    },
+    {
+      "id": "curiosity-blank-04",
+      "skill": "curiosity",
+      "kind": "blank",
+      "level": 2,
+      "context": "A client asks to move delivery earlier but has not explained what changed.",
+      "prompt": "Can you tell me ___?",
+      "answer": "what has changed about the timing you need",
+      "explanation": "Understanding the new timing requirement helps you explore realistic options.",
+      "hint": "Ask what changed before negotiating the date.",
+      "rubric": "Ask for the reason behind the changed timing without promising earlier delivery.",
+      "options": [
+        "why the original plan is no longer good enough",
+        "whether you have considered how busy we are",
+        "what has changed about the timing you need"
+      ],
+      "optionFeedback": {
+        "what has changed about the timing you need": "Understanding the new timing requirement helps you explore realistic options.",
+        "why the original plan is no longer good enough": "That frames the change as criticism of the original plan.",
+        "whether you have considered how busy we are": "That challenges the request before clarifying its purpose."
+      }
+    },
+    {
+      "id": "curiosity-blank-05",
+      "skill": "curiosity",
+      "kind": "blank",
+      "level": 3,
+      "context": "Your roommate says the quiet-hours plan does not fit their routine.",
+      "prompt": "What would help me understand ___?",
+      "answer": "which part of your routine conflicts with the plan",
+      "explanation": "Learning where the schedule conflicts allows a more specific conversation about changes.",
+      "hint": "Ask where the schedules overlap or clash.",
+      "rubric": "Explore the routine conflict before changing or abandoning quiet hours.",
+      "options": [
+        "whether we should stop having quiet hours",
+        "which part of your routine conflicts with the plan",
+        "why the shared rules are hard for you to follow"
+      ],
+      "optionFeedback": {
+        "which part of your routine conflicts with the plan": "Learning where the schedule conflicts allows a more specific conversation about changes.",
+        "why the shared rules are hard for you to follow": "That assumes the issue is willingness to follow rules.",
+        "whether we should stop having quiet hours": "That moves straight to removing the agreement."
+      }
+    },
+    {
+      "id": "curiosity-choose-01",
+      "skill": "curiosity",
+      "kind": "choose",
+      "level": 1,
+      "context": "A colleague says, “I cannot finish both requests by Friday.” You need to understand the constraint.",
+      "prompt": "Which question is most useful before making a plan?",
+      "answer": "What is involved in each request, and where is the time pressure?",
+      "explanation": "The question collects information about the work before choosing between options.",
+      "hint": "Ask for information you do not yet have.",
+      "rubric": "Explore task demands and time pressure without blaming organization or prematurely reassigning work.",
+      "options": [
+        "What is involved in each request, and where is the time pressure?",
+        "Would better organization make both requests possible?",
+        "Should I give one request to somebody else immediately?"
+      ],
+      "optionFeedback": {
+        "What is involved in each request, and where is the time pressure?": "The question collects information about the work before choosing between options.",
+        "Would better organization make both requests possible?": "That suggests the cause is organization before you have learned the workload.",
+        "Should I give one request to somebody else immediately?": "That offers a solution before understanding the tasks."
+      }
+    },
+    {
+      "id": "curiosity-choose-02",
+      "skill": "curiosity",
+      "kind": "choose",
+      "level": 1,
+      "context": "Your friend declines a weekend trip and says the plan does not work for them.",
+      "prompt": "Which reply invites their perspective without pressuring them?",
+      "answer": "If you want to share, what part of the plan does not work for you?",
+      "explanation": "An optional open question respects the refusal while allowing you to understand it.",
+      "hint": "Make room for an explanation without requiring one.",
+      "rubric": "Invite the friend to explain a constraint while respecting their choice not to join.",
+      "options": [
+        "Is the cost the only reason you do not want to come?",
+        "Would you change your mind if everyone else came?",
+        "If you want to share, what part of the plan does not work for you?"
+      ],
+      "optionFeedback": {
+        "If you want to share, what part of the plan does not work for you?": "An optional open question respects the refusal while allowing you to understand it.",
+        "Is the cost the only reason you do not want to come?": "That assumes a reason and narrows the answer before hearing it.",
+        "Would you change your mind if everyone else came?": "That uses group participation to pressure a different answer."
+      }
+    },
+    {
+      "id": "curiosity-choose-03",
+      "skill": "curiosity",
+      "kind": "choose",
+      "level": 2,
+      "context": "Your sibling says visits have felt rushed lately.",
+      "prompt": "Which question helps you understand what they want more of?",
+      "answer": "What would make a visit feel less rushed for you?",
+      "explanation": "The question asks about the desired experience instead of defending the current visits.",
+      "hint": "Explore the experience they want.",
+      "rubric": "Ask what a less-rushed visit would look like without assuming a specific solution.",
+      "options": [
+        "Are you saying our visits are never good enough?",
+        "What would make a visit feel less rushed for you?",
+        "Would staying an extra ten minutes solve the problem?"
+      ],
+      "optionFeedback": {
+        "What would make a visit feel less rushed for you?": "The question asks about the desired experience instead of defending the current visits.",
+        "Would staying an extra ten minutes solve the problem?": "That offers a narrow solution before learning what matters.",
+        "Are you saying our visits are never good enough?": "That changes the concern into a broad accusation."
+      }
+    },
+    {
+      "id": "curiosity-choose-04",
+      "skill": "curiosity",
+      "kind": "choose",
+      "level": 2,
+      "context": "A client says the first draft is “not quite right” but gives no example.",
+      "prompt": "What should you ask next?",
+      "answer": "Which part feels furthest from what you expected?",
+      "explanation": "A specific example makes vague feedback actionable without assuming the whole draft is wrong.",
+      "hint": "Narrow the feedback to an example.",
+      "rubric": "Ask the client to identify a specific mismatch without committing to a complete rewrite.",
+      "options": [
+        "Which part feels furthest from what you expected?",
+        "Do you want us to begin the whole draft again?",
+        "Did you read the brief we agreed on carefully?"
+      ],
+      "optionFeedback": {
+        "Which part feels furthest from what you expected?": "A specific example makes vague feedback actionable without assuming the whole draft is wrong.",
+        "Do you want us to begin the whole draft again?": "That proposes a large change before identifying the mismatch.",
+        "Did you read the brief we agreed on carefully?": "That challenges the client before clarifying the feedback."
+      }
+    },
+    {
+      "id": "curiosity-choose-05",
+      "skill": "curiosity",
+      "kind": "choose",
+      "level": 3,
+      "context": "Your roommate has stopped using the shared shopping list and says it has been frustrating.",
+      "prompt": "Which question opens up the problem?",
+      "answer": "What has been frustrating about using the list?",
+      "explanation": "An open question can uncover a usability problem, a disagreement, or something else you had not considered.",
+      "hint": "Avoid building your own explanation into the question.",
+      "rubric": "Ask about the roommate’s experience with the list before assigning a cause.",
+      "options": [
+        "Would you rather let me handle all the shopping?",
+        "Is remembering to update it the difficult part?",
+        "What has been frustrating about using the list?"
+      ],
+      "optionFeedback": {
+        "What has been frustrating about using the list?": "An open question can uncover a usability problem, a disagreement, or something else you had not considered.",
+        "Would you rather let me handle all the shopping?": "That proposes taking over before understanding the issue.",
+        "Is remembering to update it the difficult part?": "That offers one explanation before hearing theirs."
+      }
+    },
+    {
+      "id": "curiosity-build-01",
+      "skill": "curiosity",
+      "kind": "build",
+      "level": 1,
+      "context": "A colleague says a task is stuck, but you do not know what is blocking it.",
+      "prompt": "Build an open question about the obstacle.",
+      "answer": "What is making this task difficult to move forward?",
+      "explanation": "This asks about the situation rather than assuming a lack of effort.",
+      "hint": "Start with what, then the difficulty and task.",
+      "rubric": "Ask about the current obstacle without blaming the colleague.",
+      "words": [
+        "making",
+        "this",
+        "What",
+        "task",
+        "is",
+        "move",
+        "to",
+        "forward?",
+        "difficult"
+      ]
+    },
+    {
+      "id": "curiosity-build-02",
+      "skill": "curiosity",
+      "kind": "build",
+      "level": 1,
+      "context": "A friend says your usual plans are not working for them anymore.",
+      "prompt": "Build a question about what they need from the plans.",
+      "answer": "What would make our plans work better for you?",
+      "explanation": "The question asks for the friend’s perspective without requiring agreement with your preference.",
+      "hint": "Ask what would improve the plans for them.",
+      "rubric": "Invite the friend to describe a more workable plan.",
+      "words": [
+        "our",
+        "What",
+        "you?",
+        "work",
+        "make",
+        "plans",
+        "would",
+        "better",
+        "for"
+      ]
+    },
+    {
+      "id": "curiosity-build-03",
+      "skill": "curiosity",
+      "kind": "build",
+      "level": 2,
+      "context": "A relative proposes changing a family tradition.",
+      "prompt": "Build a question that explores what matters to them.",
+      "answer": "What matters most to you about changing the tradition?",
+      "explanation": "Understanding the priority behind a proposal can help you discuss more than one solution.",
+      "hint": "Ask about the priority behind the change.",
+      "rubric": "Explore the relative’s reason for the change without judging it.",
+      "words": [
+        "tradition?",
+        "you",
+        "matters",
+        "about",
+        "most",
+        "changing",
+        "to",
+        "the",
+        "What"
+      ]
+    },
+    {
+      "id": "curiosity-build-04",
+      "skill": "curiosity",
+      "kind": "build",
+      "level": 2,
+      "context": "A client is unsure about a design choice you made.",
+      "prompt": "Build a question that asks for a concrete concern.",
+      "answer": "Which part of the design concerns you the most?",
+      "explanation": "This gives a vague concern a more specific focus.",
+      "hint": "Begin by asking which part.",
+      "rubric": "Invite a specific concern about the design without defending the choice.",
+      "words": [
+        "part",
+        "the",
+        "design",
+        "the",
+        "you",
+        "most?",
+        "concerns",
+        "Which",
+        "of"
+      ]
+    },
+    {
+      "id": "curiosity-build-05",
+      "skill": "curiosity",
+      "kind": "build",
+      "level": 3,
+      "context": "Your roommate says the new schedule is difficult.",
+      "prompt": "Build an invitation to explain the scheduling problem.",
+      "answer": "Can you help me understand where the schedule conflicts?",
+      "explanation": "The question asks for context while keeping the problem open.",
+      "hint": "Invite understanding, then ask where the conflict occurs.",
+      "rubric": "Ask about the scheduling conflict without assuming the roommate refuses to cooperate.",
+      "words": [
+        "Can",
+        "the",
+        "help",
+        "where",
+        "me",
+        "schedule",
+        "conflicts?",
+        "you",
+        "understand"
+      ]
+    },
+    {
+      "id": "curiosity-write-01",
+      "skill": "curiosity",
+      "kind": "write",
+      "level": 1,
+      "context": "A teammate says they need more time for a report. You do not yet know which part is unfinished.",
+      "prompt": "Write an open question that helps you understand the remaining work.",
+      "answer": "Which parts of the report still need work, and what is making them take longer?",
+      "explanation": "The question asks about the work before deciding whether or how the deadline can change.",
+      "hint": "Ask about the remaining pieces or the obstacle.",
+      "rubric": "Ask an open question about unfinished report work or blockers; do not assume laziness or promise an extension.",
+      "minWords": 5
+    },
+    {
+      "id": "curiosity-write-02",
+      "skill": "curiosity",
+      "kind": "write",
+      "level": 1,
+      "context": "Your friend says they would prefer not to meet at your usual café.",
+      "prompt": "Invite their perspective without guessing why they want a different place.",
+      "answer": "What would you prefer in a place to meet this time?",
+      "explanation": "The question leaves room for different needs without demanding a personal explanation.",
+      "hint": "Ask about what would work, not what you assume is wrong.",
+      "rubric": "Use an open question about a suitable meeting place; avoid assuming money, dislike, or a personal problem.",
+      "minWords": 4
+    },
+    {
+      "id": "curiosity-write-03",
+      "skill": "curiosity",
+      "kind": "write",
+      "level": 2,
+      "context": "Your adult sibling has asked for less advice when they tell you about work.",
+      "prompt": "Ask how they would like you to respond in those conversations.",
+      "answer": "When you tell me about work, what kind of response would be helpful?",
+      "explanation": "Asking about their preferred support helps you respond to the request rather than defending your advice.",
+      "hint": "Ask what they want from you when sharing.",
+      "rubric": "Ask about the sibling’s preferred response or support without arguing that advice is necessary.",
+      "minWords": 5
+    },
+    {
+      "id": "curiosity-write-04",
+      "skill": "curiosity",
+      "kind": "write",
+      "level": 2,
+      "context": "A client says your update messages contain too much detail.",
+      "prompt": "Ask one question that would help you make the updates more useful.",
+      "answer": "Which information would you most like to see in each update?",
+      "explanation": "The question helps identify useful content instead of assuming the client wants no detail at all.",
+      "hint": "Focus on what information they need.",
+      "rubric": "Ask which information, format, or level of detail would help the client; do not treat the feedback as a rejection of all updates.",
+      "minWords": 5
+    },
+    {
+      "id": "curiosity-write-05",
+      "skill": "curiosity",
+      "kind": "write",
+      "level": 3,
+      "context": "Your roommate says sharing kitchen space in the evening has become stressful.",
+      "prompt": "Write a question that explores the specific difficulty before suggesting a new schedule.",
+      "answer": "What tends to happen in the kitchen that makes evenings difficult for you?",
+      "explanation": "The question asks for the experience behind the concern before choosing a scheduling solution.",
+      "hint": "Ask about the moments that create the difficulty.",
+      "rubric": "Invite a specific description of the evening kitchen problem without assigning blame or imposing a schedule.",
+      "minWords": 5
+    },
+    {
+      "id": "empathy-blank-01",
+      "skill": "empathy",
+      "kind": "blank",
+      "level": 1,
+      "context": "A teammate says, “I am worried that asking for help will make me look incapable.”",
+      "prompt": "I hear that you are worried about ___.",
+      "answer": "how asking for help will be seen",
+      "explanation": "Reflecting the stated concern shows you heard it without agreeing that help signals inability.",
+      "hint": "Reflect the concern they actually named.",
+      "rubric": "Acknowledge the teammate’s worry about how requesting help will be perceived.",
+      "options": [
+        "how little progress the team is making",
+        "how asking for help will be seen",
+        "whether this job is really right for you"
+      ],
+      "optionFeedback": {
+        "how asking for help will be seen": "Reflecting the stated concern shows you heard it without agreeing that help signals inability.",
+        "whether this job is really right for you": "That adds a concern the teammate did not express.",
+        "how little progress the team is making": "That redirects attention to a different problem."
+      }
+    },
+    {
+      "id": "empathy-blank-02",
+      "skill": "empathy",
+      "kind": "blank",
+      "level": 1,
+      "context": "Your friend says the proposed restaurant is more expensive than they want to spend.",
+      "prompt": "It sounds like ___ matters for this plan.",
+      "answer": "keeping the cost comfortable for you",
+      "explanation": "You can recognize a spending limit without making assumptions about someone’s finances.",
+      "hint": "Name the stated cost concern, not their financial situation.",
+      "rubric": "Acknowledge the friend’s preferred spending limit without inferring financial hardship.",
+      "options": [
+        "keeping the cost comfortable for you",
+        "finding the cheapest possible option",
+        "making sure everyone chooses the same thing"
+      ],
+      "optionFeedback": {
+        "keeping the cost comfortable for you": "You can recognize a spending limit without making assumptions about someone’s finances.",
+        "finding the cheapest possible option": "That exaggerates a preference for a comfortable budget.",
+        "making sure everyone chooses the same thing": "That introduces a concern the friend did not mention."
+      }
+    },
+    {
+      "id": "empathy-blank-03",
+      "skill": "empathy",
+      "kind": "blank",
+      "level": 2,
+      "context": "Your sister says she felt left out when the family planned a visit without asking her.",
+      "prompt": "I hear that ___ was upsetting.",
+      "answer": "not being included in the planning",
+      "explanation": "Reflecting exclusion is different from assuming the person wanted every decision to go their way.",
+      "hint": "Focus on the missing invitation to contribute.",
+      "rubric": "Acknowledge feeling excluded from planning without equating it with a demand for control.",
+      "options": [
+        "having to attend another family visit",
+        "not getting the visit arranged your way",
+        "not being included in the planning"
+      ],
+      "optionFeedback": {
+        "not being included in the planning": "Reflecting exclusion is different from assuming the person wanted every decision to go their way.",
+        "having to attend another family visit": "That changes the concern from exclusion to attendance.",
+        "not getting the visit arranged your way": "That assumes she wanted control rather than inclusion."
+      }
+    },
+    {
+      "id": "empathy-blank-04",
+      "skill": "empathy",
+      "kind": "blank",
+      "level": 2,
+      "context": "A client says waiting without an update made it hard to organize their own team.",
+      "prompt": "I can see how the lack of an update ___.",
+      "answer": "made planning harder for your team",
+      "explanation": "A specific acknowledgment connects your response to the effect the client described.",
+      "hint": "Reflect the practical effect they mentioned.",
+      "rubric": "Acknowledge the planning difficulty caused by the missing update without inventing wider consequences.",
+      "options": [
+        "must have made you lose confidence in us",
+        "made planning harder for your team",
+        "means the whole project has failed"
+      ],
+      "optionFeedback": {
+        "made planning harder for your team": "A specific acknowledgment connects your response to the effect the client described.",
+        "means the whole project has failed": "That exaggerates the stated impact.",
+        "must have made you lose confidence in us": "That assumes a reaction the client did not state."
+      }
+    },
+    {
+      "id": "empathy-blank-05",
+      "skill": "empathy",
+      "kind": "blank",
+      "level": 3,
+      "context": "Your roommate says late-night noise has been waking them before early shifts.",
+      "prompt": "I hear that the noise ___.",
+      "answer": "is interrupting sleep before your early shifts",
+      "explanation": "Reflecting the effect on sleep shows understanding without debating whose reaction is reasonable.",
+      "hint": "Connect the noise to the sleep problem they named.",
+      "rubric": "Acknowledge the stated effect on sleep and early shifts without minimizing it.",
+      "options": [
+        "is interrupting sleep before your early shifts",
+        "means you need a completely different living arrangement",
+        "is more upsetting to you than it would be to me"
+      ],
+      "optionFeedback": {
+        "is interrupting sleep before your early shifts": "Reflecting the effect on sleep shows understanding without debating whose reaction is reasonable.",
+        "means you need a completely different living arrangement": "That jumps to a major solution the roommate did not request.",
+        "is more upsetting to you than it would be to me": "That compares reactions instead of acknowledging the effect."
+      }
+    },
+    {
+      "id": "empathy-choose-01",
+      "skill": "empathy",
+      "kind": "choose",
+      "level": 1,
+      "context": "A former peer tells you, “Since you became my manager, I feel like my experience does not count.”",
+      "prompt": "Which response acknowledges the concern without giving away your responsibility?",
+      "answer": "I hear that you want your experience included in decisions.",
+      "explanation": "Acknowledging a wish for input does not require surrendering responsibility for decisions.",
+      "hint": "Look for recognition of the concern, rather than a promise or defense.",
+      "rubric": "Recognize the former peer’s wish for their experience to matter without transferring all authority.",
+      "options": [
+        "You are right; I should leave all decisions to you.",
+        "I thought you understood that my role had changed.",
+        "I hear that you want your experience included in decisions."
+      ],
+      "optionFeedback": {
+        "I hear that you want your experience included in decisions.": "Acknowledging a wish for input does not require surrendering responsibility for decisions.",
+        "You are right; I should leave all decisions to you.": "That offers a change in responsibility instead of first acknowledging the concern.",
+        "I thought you understood that my role had changed.": "That defends the role change without reflecting what the person said."
+      }
+    },
+    {
+      "id": "empathy-choose-02",
+      "skill": "empathy",
+      "kind": "choose",
+      "level": 1,
+      "context": "Your friend says, “I felt embarrassed when my mistake became the joke at dinner.”",
+      "prompt": "Which reply shows you heard the specific impact?",
+      "answer": "I hear that the joke about your mistake embarrassed you.",
+      "explanation": "Naming the impact keeps attention on what your friend told you.",
+      "hint": "Separate their experience from what anyone intended.",
+      "rubric": "Acknowledge the stated embarrassment about the joke without minimizing it.",
+      "options": [
+        "We should probably avoid joking at dinner altogether.",
+        "I hear that the joke about your mistake embarrassed you.",
+        "I think everyone knew it was meant lightly."
+      ],
+      "optionFeedback": {
+        "I hear that the joke about your mistake embarrassed you.": "Naming the impact keeps attention on what your friend told you.",
+        "I think everyone knew it was meant lightly.": "That explains intention instead of acknowledging impact.",
+        "We should probably avoid joking at dinner altogether.": "That jumps to a broad rule rather than responding to this experience."
+      }
+    },
+    {
+      "id": "empathy-choose-03",
+      "skill": "empathy",
+      "kind": "choose",
+      "level": 2,
+      "context": "Your parent says, “When plans change at the last minute, I cannot organize my day.”",
+      "prompt": "Which acknowledgment stays close to that concern?",
+      "answer": "The late changes make it difficult for you to plan your day.",
+      "explanation": "You can recognize a practical difficulty even if plans sometimes need to change.",
+      "hint": "Reflect the difficulty they described.",
+      "rubric": "Acknowledge the effect of late changes on planning without criticizing flexibility.",
+      "options": [
+        "The late changes make it difficult for you to plan your day.",
+        "You would feel better if you were more flexible with plans.",
+        "I know you want to control every detail of the visit."
+      ],
+      "optionFeedback": {
+        "The late changes make it difficult for you to plan your day.": "You can recognize a practical difficulty even if plans sometimes need to change.",
+        "You would feel better if you were more flexible with plans.": "That turns acknowledgment into advice about their reaction.",
+        "I know you want to control every detail of the visit.": "That assigns a motive rather than reflecting the planning difficulty."
+      }
+    },
+    {
+      "id": "empathy-choose-04",
+      "skill": "empathy",
+      "kind": "choose",
+      "level": 2,
+      "context": "A client says, “The revision rounds are taking more time than I expected.”",
+      "prompt": "Which reply acknowledges the concern without making an unverified promise?",
+      "answer": "I hear that the time spent on revisions is more than you expected.",
+      "explanation": "Acknowledgment can come before a conversation about scope and timing.",
+      "hint": "Recognize the time concern without guaranteeing the next result.",
+      "rubric": "Reflect the unexpected revision time without promising a final round or blaming the client.",
+      "options": [
+        "I understand; the next revision will definitely be the last.",
+        "The time is reasonable given how many requests you have made.",
+        "I hear that the time spent on revisions is more than you expected."
+      ],
+      "optionFeedback": {
+        "I hear that the time spent on revisions is more than you expected.": "Acknowledgment can come before a conversation about scope and timing.",
+        "I understand; the next revision will definitely be the last.": "That promises an outcome you have not checked.",
+        "The time is reasonable given how many requests you have made.": "That argues your position before acknowledging the concern."
+      }
+    },
+    {
+      "id": "empathy-choose-05",
+      "skill": "empathy",
+      "kind": "choose",
+      "level": 3,
+      "context": "Your roommate says, “I have felt like the only person noticing when supplies run out.”",
+      "prompt": "Which response acknowledges their experience without claiming facts you have not checked?",
+      "answer": "It sounds like you have been carrying the work of noticing what is missing.",
+      "explanation": "You can acknowledge the burden they describe while later checking how tasks are shared.",
+      "hint": "Reflect the work they feel they are carrying.",
+      "rubric": "Recognize the reported mental effort of tracking supplies without making absolute claims.",
+      "options": [
+        "We both use the supplies, so it cannot be only your problem.",
+        "It sounds like you have been carrying the work of noticing what is missing.",
+        "You are right; I have never helped with the apartment."
+      ],
+      "optionFeedback": {
+        "It sounds like you have been carrying the work of noticing what is missing.": "You can acknowledge the burden they describe while later checking how tasks are shared.",
+        "You are right; I have never helped with the apartment.": "That makes a sweeping admission beyond what has been established.",
+        "We both use the supplies, so it cannot be only your problem.": "That disputes the concern rather than reflecting it."
+      }
+    },
+    {
+      "id": "empathy-build-01",
+      "skill": "empathy",
+      "kind": "build",
+      "level": 1,
+      "context": "A teammate says the extra review has added work they did not expect.",
+      "prompt": "Build an acknowledgment of the specific concern.",
+      "answer": "I hear that the extra review has increased your workload.",
+      "explanation": "The acknowledgment names the actual effect instead of offering a generic reassurance.",
+      "hint": "Begin by showing you heard them, then name the added workload.",
+      "rubric": "Acknowledge the extra workload from the review without judging the response.",
+      "words": [
+        "I",
+        "your",
+        "extra",
+        "review",
+        "that",
+        "has",
+        "workload.",
+        "hear",
+        "the",
+        "increased"
+      ]
+    },
+    {
+      "id": "empathy-build-02",
+      "skill": "empathy",
+      "kind": "build",
+      "level": 1,
+      "context": "Your friend wants to join a trip but says its cost is uncomfortable.",
+      "prompt": "Build a sentence recognizing the cost concern.",
+      "answer": "I understand that this cost does not feel comfortable for you.",
+      "explanation": "This recognizes the friend’s limit without assuming why the amount is difficult.",
+      "hint": "Reflect the cost and comfort, not the friend’s finances.",
+      "rubric": "Acknowledge the stated discomfort with the cost without inferring financial status.",
+      "words": [
+        "cost",
+        "comfortable",
+        "this",
+        "you.",
+        "not",
+        "feel",
+        "I",
+        "does",
+        "that",
+        "understand",
+        "for"
+      ]
+    },
+    {
+      "id": "empathy-build-03",
+      "skill": "empathy",
+      "kind": "build",
+      "level": 2,
+      "context": "Your brother says he wanted to be asked before you made a shared plan.",
+      "prompt": "Build an acknowledgment of the missing input.",
+      "answer": "You wanted a chance to help shape the plan.",
+      "explanation": "This reflects a request for input rather than assuming a need to control everything.",
+      "hint": "Describe the opportunity they wanted.",
+      "rubric": "Recognize the wish to contribute to the shared plan.",
+      "words": [
+        "wanted",
+        "chance",
+        "help",
+        "You",
+        "the",
+        "shape",
+        "a",
+        "to",
+        "plan."
+      ]
+    },
+    {
+      "id": "empathy-build-04",
+      "skill": "empathy",
+      "kind": "build",
+      "level": 2,
+      "context": "A client explains that a missing update disrupted their planning.",
+      "prompt": "Build an acknowledgment of that practical effect.",
+      "answer": "The missing update made planning harder for your team.",
+      "explanation": "The effect is grounded in what the client said, not a guessed emotion.",
+      "hint": "Start with the missing information and its effect.",
+      "rubric": "Acknowledge the planning impact of the missing update.",
+      "words": [
+        "update",
+        "made",
+        "The",
+        "your",
+        "for",
+        "team.",
+        "planning",
+        "harder",
+        "missing"
+      ]
+    },
+    {
+      "id": "empathy-build-05",
+      "skill": "empathy",
+      "kind": "build",
+      "level": 3,
+      "context": "Your roommate says noise has been waking them before early shifts.",
+      "prompt": "Build a response that reflects the effect on their sleep.",
+      "answer": "I hear that the noise has been interrupting your sleep.",
+      "explanation": "This reflects the stated difficulty without debating whether the noise should bother them.",
+      "hint": "Name the effect the roommate reported.",
+      "rubric": "Acknowledge interrupted sleep without minimizing the roommate’s concern.",
+      "words": [
+        "that",
+        "your",
+        "I",
+        "hear",
+        "sleep.",
+        "been",
+        "the",
+        "has",
+        "noise",
+        "interrupting"
+      ]
+    },
+    {
+      "id": "empathy-write-01",
+      "skill": "empathy",
+      "kind": "write",
+      "level": 1,
+      "context": "A colleague says, “I am worried the extra meetings will leave too little time for my client work.”",
+      "prompt": "Acknowledge the concern before discussing whether the meeting plan can change.",
+      "answer": "I hear that you are worried the extra meetings will reduce the time available for your clients.",
+      "explanation": "This recognizes the stated trade-off without promising a schedule change you have not discussed.",
+      "hint": "Name what the meetings could take time away from.",
+      "rubric": "Reflect concern about time for client work; do not promise to cancel meetings or assume the colleague dislikes the team.",
+      "minWords": 5
+    },
+    {
+      "id": "empathy-write-02",
+      "skill": "empathy",
+      "kind": "write",
+      "level": 1,
+      "context": "Your friend says they felt ignored when you kept checking your phone during lunch.",
+      "prompt": "Write an acknowledgment of the effect they described.",
+      "answer": "You felt ignored when I kept looking at my phone during lunch.",
+      "explanation": "The sentence reflects the friend’s experience instead of defending why you checked the phone.",
+      "hint": "Connect the specific behavior to the feeling they named.",
+      "rubric": "Acknowledge the friend’s stated feeling of being ignored in relation to phone use, without minimizing or explaining it away.",
+      "minWords": 5
+    },
+    {
+      "id": "empathy-write-03",
+      "skill": "empathy",
+      "kind": "write",
+      "level": 2,
+      "context": "Your aunt says hosting the whole family has left her with more preparation than she can manage.",
+      "prompt": "Acknowledge the workload she described without assuming she wants to cancel.",
+      "answer": "It sounds like preparing for everyone has become more work than you can comfortably manage.",
+      "explanation": "This recognizes the workload while leaving the next decision open.",
+      "hint": "Reflect the preparation burden rather than choosing a solution.",
+      "rubric": "Acknowledge the hosting workload without deciding that the aunt must cancel or continue.",
+      "minWords": 5
+    },
+    {
+      "id": "empathy-write-04",
+      "skill": "empathy",
+      "kind": "write",
+      "level": 2,
+      "context": "A client says they are frustrated because they received different answers from two members of your team.",
+      "prompt": "Write a response that acknowledges the inconsistency and its stated effect.",
+      "answer": "I understand that receiving two different answers has been frustrating.",
+      "explanation": "The acknowledgment stays with the inconsistency the client experienced without guessing which answer is right.",
+      "hint": "Reflect the conflicting information and the frustration they named.",
+      "rubric": "Acknowledge the two different answers and frustration without deciding which answer is correct or blaming a teammate.",
+      "minWords": 5
+    },
+    {
+      "id": "empathy-write-05",
+      "skill": "empathy",
+      "kind": "write",
+      "level": 3,
+      "context": "Your roommate says, “I need to know before visitors stay overnight because it changes how comfortable I feel at home.”",
+      "prompt": "Acknowledge the need they expressed before discussing a visitor agreement.",
+      "answer": "I hear that advance notice about overnight visitors matters for feeling comfortable at home.",
+      "explanation": "Recognizing the need for notice creates a better starting point for an agreement.",
+      "hint": "Reflect the need for notice and its stated importance.",
+      "rubric": "Acknowledge advance notice and comfort at home without assuming all visitors are forbidden.",
+      "minWords": 5
+    },
+    {
+      "id": "boundaries-blank-01",
+      "skill": "boundaries",
+      "kind": "blank",
+      "level": 1,
+      "context": "A colleague asks you to review a document tonight. You are unavailable tonight but can review it tomorrow morning.",
+      "prompt": "I cannot review it tonight, but ___.",
+      "answer": "I can look at it tomorrow morning",
+      "explanation": "A clear limit and a real alternative help the colleague make a workable plan.",
+      "hint": "Use the availability you actually have.",
+      "rubric": "State that tonight is unavailable and offer tomorrow morning without promising extra capacity.",
+      "options": [
+        "I can look at it tomorrow morning",
+        "I will try to squeeze it in somehow",
+        "you should have planned this much earlier"
+      ],
+      "optionFeedback": {
+        "I can look at it tomorrow morning": "A clear limit and a real alternative help the colleague make a workable plan.",
+        "I will try to squeeze it in somehow": "That weakens the limit by suggesting tonight may still be possible.",
+        "you should have planned this much earlier": "That adds blame without stating your available option."
+      }
+    },
+    {
+      "id": "boundaries-blank-02",
+      "skill": "boundaries",
+      "kind": "blank",
+      "level": 1,
+      "context": "A friend asks to borrow money. You cannot lend it, but you are willing to help them look through other options.",
+      "prompt": "I cannot lend the money, and ___.",
+      "answer": "I can help you think through other options",
+      "explanation": "The boundary stays clear while the offered support remains specific and voluntary.",
+      "hint": "Keep the money limit separate from other support.",
+      "rubric": "Decline lending money clearly while offering only the support the learner is willing to give.",
+      "options": [
+        "I might be able to if you ask again later",
+        "you should not put friends in this position",
+        "I can help you think through other options"
+      ],
+      "optionFeedback": {
+        "I can help you think through other options": "The boundary stays clear while the offered support remains specific and voluntary.",
+        "I might be able to if you ask again later": "That creates an expectation you have not said you can meet.",
+        "you should not put friends in this position": "That judges the request instead of expressing your limit."
+      }
+    },
+    {
+      "id": "boundaries-blank-03",
+      "skill": "boundaries",
+      "kind": "blank",
+      "level": 2,
+      "context": "Your family asks you to host on Sunday. You need Sunday to rest and are available for a visit on Saturday afternoon.",
+      "prompt": "Sunday does not work for me; ___.",
+      "answer": "Saturday afternoon is an option",
+      "explanation": "A concrete alternative communicates availability without requiring a defense of your need for rest.",
+      "hint": "State the day that is actually available.",
+      "rubric": "Decline Sunday and offer Saturday afternoon without treating the offer as an agreed plan.",
+      "options": [
+        "you need to find a better way to organize yourselves",
+        "Saturday afternoon is an option",
+        "I will manage if everyone really wants it"
+      ],
+      "optionFeedback": {
+        "Saturday afternoon is an option": "A concrete alternative communicates availability without requiring a defense of your need for rest.",
+        "I will manage if everyone really wants it": "That makes the stated limit depend on pressure from others.",
+        "you need to find a better way to organize yourselves": "That shifts into criticism instead of explaining availability."
+      }
+    },
+    {
+      "id": "boundaries-blank-04",
+      "skill": "boundaries",
+      "kind": "blank",
+      "level": 2,
+      "context": "A client requests two extra pages that are outside the agreed work. You can discuss a revised scope before starting.",
+      "prompt": "Those pages are outside the current scope, so ___.",
+      "answer": "let’s discuss the scope before I begin them",
+      "explanation": "Discussing scope first makes the limit clear without closing the conversation.",
+      "hint": "Clarify the agreement before taking on extra work.",
+      "rubric": "Pause additional work pending a scope discussion without ending the existing project.",
+      "options": [
+        "let’s discuss the scope before I begin them",
+        "I will add them now and sort out details later",
+        "we should stop the whole project immediately"
+      ],
+      "optionFeedback": {
+        "let’s discuss the scope before I begin them": "Discussing scope first makes the limit clear without closing the conversation.",
+        "I will add them now and sort out details later": "That commits to the work before the scope is clarified.",
+        "we should stop the whole project immediately": "That escalates beyond the specific additional request."
+      }
+    },
+    {
+      "id": "boundaries-blank-05",
+      "skill": "boundaries",
+      "kind": "blank",
+      "level": 3,
+      "context": "A friend calls while you are working. You want to hear them out after dinner, but cannot talk now.",
+      "prompt": "I want to hear about this, and ___.",
+      "answer": "I can talk after dinner rather than while I’m working",
+      "explanation": "You can communicate care and a time limit in the same response.",
+      "hint": "Name your availability without judging the friend’s situation.",
+      "rubric": "State that the learner cannot talk during work and offer the after-dinner availability.",
+      "options": [
+        "I suppose I can keep working while we talk",
+        "this should wait until it becomes less emotional",
+        "I can talk after dinner rather than while I’m working"
+      ],
+      "optionFeedback": {
+        "I can talk after dinner rather than while I’m working": "You can communicate care and a time limit in the same response.",
+        "I suppose I can keep working while we talk": "That offers attention you have said you cannot give.",
+        "this should wait until it becomes less emotional": "That judges their state instead of naming your availability."
+      }
+    },
+    {
+      "id": "boundaries-choose-01",
+      "skill": "boundaries",
+      "kind": "choose",
+      "level": 1,
+      "context": "A teammate asks you to take over their task today. You already have a deadline and cannot take it on. You can spend ten minutes helping identify another option.",
+      "prompt": "Which response gives a clear limit and the support you can actually offer?",
+      "answer": "I cannot take it over today, but I can spend ten minutes exploring options.",
+      "explanation": "The limit is clear, and the offered help stays within the time you have.",
+      "hint": "Keep the task boundary and available support separate.",
+      "rubric": "Decline taking over the task while offering the stated ten minutes of planning help.",
+      "options": [
+        "You will need to learn to solve these problems without me.",
+        "I cannot take it over today, but I can spend ten minutes exploring options.",
+        "I will take a look and see how much of it I can fit in."
+      ],
+      "optionFeedback": {
+        "I cannot take it over today, but I can spend ten minutes exploring options.": "The limit is clear, and the offered help stays within the time you have.",
+        "I will take a look and see how much of it I can fit in.": "That leaves the teammate expecting work you have said you cannot take on.",
+        "You will need to learn to solve these problems without me.": "That judges the teammate instead of describing your capacity."
+      }
+    },
+    {
+      "id": "boundaries-choose-02",
+      "skill": "boundaries",
+      "kind": "choose",
+      "level": 1,
+      "context": "Your friend keeps sharing your personal news with others. You want to decide who hears it.",
+      "prompt": "Which response states the boundary directly?",
+      "answer": "Please check with me before sharing my personal news.",
+      "explanation": "A direct request tells the friend what permission is needed.",
+      "hint": "State the permission you want, without testing their care.",
+      "rubric": "Ask for consent before sharing personal news without making a threat or vague hint.",
+      "options": [
+        "Please check with me before sharing my personal news.",
+        "I wish people were more careful about what they repeat.",
+        "If you really valued our friendship, you would know what to do."
+      ],
+      "optionFeedback": {
+        "Please check with me before sharing my personal news.": "A direct request tells the friend what permission is needed.",
+        "I wish people were more careful about what they repeat.": "That hints at the problem without making the request clear.",
+        "If you really valued our friendship, you would know what to do.": "That makes the boundary a test of the friendship."
+      }
+    },
+    {
+      "id": "boundaries-choose-03",
+      "skill": "boundaries",
+      "kind": "choose",
+      "level": 2,
+      "context": "Your family wants an immediate answer about a holiday plan. You need until tomorrow to check your schedule.",
+      "prompt": "Which response protects the time you need?",
+      "answer": "I need to check my schedule; I can give you an answer tomorrow.",
+      "explanation": "A clear response time is more useful than a tentative promise you may need to withdraw.",
+      "hint": "Name when you can answer, not an answer you have not confirmed.",
+      "rubric": "Request until tomorrow to check availability without committing to attend.",
+      "options": [
+        "I will probably come, unless something gets in the way.",
+        "There is no reason to decide anything this early.",
+        "I need to check my schedule; I can give you an answer tomorrow."
+      ],
+      "optionFeedback": {
+        "I need to check my schedule; I can give you an answer tomorrow.": "A clear response time is more useful than a tentative promise you may need to withdraw.",
+        "I will probably come, unless something gets in the way.": "That suggests a commitment before you have checked your availability.",
+        "There is no reason to decide anything this early.": "That disputes their timing rather than stating what you need."
+      }
+    },
+    {
+      "id": "boundaries-choose-04",
+      "skill": "boundaries",
+      "kind": "choose",
+      "level": 2,
+      "context": "A client asks for your personal phone number for late-night requests. Your agreed communication channel is email, which you check during business hours.",
+      "prompt": "Which response maintains the existing channel and availability?",
+      "answer": "Please use email for requests; I respond during business hours.",
+      "explanation": "The response clarifies how and when the client can contact you.",
+      "hint": "Use the agreed channel and your actual response hours.",
+      "rubric": "Maintain email and business-hour responses without offering personal after-hours access.",
+      "options": [
+        "I do not think your requests should ever be urgent.",
+        "Please use email for requests; I respond during business hours.",
+        "You can have my number, but please only use it occasionally."
+      ],
+      "optionFeedback": {
+        "Please use email for requests; I respond during business hours.": "The response clarifies how and when the client can contact you.",
+        "You can have my number, but please only use it occasionally.": "That opens the late-night channel despite the boundary you need.",
+        "I do not think your requests should ever be urgent.": "That judges the client’s needs rather than stating your communication arrangement."
+      }
+    },
+    {
+      "id": "boundaries-choose-05",
+      "skill": "boundaries",
+      "kind": "choose",
+      "level": 3,
+      "context": "Your roommate asks to use your desk while you are out. You are not comfortable sharing it, but the kitchen table is available.",
+      "prompt": "Which reply states your limit without judging the request?",
+      "answer": "I would like to keep my desk for my own use; the kitchen table is available.",
+      "explanation": "A boundary can be direct without criticizing the person who asked.",
+      "hint": "Name the space you are keeping private and the available option.",
+      "rubric": "Decline use of the desk and identify the available table without shaming the roommate.",
+      "options": [
+        "I would like to keep my desk for my own use; the kitchen table is available.",
+        "I suppose it is okay if you promise not to touch anything.",
+        "You should have arranged your own workspace by now."
+      ],
+      "optionFeedback": {
+        "I would like to keep my desk for my own use; the kitchen table is available.": "A boundary can be direct without criticizing the person who asked.",
+        "I suppose it is okay if you promise not to touch anything.": "That grants permission despite the limit you want to set.",
+        "You should have arranged your own workspace by now.": "That adds a judgment instead of describing what space is available."
+      }
+    },
+    {
+      "id": "boundaries-build-01",
+      "skill": "boundaries",
+      "kind": "build",
+      "level": 1,
+      "context": "You cannot review a document tonight but can review it tomorrow.",
+      "prompt": "Build a clear statement of your availability.",
+      "answer": "I can review this tomorrow, but not tonight.",
+      "explanation": "The sentence states a real option while keeping tonight unavailable.",
+      "hint": "Say what you can do, then the limit.",
+      "rubric": "Offer tomorrow’s review while clearly declining tonight.",
+      "words": [
+        "review",
+        "this",
+        "tomorrow,",
+        "not",
+        "I",
+        "tonight.",
+        "can",
+        "but"
+      ]
+    },
+    {
+      "id": "boundaries-build-02",
+      "skill": "boundaries",
+      "kind": "build",
+      "level": 1,
+      "context": "You are willing to listen to a friend after dinner, but you cannot talk while working.",
+      "prompt": "Build a response that combines care with a time boundary.",
+      "answer": "I can listen after dinner but not while working.",
+      "acceptedAnswers": [
+        "After dinner I can listen but not while working."
+      ],
+      "explanation": "Availability is clearer when you name both the available time and the unavailable one.",
+      "hint": "Keep the available time before the work boundary.",
+      "rubric": "Offer listening after dinner while keeping work time unavailable.",
+      "words": [
+        "listen",
+        "dinner",
+        "working.",
+        "but",
+        "after",
+        "while",
+        "I",
+        "can",
+        "not"
+      ]
+    },
+    {
+      "id": "boundaries-build-03",
+      "skill": "boundaries",
+      "kind": "build",
+      "level": 2,
+      "context": "Your personal news has been shared without checking with you.",
+      "prompt": "Build a request for consent before future sharing.",
+      "answer": "Please ask me before sharing my personal news.",
+      "explanation": "The request names the specific permission you need.",
+      "hint": "Start with a direct request to ask first.",
+      "rubric": "Request permission before sharing the learner’s personal news.",
+      "words": [
+        "Please",
+        "ask",
+        "personal",
+        "before",
+        "me",
+        "my",
+        "sharing",
+        "news."
+      ]
+    },
+    {
+      "id": "boundaries-build-04",
+      "skill": "boundaries",
+      "kind": "build",
+      "level": 2,
+      "context": "A client has requested additional work beyond the agreed scope.",
+      "prompt": "Build a request to discuss scope before doing more work.",
+      "answer": "Let us agree on scope before adding more work.",
+      "explanation": "The sentence leaves room to discuss extra work without automatically accepting it.",
+      "hint": "Agreement on scope comes before extra work.",
+      "rubric": "Require a scope discussion before adding work without ending the current project.",
+      "words": [
+        "Let",
+        "agree",
+        "adding",
+        "more",
+        "scope",
+        "before",
+        "work.",
+        "on",
+        "us"
+      ]
+    },
+    {
+      "id": "boundaries-build-05",
+      "skill": "boundaries",
+      "kind": "build",
+      "level": 3,
+      "context": "A family member needs an answer, but you must check your schedule first.",
+      "prompt": "Build a response naming when you can answer.",
+      "answer": "I can give you an answer after checking my schedule.",
+      "explanation": "This avoids giving a premature yes while identifying the step needed before answering.",
+      "hint": "Name the answer and the check that comes first.",
+      "rubric": "Explain that an answer follows checking the schedule without committing in advance.",
+      "words": [
+        "give",
+        "can",
+        "I",
+        "an",
+        "after",
+        "schedule.",
+        "answer",
+        "you",
+        "my",
+        "checking"
+      ]
+    },
+    {
+      "id": "boundaries-write-01",
+      "skill": "boundaries",
+      "kind": "write",
+      "level": 1,
+      "context": "A colleague asks for a call during your lunch break. You are keeping that break free and can speak at 2:00 instead.",
+      "prompt": "Decline the lunch-break call and offer your actual availability.",
+      "answer": "I am keeping my lunch break free, but I can speak at two.",
+      "explanation": "The response sets the limit without needing an excuse and offers the time that works.",
+      "hint": "State the unavailable period and the available time.",
+      "rubric": "Clearly decline the lunch-break call and offer 2:00 without implying the colleague has already accepted.",
+      "minWords": 5
+    },
+    {
+      "id": "boundaries-write-02",
+      "skill": "boundaries",
+      "kind": "write",
+      "level": 1,
+      "context": "A friend wants you to stay out later. You have decided to go home now and still want to see them another time.",
+      "prompt": "State your decision while keeping the relationship warm.",
+      "answer": "I am heading home now, and I would like to make plans with you another day.",
+      "explanation": "The decision remains clear without making the friend responsible for approving it.",
+      "hint": "Keep the decision definite; express future interest separately.",
+      "rubric": "State that the learner is leaving now while expressing interest in meeting again; do not invent a specific future agreement.",
+      "minWords": 5
+    },
+    {
+      "id": "boundaries-write-03",
+      "skill": "boundaries",
+      "kind": "write",
+      "level": 2,
+      "context": "Your cousin wants to stay at your home for a week. You can host for two nights, not a full week.",
+      "prompt": "Explain the hosting limit and the option you can offer.",
+      "answer": "I can host you for two nights, but I cannot manage the full week.",
+      "explanation": "A specific limit prevents the cousin from planning around availability you do not have.",
+      "hint": "Name both the available duration and the unavailable one.",
+      "rubric": "Clearly limit hosting to two nights and decline a full week without promising more space or time.",
+      "minWords": 5
+    },
+    {
+      "id": "boundaries-write-04",
+      "skill": "boundaries",
+      "kind": "write",
+      "level": 2,
+      "context": "A client asks for an immediate extra revision. You cannot start it until the revised scope and fee are agreed.",
+      "prompt": "Write a response that explains what must happen before the new work starts.",
+      "answer": "Before I start the extra revision, we need to agree on the revised scope and fee.",
+      "explanation": "This makes the condition for additional work explicit without criticizing the request.",
+      "hint": "State the required agreement before the action.",
+      "rubric": "Say that scope and fee must be agreed before beginning the additional revision; do not claim that agreement already exists.",
+      "minWords": 6
+    },
+    {
+      "id": "boundaries-write-05",
+      "skill": "boundaries",
+      "kind": "write",
+      "level": 3,
+      "context": "Your roommate plays music while you are in a scheduled remote meeting. You need the music lower for that meeting, which ends at 3:00.",
+      "prompt": "Make a clear, time-bounded request about the music.",
+      "answer": "Could you lower the music until my meeting ends at three?",
+      "explanation": "The request names the change and a defined time rather than demanding silence indefinitely.",
+      "hint": "Request the specific change for the stated period.",
+      "rubric": "Ask for lower music during the meeting until 3:00 without demanding an indefinite ban or assuming consent.",
+      "minWords": 5
+    },
+    {
+      "id": "agreements-blank-01",
+      "skill": "agreements",
+      "kind": "blank",
+      "level": 1,
+      "context": "You will compare hotels by 6:00. Your friend will check flight prices by 5:00. You are confirming only your own task.",
+      "prompt": "I will ___ by six.",
+      "answer": "compare the hotel options",
+      "explanation": "A useful confirmation keeps each person’s task and time intact.",
+      "hint": "Keep your task separate from your friend’s task.",
+      "rubric": "Confirm the learner’s hotel comparison by six without swapping owners or adding a booking commitment.",
+      "options": [
+        "check the flight prices",
+        "book whichever trip looks best",
+        "compare the hotel options"
+      ],
+      "optionFeedback": {
+        "compare the hotel options": "A useful confirmation keeps each person’s task and time intact.",
+        "check the flight prices": "That switches the task your friend agreed to handle onto you.",
+        "book whichever trip looks best": "That adds a booking decision that has not been agreed."
+      }
+    },
+    {
+      "id": "agreements-blank-02",
+      "skill": "agreements",
+      "kind": "blank",
+      "level": 1,
+      "context": "A teammate agreed to send a draft on Thursday. You will review it, but no review time has been agreed.",
+      "prompt": "What time on Thursday ___?",
+      "answer": "would work for us to review the draft",
+      "explanation": "Asking about the missing time turns a partial plan into a discussion of a usable agreement.",
+      "hint": "Ask about the detail that is still open.",
+      "rubric": "Ask for a Thursday review time without inventing an agreement or expanding the task.",
+      "options": [
+        "will you finish all the remaining project work",
+        "would work for us to review the draft",
+        "should I tell everyone the review is already booked"
+      ],
+      "optionFeedback": {
+        "would work for us to review the draft": "Asking about the missing time turns a partial plan into a discussion of a usable agreement.",
+        "should I tell everyone the review is already booked": "That treats an unagreed time as a scheduled event.",
+        "will you finish all the remaining project work": "That broadens the commitment beyond the draft."
+      }
+    },
+    {
+      "id": "agreements-blank-03",
+      "skill": "agreements",
+      "kind": "blank",
+      "level": 2,
+      "context": "You and a client have agreed on a Friday revision. You have not agreed how you will send it.",
+      "prompt": "For the Friday revision, ___?",
+      "answer": "would email be a useful way to send it",
+      "explanation": "A clear delivery method helps both people know where to look for the agreed work.",
+      "hint": "Clarify the channel for the existing commitment.",
+      "rubric": "Ask about a delivery channel for the Friday revision without adding scope.",
+      "options": [
+        "would email be a useful way to send it",
+        "should we assume you will see it whenever it arrives",
+        "can I add the extra pages you mentioned before"
+      ],
+      "optionFeedback": {
+        "would email be a useful way to send it": "A clear delivery method helps both people know where to look for the agreed work.",
+        "should we assume you will see it whenever it arrives": "That leaves the delivery method and expectation unclear.",
+        "can I add the extra pages you mentioned before": "That introduces a separate scope question instead of clarifying delivery."
+      }
+    },
+    {
+      "id": "agreements-blank-04",
+      "skill": "agreements",
+      "kind": "blank",
+      "level": 2,
+      "context": "Your roommate agreed to empty the bin on Tuesday. You want to discuss what happens if they cannot do it.",
+      "prompt": "If Tuesday stops working, ___?",
+      "answer": "could you let me know before the bin collection",
+      "explanation": "A contingency tells both people how to respond when the original plan becomes difficult.",
+      "hint": "Agree how to flag a problem before it causes one.",
+      "rubric": "Propose early notice if the roommate cannot do Tuesday’s task without permanently transferring it.",
+      "options": [
+        "will I need to take over every week",
+        "should we stop using the schedule altogether",
+        "could you let me know before the bin collection"
+      ],
+      "optionFeedback": {
+        "could you let me know before the bin collection": "A contingency tells both people how to respond when the original plan becomes difficult.",
+        "will I need to take over every week": "That adds an ongoing responsibility that has not been discussed.",
+        "should we stop using the schedule altogether": "That abandons the plan rather than adding a contingency."
+      }
+    },
+    {
+      "id": "agreements-blank-05",
+      "skill": "agreements",
+      "kind": "blank",
+      "level": 3,
+      "context": "Your family needs groceries for a shared dinner, but no one has agreed who will buy them.",
+      "prompt": "Before we finish planning, ___?",
+      "answer": "can we decide who will buy the groceries",
+      "explanation": "Naming the open task makes it possible to agree on an owner.",
+      "hint": "Ask about the task that still has no owner.",
+      "rubric": "Ask the group to agree who buys groceries without assuming a volunteer.",
+      "options": [
+        "shall I tell the shop that we are ready",
+        "can we decide who will buy the groceries",
+        "can everyone remember to be helpful"
+      ],
+      "optionFeedback": {
+        "can we decide who will buy the groceries": "Naming the open task makes it possible to agree on an owner.",
+        "can everyone remember to be helpful": "That asks for a general attitude without assigning the task.",
+        "shall I tell the shop that we are ready": "That moves ahead while responsibility is still unclear."
+      }
+    },
+    {
+      "id": "agreements-choose-01",
+      "skill": "agreements",
+      "kind": "choose",
+      "level": 1,
+      "context": "You will write the summary. Your colleague will review it. Neither of you has agreed on timing.",
+      "prompt": "Which reply clarifies the missing detail without swapping roles?",
+      "answer": "When can I send the summary so you have time to review it?",
+      "explanation": "The question preserves both roles while asking about the missing timing.",
+      "hint": "Keep the writer and reviewer unchanged.",
+      "rubric": "Clarify timing while keeping the learner as writer and the colleague as reviewer.",
+      "options": [
+        "When can I send the summary so you have time to review it?",
+        "Could you write the summary and send it over when ready?",
+        "I will tell the team we have everything arranged."
+      ],
+      "optionFeedback": {
+        "When can I send the summary so you have time to review it?": "The question preserves both roles while asking about the missing timing.",
+        "Could you write the summary and send it over when ready?": "That swaps the writing task to the person who agreed to review.",
+        "I will tell the team we have everything arranged.": "That treats the incomplete timing plan as settled."
+      }
+    },
+    {
+      "id": "agreements-choose-02",
+      "skill": "agreements",
+      "kind": "choose",
+      "level": 1,
+      "context": "You and a friend have agreed to meet on Saturday, but have not chosen a place or time.",
+      "prompt": "Which reply moves the plan forward without treating a proposal as accepted?",
+      "answer": "Would two o’clock at the library work for you?",
+      "explanation": "A proposed time and place become an agreement only when the other person accepts.",
+      "hint": "Offer the missing details as a question.",
+      "rubric": "Propose a Saturday time and place while leaving the friend a chance to agree or suggest changes.",
+      "options": [
+        "Great, I will let everyone know we are meeting at two.",
+        "Saturday sounds good; we can figure out the rest somehow.",
+        "Would two o’clock at the library work for you?"
+      ],
+      "optionFeedback": {
+        "Would two o’clock at the library work for you?": "A proposed time and place become an agreement only when the other person accepts.",
+        "Great, I will let everyone know we are meeting at two.": "That announces a time before the friend has accepted it.",
+        "Saturday sounds good; we can figure out the rest somehow.": "That leaves the practical details unresolved."
+      }
+    },
+    {
+      "id": "agreements-choose-03",
+      "skill": "agreements",
+      "kind": "choose",
+      "level": 2,
+      "context": "Your client will send comments, and you will revise the draft. The client says “soon,” but you need a usable review plan.",
+      "prompt": "What is the most useful next question?",
+      "answer": "When could you send the comments so I can plan the revision?",
+      "explanation": "A specific request for timing supports the sequence both people already agreed on.",
+      "hint": "Ask about the timing of the first agreed action.",
+      "rubric": "Clarify the client’s comment deadline while preserving the learner’s revision responsibility.",
+      "options": [
+        "I will revise it first and hope your comments fit afterward.",
+        "When could you send the comments so I can plan the revision?",
+        "Can you make sure the comments are very helpful this time?"
+      ],
+      "optionFeedback": {
+        "When could you send the comments so I can plan the revision?": "A specific request for timing supports the sequence both people already agreed on.",
+        "Can you make sure the comments are very helpful this time?": "That evaluates the comments rather than clarifying timing.",
+        "I will revise it first and hope your comments fit afterward.": "That reverses the agreed order of comments and revision."
+      }
+    },
+    {
+      "id": "agreements-choose-04",
+      "skill": "agreements",
+      "kind": "choose",
+      "level": 2,
+      "context": "You and your roommate have agreed to alternate cleaning the bathroom. You have not decided how to tell each other when a week cannot be covered.",
+      "prompt": "Which addition makes the plan more resilient?",
+      "answer": "How should we let each other know if our week stops working?",
+      "explanation": "A clear way to flag a problem helps protect the agreement when circumstances change.",
+      "hint": "Focus on how a problem will be communicated.",
+      "rubric": "Ask about a notification method for a missed cleaning week without silently reassigning it.",
+      "options": [
+        "How should we let each other know if our week stops working?",
+        "If someone misses a week, the other person should always cover it.",
+        "We should be fine as long as everyone tries hard."
+      ],
+      "optionFeedback": {
+        "How should we let each other know if our week stops working?": "A clear way to flag a problem helps protect the agreement when circumstances change.",
+        "If someone misses a week, the other person should always cover it.": "That assigns an ongoing fallback without agreement.",
+        "We should be fine as long as everyone tries hard.": "That leaves the response to a missed week undefined."
+      }
+    },
+    {
+      "id": "agreements-choose-05",
+      "skill": "agreements",
+      "kind": "choose",
+      "level": 3,
+      "context": "Your sibling will book a table, and you will message the family once the booking is confirmed.",
+      "prompt": "Which confirmation keeps the sequence and owners clear?",
+      "answer": "You will book the table, and I will message everyone after you confirm it.",
+      "explanation": "The confirmation preserves who acts first and what the next person is waiting for.",
+      "hint": "Follow the original ownership and order.",
+      "rubric": "Confirm the sibling’s booking task and the learner’s later message after confirmation.",
+      "options": [
+        "I will book the table, then you can tell the family.",
+        "I will message everyone now so the plan feels settled.",
+        "You will book the table, and I will message everyone after you confirm it."
+      ],
+      "optionFeedback": {
+        "You will book the table, and I will message everyone after you confirm it.": "The confirmation preserves who acts first and what the next person is waiting for.",
+        "I will book the table, then you can tell the family.": "That swaps both agreed tasks.",
+        "I will message everyone now so the plan feels settled.": "That communicates the booking before it is confirmed."
+      }
+    },
+    {
+      "id": "agreements-build-01",
+      "skill": "agreements",
+      "kind": "build",
+      "level": 1,
+      "context": "You agreed to compare hotels by six; your friend agreed to check flights by five.",
+      "prompt": "Build a confirmation of your own task only.",
+      "answer": "I will compare hotels by six as we agreed.",
+      "explanation": "The confirmation keeps your task and deadline intact.",
+      "hint": "Use your hotel task and its deadline.",
+      "rubric": "Confirm the learner’s hotel comparison by six without claiming the flight task.",
+      "words": [
+        "compare",
+        "will",
+        "agreed.",
+        "hotels",
+        "by",
+        "six",
+        "as",
+        "we",
+        "I"
+      ]
+    },
+    {
+      "id": "agreements-build-02",
+      "skill": "agreements",
+      "kind": "build",
+      "level": 1,
+      "context": "A colleague will send a draft, but you have not agreed when to review it.",
+      "prompt": "Build a question about the missing review time.",
+      "answer": "What time would work for us to review the draft?",
+      "explanation": "The question asks for agreement rather than inventing a scheduled review.",
+      "hint": "Ask for a workable time before naming the review.",
+      "rubric": "Ask when to review the draft without treating a time as already agreed.",
+      "words": [
+        "for",
+        "to",
+        "would",
+        "draft?",
+        "the",
+        "time",
+        "us",
+        "review",
+        "What",
+        "work"
+      ]
+    },
+    {
+      "id": "agreements-build-03",
+      "skill": "agreements",
+      "kind": "build",
+      "level": 2,
+      "context": "Your family has not chosen who will buy groceries for dinner.",
+      "prompt": "Build a question that clarifies responsibility.",
+      "answer": "Who will take responsibility for buying the groceries?",
+      "explanation": "The task can be planned once an owner is agreed.",
+      "hint": "Ask who will own the specific action.",
+      "rubric": "Ask who will buy groceries without assigning the task unilaterally.",
+      "words": [
+        "the",
+        "Who",
+        "will",
+        "buying",
+        "responsibility",
+        "groceries?",
+        "for",
+        "take"
+      ]
+    },
+    {
+      "id": "agreements-build-04",
+      "skill": "agreements",
+      "kind": "build",
+      "level": 2,
+      "context": "You want a way to flag a risk before the agreed deadline.",
+      "prompt": "Build a request about communicating a problem.",
+      "answer": "Can we agree how to flag a delay early?",
+      "explanation": "An early signal gives both people time to discuss changes.",
+      "hint": "Ask for an agreement about the delay signal.",
+      "rubric": "Propose agreeing on early notice for delays without inventing a deadline change.",
+      "words": [
+        "we",
+        "to",
+        "how",
+        "flag",
+        "Can",
+        "early?",
+        "delay",
+        "agree",
+        "a"
+      ]
+    },
+    {
+      "id": "agreements-build-05",
+      "skill": "agreements",
+      "kind": "build",
+      "level": 3,
+      "context": "A client will send comments before you revise the document.",
+      "prompt": "Build a confirmation that preserves the order of work.",
+      "answer": "I will revise the draft after you send your comments.",
+      "explanation": "This keeps the revision with you and makes its dependency clear.",
+      "hint": "The comments must arrive before your revision.",
+      "rubric": "Confirm learner revision after client comments without swapping the tasks.",
+      "words": [
+        "draft",
+        "I",
+        "comments.",
+        "after",
+        "will",
+        "revise",
+        "send",
+        "you",
+        "the",
+        "your"
+      ]
+    },
+    {
+      "id": "agreements-write-01",
+      "skill": "agreements",
+      "kind": "write",
+      "level": 1,
+      "context": "You have agreed to compare hotels by 6:00, and your friend has agreed to check flights by 5:00.",
+      "prompt": "Confirm both tasks and their deadlines without changing who owns them.",
+      "answer": "I will compare hotels by six, and you will check flight prices by five.",
+      "explanation": "The confirmation preserves the two owners and the two different deadlines.",
+      "hint": "Check every I and you against the agreement.",
+      "rubric": "Keep hotel comparison with the learner by six and flight checking with the friend by five; do not add a booking commitment.",
+      "minWords": 6
+    },
+    {
+      "id": "agreements-write-02",
+      "skill": "agreements",
+      "kind": "write",
+      "level": 1,
+      "context": "You will draft a client email, and your teammate will review it. No deadline has been agreed for either action.",
+      "prompt": "Ask about timing while keeping the agreed responsibilities clear.",
+      "answer": "When should I send you the draft so you have time to review the email?",
+      "explanation": "This asks for a usable schedule while retaining the writing and review roles.",
+      "hint": "Ask when your draft should reach the reviewer.",
+      "rubric": "Keep learner drafting and teammate reviewing; ask for timing without claiming a date is already agreed.",
+      "minWords": 6
+    },
+    {
+      "id": "agreements-write-03",
+      "skill": "agreements",
+      "kind": "write",
+      "level": 2,
+      "context": "Your family agreed that you will bring the main dish and your brother will bring dessert. No one has checked how many people are coming.",
+      "prompt": "Confirm your task and ask for the missing information you need.",
+      "answer": "I will bring the main dish. How many people should I plan for?",
+      "explanation": "The reply preserves your responsibility and asks a practical question before choosing quantities.",
+      "hint": "Keep your dish assignment and ask about attendance.",
+      "rubric": "Keep the main dish with the learner and ask how many people to plan for; do not take over dessert or invent the guest count.",
+      "minWords": 5
+    },
+    {
+      "id": "agreements-write-04",
+      "skill": "agreements",
+      "kind": "write",
+      "level": 2,
+      "context": "You and a client agreed that they will send feedback on Tuesday. You will revise the draft afterward, but have not agreed on a revision deadline.",
+      "prompt": "Ask for a realistic revision deadline without changing the client’s Tuesday commitment.",
+      "answer": "Once you send feedback on Tuesday, what revision deadline would work for us?",
+      "explanation": "The question keeps the existing commitment and opens the detail that is still unresolved.",
+      "hint": "Keep Tuesday fixed for feedback, then ask about the revision.",
+      "rubric": "Preserve client feedback on Tuesday and learner revision afterward; ask about the revision deadline rather than inventing an agreement.",
+      "minWords": 6
+    },
+    {
+      "id": "agreements-write-05",
+      "skill": "agreements",
+      "kind": "write",
+      "level": 3,
+      "context": "You and your roommate have agreed that you will clean on Saturday. You want a plan in case your Saturday shift at work changes.",
+      "prompt": "Propose a way to communicate a conflict without silently moving your task to your roommate.",
+      "answer": "If my shift changes, could we agree on when I should tell you so we can discuss another cleaning time?",
+      "explanation": "The proposal keeps responsibility with you while allowing a joint discussion if availability changes.",
+      "hint": "Offer a signal and a conversation, not an automatic transfer.",
+      "rubric": "Keep the cleaning responsibility with the learner and propose communication about a possible conflict; do not assume the roommate will cover it.",
+      "minWords": 6
+    },
+    {
+      "id": "repair-blank-01",
+      "skill": "repair",
+      "kind": "blank",
+      "level": 1,
+      "context": "You interrupted a teammate before they finished explaining a delay. You want to restart the exchange.",
+      "prompt": "I interrupted before you finished. ___.",
+      "answer": "Please finish your explanation; I’m listening",
+      "explanation": "Owning the specific action and returning the turn creates a concrete repair.",
+      "hint": "Name your part and give back the space to speak.",
+      "rubric": "Acknowledge the learner’s interruption and invite the teammate to finish.",
+      "options": [
+        "We both need to communicate better next time",
+        "Please finish your explanation; I’m listening",
+        "I was only trying to keep us on schedule"
+      ],
+      "optionFeedback": {
+        "Please finish your explanation; I’m listening": "Owning the specific action and returning the turn creates a concrete repair.",
+        "I was only trying to keep us on schedule": "That explains your intention without giving the teammate their turn back.",
+        "We both need to communicate better next time": "That spreads responsibility instead of owning the interruption."
+      }
+    },
+    {
+      "id": "repair-blank-02",
+      "skill": "repair",
+      "kind": "blank",
+      "level": 1,
+      "context": "You accidentally said your friend would compare hotels, but you had agreed to compare hotels yourself. Your friend is checking flights.",
+      "prompt": "I mixed up our tasks. ___.",
+      "answer": "I’m comparing hotels, and you’re checking flights",
+      "explanation": "A clear correction restores the existing agreement without creating a new one.",
+      "hint": "Correct the mix-up using the original owners.",
+      "rubric": "Restore learner hotel comparison and friend flight checking without renegotiating the tasks.",
+      "options": [
+        "I’m comparing hotels, and you’re checking flights",
+        "Let’s just decide everything again from the beginning",
+        "You can compare hotels if that seems easier now"
+      ],
+      "optionFeedback": {
+        "I’m comparing hotels, and you’re checking flights": "A clear correction restores the existing agreement without creating a new one.",
+        "Let’s just decide everything again from the beginning": "That discards an agreement that only needs a correction.",
+        "You can compare hotels if that seems easier now": "That changes responsibilities instead of correcting the mistake."
+      }
+    },
+    {
+      "id": "repair-blank-03",
+      "skill": "repair",
+      "kind": "blank",
+      "level": 2,
+      "context": "Your sister thought you were canceling every visit. You meant that only this Sunday does not work.",
+      "prompt": "I was unclear. ___.",
+      "answer": "I meant this Sunday, not all our visits",
+      "explanation": "The repair identifies the exact difference between what you meant and what was heard.",
+      "hint": "Narrow the correction to the one affected visit.",
+      "rubric": "Clarify that only this Sunday is unavailable without canceling future visits.",
+      "options": [
+        "I thought you would know what I meant",
+        "Perhaps we should stop planning visits for a while",
+        "I meant this Sunday, not all our visits"
+      ],
+      "optionFeedback": {
+        "I meant this Sunday, not all our visits": "The repair identifies the exact difference between what you meant and what was heard.",
+        "I thought you would know what I meant": "That shifts responsibility for the unclear message onto your sister.",
+        "Perhaps we should stop planning visits for a while": "That turns the misunderstanding into a broader cancellation."
+      }
+    },
+    {
+      "id": "repair-blank-04",
+      "skill": "repair",
+      "kind": "blank",
+      "level": 2,
+      "context": "You raised your voice during a disagreement with your roommate. You want to continue more calmly.",
+      "prompt": "I raised my voice, and ___.",
+      "answer": "I’d like to pause and restart more calmly",
+      "explanation": "You can own your tone and ask for a reset without abandoning the issue.",
+      "hint": "Own your response, then propose a calmer next step.",
+      "rubric": "Acknowledge raising your voice and propose a pause or calm restart without blaming the roommate.",
+      "options": [
+        "we should act as if the argument never happened",
+        "I’d like to pause and restart more calmly",
+        "that happened because you would not listen"
+      ],
+      "optionFeedback": {
+        "I’d like to pause and restart more calmly": "You can own your tone and ask for a reset without abandoning the issue.",
+        "that happened because you would not listen": "That makes the roommate responsible for your response.",
+        "we should act as if the argument never happened": "That skips acknowledging and repairing the exchange."
+      }
+    },
+    {
+      "id": "repair-blank-05",
+      "skill": "repair",
+      "kind": "blank",
+      "level": 3,
+      "context": "You told a client the review would be Friday, but the confirmed review is Thursday.",
+      "prompt": "I gave you the wrong review day. ___.",
+      "answer": "The confirmed review is Thursday",
+      "explanation": "A correction should clearly replace the wrong information with the confirmed detail.",
+      "hint": "State the confirmed day rather than another possibility.",
+      "rubric": "Own the incorrect information and correct Friday to Thursday without inventing a new booking.",
+      "options": [
+        "The confirmed review is Thursday",
+        "Friday may still be easier if you prefer it",
+        "There seems to have been some confusion somewhere"
+      ],
+      "optionFeedback": {
+        "The confirmed review is Thursday": "A correction should clearly replace the wrong information with the confirmed detail.",
+        "Friday may still be easier if you prefer it": "That suggests a new option you have not confirmed.",
+        "There seems to have been some confusion somewhere": "That avoids correcting your specific mistake."
+      }
+    },
+    {
+      "id": "repair-choose-01",
+      "skill": "repair",
+      "kind": "choose",
+      "level": 1,
+      "context": "You called a colleague’s suggestion “pointless.” They say the comment shut down the discussion.",
+      "prompt": "Which response repairs your wording while leaving room to discuss the idea?",
+      "answer": "Calling it pointless was dismissive. Could you explain the idea again?",
+      "explanation": "Owning the dismissive phrase and reopening the discussion makes the repair concrete.",
+      "hint": "Take responsibility for the words you used.",
+      "rubric": "Acknowledge the dismissive wording and invite the colleague’s idea without withdrawing all substantive feedback.",
+      "options": [
+        "I am sorry you interpreted my feedback negatively.",
+        "Let’s forget the comment and move straight to a decision.",
+        "Calling it pointless was dismissive. Could you explain the idea again?"
+      ],
+      "optionFeedback": {
+        "Calling it pointless was dismissive. Could you explain the idea again?": "Owning the dismissive phrase and reopening the discussion makes the repair concrete.",
+        "I am sorry you interpreted my feedback negatively.": "That treats their interpretation as the problem rather than your wording.",
+        "Let’s forget the comment and move straight to a decision.": "That moves on without acknowledging the effect of the comment."
+      }
+    },
+    {
+      "id": "repair-choose-02",
+      "skill": "repair",
+      "kind": "choose",
+      "level": 1,
+      "context": "You misunderstood a friend’s message and assumed they were canceling. They explain they only wanted to change the time.",
+      "prompt": "What is the clearest repair?",
+      "answer": "I read your message as a cancellation. I understand you want a different time.",
+      "explanation": "A repair can simply acknowledge the mistaken reading and state the corrected meaning.",
+      "hint": "Contrast your earlier interpretation with the clarification.",
+      "rubric": "Acknowledge the mistaken cancellation assumption and recognize the request for a different time.",
+      "options": [
+        "It is probably easier if we cancel anyway.",
+        "I read your message as a cancellation. I understand you want a different time.",
+        "Your message could have been clearer about that."
+      ],
+      "optionFeedback": {
+        "I read your message as a cancellation. I understand you want a different time.": "A repair can simply acknowledge the mistaken reading and state the corrected meaning.",
+        "Your message could have been clearer about that.": "That begins by assigning fault instead of correcting your understanding.",
+        "It is probably easier if we cancel anyway.": "That changes the plan rather than repairing the misunderstanding."
+      }
+    },
+    {
+      "id": "repair-choose-03",
+      "skill": "repair",
+      "kind": "choose",
+      "level": 2,
+      "context": "During a family discussion, you answered a question that was directed to your brother. He says he wanted to speak for himself.",
+      "prompt": "Which reply makes space for him now?",
+      "answer": "I answered for you. Please say what you wanted to say.",
+      "explanation": "The repair names the action and gives the person their voice back.",
+      "hint": "Return the speaking turn to the person you spoke for.",
+      "rubric": "Acknowledge speaking for the brother and invite his own response.",
+      "options": [
+        "I answered for you. Please say what you wanted to say.",
+        "I was trying to save you from an awkward explanation.",
+        "We should ask everyone fewer personal questions."
+      ],
+      "optionFeedback": {
+        "I answered for you. Please say what you wanted to say.": "The repair names the action and gives the person their voice back.",
+        "I was trying to save you from an awkward explanation.": "That explains your intention without returning his chance to speak.",
+        "We should ask everyone fewer personal questions.": "That shifts to a new rule instead of addressing this moment."
+      }
+    },
+    {
+      "id": "repair-choose-04",
+      "skill": "repair",
+      "kind": "choose",
+      "level": 2,
+      "context": "A client points out that your written summary names the wrong owner for a task. You have checked: your team owns the revision, and the client owns the approval.",
+      "prompt": "Which correction preserves the actual agreement?",
+      "answer": "Our team owns the revision; you own approval. I will correct the summary.",
+      "explanation": "Correcting the owners and the written record prevents the misunderstanding from continuing.",
+      "hint": "Restore the agreement and fix the place that got it wrong.",
+      "rubric": "Keep revision with the learner’s team and approval with the client, and propose correcting the summary.",
+      "options": [
+        "You can take the revision if that would avoid confusion.",
+        "Let’s leave the summary and clarify it when the work starts.",
+        "Our team owns the revision; you own approval. I will correct the summary."
+      ],
+      "optionFeedback": {
+        "Our team owns the revision; you own approval. I will correct the summary.": "Correcting the owners and the written record prevents the misunderstanding from continuing.",
+        "You can take the revision if that would avoid confusion.": "That changes ownership rather than correcting the record.",
+        "Let’s leave the summary and clarify it when the work starts.": "That keeps known incorrect information in the shared record."
+      }
+    },
+    {
+      "id": "repair-choose-05",
+      "skill": "repair",
+      "kind": "choose",
+      "level": 3,
+      "context": "You made a joke about your roommate’s mistake. They said it was hurtful.",
+      "prompt": "Which response acknowledges the impact without requiring them to reassure you?",
+      "answer": "I am sorry I joked about your mistake. I will stop making that joke.",
+      "explanation": "An apology can own the behavior and name a relevant change without demanding forgiveness.",
+      "hint": "Focus on your behavior and what you will change.",
+      "rubric": "Acknowledge the hurtful joke, apologize for it, and avoid demanding reassurance or forgiveness.",
+      "options": [
+        "I feel terrible; please tell me you are not upset anymore.",
+        "I am sorry I joked about your mistake. I will stop making that joke.",
+        "I did not mean it seriously, so I hope you can relax about it."
+      ],
+      "optionFeedback": {
+        "I am sorry I joked about your mistake. I will stop making that joke.": "An apology can own the behavior and name a relevant change without demanding forgiveness.",
+        "I did not mean it seriously, so I hope you can relax about it.": "That minimizes the impact they described.",
+        "I feel terrible; please tell me you are not upset anymore.": "That asks them to take care of your discomfort before their concern is addressed."
+      }
+    },
+    {
+      "id": "repair-build-01",
+      "skill": "repair",
+      "kind": "build",
+      "level": 1,
+      "context": "You interrupted a teammate and want to return their speaking turn.",
+      "prompt": "Build a repair that owns the interruption.",
+      "answer": "I interrupted you; please finish what you were saying.",
+      "explanation": "This names your action and makes room for the other person to continue.",
+      "hint": "Own the interruption before inviting them to continue.",
+      "rubric": "Acknowledge interrupting and return the teammate’s turn.",
+      "words": [
+        "you;",
+        "interrupted",
+        "saying.",
+        "what",
+        "you",
+        "were",
+        "finish",
+        "please",
+        "I"
+      ]
+    },
+    {
+      "id": "repair-build-02",
+      "skill": "repair",
+      "kind": "build",
+      "level": 1,
+      "context": "You mixed up two agreed tasks: you compare hotels, your friend checks flights.",
+      "prompt": "Build a correction of the task ownership.",
+      "answer": "I compare hotels, and you check flights as agreed.",
+      "explanation": "The correction keeps the original owners instead of renegotiating the plan.",
+      "hint": "Keep hotels with I and flights with you.",
+      "rubric": "Restore the learner’s hotel task and friend’s flight task.",
+      "words": [
+        "check",
+        "and",
+        "compare",
+        "I",
+        "as",
+        "agreed.",
+        "flights",
+        "you",
+        "hotels,"
+      ]
+    },
+    {
+      "id": "repair-build-03",
+      "skill": "repair",
+      "kind": "build",
+      "level": 2,
+      "context": "You spoke sharply and want to restart the discussion calmly.",
+      "prompt": "Build a sentence that owns your response and proposes a reset.",
+      "answer": "I spoke sharply; can we restart this conversation more calmly?",
+      "explanation": "The sentence takes responsibility for your words without blaming the other person.",
+      "hint": "Name your response, then ask for a calmer restart.",
+      "rubric": "Own speaking sharply and ask to restart calmly without transferring blame.",
+      "words": [
+        "spoke",
+        "more",
+        "sharply;",
+        "restart",
+        "conversation",
+        "this",
+        "we",
+        "calmly?",
+        "can",
+        "I"
+      ]
+    },
+    {
+      "id": "repair-build-04",
+      "skill": "repair",
+      "kind": "build",
+      "level": 2,
+      "context": "A client received the wrong date from you; Thursday is the confirmed date.",
+      "prompt": "Build a direct correction of the information.",
+      "answer": "I gave the wrong date; the confirmed day is Thursday.",
+      "explanation": "A useful correction replaces the mistaken information with the verified detail.",
+      "hint": "Own the error and state the confirmed day.",
+      "rubric": "Acknowledge the date error and correct it to Thursday.",
+      "words": [
+        "the",
+        "wrong",
+        "I",
+        "date;",
+        "day",
+        "is",
+        "gave",
+        "Thursday.",
+        "confirmed",
+        "the"
+      ]
+    },
+    {
+      "id": "repair-build-05",
+      "skill": "repair",
+      "kind": "build",
+      "level": 3,
+      "context": "Your sister thought you meant all visits were canceled, but only Sunday does not work.",
+      "prompt": "Build a clarification of the limited change.",
+      "answer": "I meant this Sunday, not all of our visits.",
+      "explanation": "The clarification corrects the scope of the message without canceling anything else.",
+      "hint": "Distinguish one Sunday from every visit.",
+      "rubric": "Clarify that only this Sunday is affected.",
+      "words": [
+        "not",
+        "meant",
+        "of",
+        "Sunday,",
+        "I",
+        "all",
+        "this",
+        "our",
+        "visits."
+      ]
+    },
+    {
+      "id": "repair-write-01",
+      "skill": "repair",
+      "kind": "write",
+      "level": 1,
+      "context": "You interrupted a colleague while they were explaining a delay. You realize you have not heard their full explanation.",
+      "prompt": "Write a short repair that owns your interruption and returns their turn.",
+      "answer": "I interrupted before you finished. Please go on; I want to hear the rest.",
+      "explanation": "The response takes responsibility and changes what happens next in the conversation.",
+      "hint": "Name your action, then invite them to continue.",
+      "rubric": "Acknowledge the learner’s interruption and invite the colleague to finish; do not blame the colleague or only explain good intentions.",
+      "minWords": 5
+    },
+    {
+      "id": "repair-write-02",
+      "skill": "repair",
+      "kind": "write",
+      "level": 1,
+      "context": "You told your friend you would book the tickets, but you now notice your message was wrong: you had agreed to compare prices, not purchase anything yet.",
+      "prompt": "Correct your message without inventing a new purchase agreement.",
+      "answer": "I misstated our plan. I agreed to compare ticket prices, and we have not agreed to buy them yet.",
+      "explanation": "The correction separates research from a purchase commitment.",
+      "hint": "State the real task and the decision that is still open.",
+      "rubric": "Correct the learner’s responsibility to comparing prices and clarify that buying tickets has not been agreed.",
+      "minWords": 6
+    },
+    {
+      "id": "repair-write-03",
+      "skill": "repair",
+      "kind": "write",
+      "level": 2,
+      "context": "You shared a family member’s news without asking. They have told you they wanted to choose when others heard it.",
+      "prompt": "Acknowledge your action and propose a relevant change for future sharing.",
+      "answer": "I shared your news without checking with you, and I am sorry. I will ask before sharing your personal news again.",
+      "explanation": "The repair owns the action and responds to the specific permission that was missing.",
+      "hint": "Name what you did and the permission you will seek next time.",
+      "rubric": "Acknowledge sharing without consent, apologize or own responsibility, and commit to asking before future sharing; do not demand forgiveness.",
+      "minWords": 6
+    },
+    {
+      "id": "repair-write-04",
+      "skill": "repair",
+      "kind": "write",
+      "level": 2,
+      "context": "Your email told a client that their approval was due on Monday. The written agreement says Wednesday.",
+      "prompt": "Correct the deadline clearly and acknowledge your mistake.",
+      "answer": "I gave the wrong approval deadline in my email. Our agreed deadline is Wednesday, not Monday.",
+      "explanation": "A precise correction replaces the incorrect day without silently renegotiating the agreement.",
+      "hint": "Use the written agreement as the source of the corrected day.",
+      "rubric": "Own the incorrect Monday deadline and restore Wednesday as the client’s agreed approval deadline.",
+      "minWords": 6
+    },
+    {
+      "id": "repair-write-05",
+      "skill": "repair",
+      "kind": "write",
+      "level": 3,
+      "context": "You dismissed your roommate’s concern about noise by saying, “It is not a big deal.” They say they still need to discuss it.",
+      "prompt": "Repair the dismissive response and reopen the discussion.",
+      "answer": "Calling it not a big deal dismissed your concern. Can you tell me how the noise is affecting you?",
+      "explanation": "The response owns the dismissive words and makes room for information you skipped.",
+      "hint": "Name the wording you are repairing and invite their perspective.",
+      "rubric": "Acknowledge dismissing the noise concern and invite the roommate to explain its effect without minimizing it again.",
+      "minWords": 6
+    }
+  ]
+}

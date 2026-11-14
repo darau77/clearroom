@@ -42,6 +42,7 @@ services:
       CLEARROOM_WARMUP: "1"
       WHISPER_MODEL: small
       CLEARROOM_QUOTA_DB: /data/usage.sqlite3
+      CLEARROOM_QUESTION_BANK_DB: /data/question-bank.sqlite3
     ports:
       - "127.0.0.1:8000:8000"
     volumes:

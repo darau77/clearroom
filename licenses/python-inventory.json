@@ -1,0 +1,1498 @@
+{
+  "schemaVersion": 1,
+  "packages": [
+    {
+      "name": "annotated-doc",
+      "version": "0.0.6",
+      "licenseExpression": "MIT",
+      "licenseMetadata": null,
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "Homepage, https://github.com/fastapi/annotated-doc",
+        "Documentation, https://github.com/fastapi/annotated-doc",
+        "Repository, https://github.com/fastapi/annotated-doc",
+        "Issues, https://github.com/fastapi/annotated-doc/issues",
+        "Changelog, https://github.com/fastapi/annotated-doc/release-notes.md"
+      ],
+      "homepage": null,
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "annotated_doc-0.0.6.dist-info/licenses/LICENSE",
+          "file": "texts/fff170779a6acbf65abdb405c087f1cee1786691e4a96a4034517e4a504a0cdf.txt",
+          "sha256": "fff170779a6acbf65abdb405c087f1cee1786691e4a96a4034517e4a504a0cdf"
+        }
+      ]
+    },
+    {
+      "name": "annotated-types",
+      "version": "0.8.0",
+      "licenseExpression": "MIT",
+      "licenseMetadata": null,
+      "licenseClassifiers": [
+        "OSI Approved :: MIT License"
+      ],
+      "projectURLs": [
+        "Homepage, https://github.com/annotated-types/annotated-types",
+        "Source, https://github.com/annotated-types/annotated-types",
+        "Changelog, https://github.com/annotated-types/annotated-types/releases"
+      ],
+      "homepage": null,
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "annotated_types-0.8.0.dist-info/licenses/LICENSE",
+          "file": "texts/fe1049884b1a0d9342901e88e07f32925d24b3121d9972b6a6805fb9824b095d.txt",
+          "sha256": "fe1049884b1a0d9342901e88e07f32925d24b3121d9972b6a6805fb9824b095d"
+        }
+      ]
+    },
+    {
+      "name": "anyio",
+      "version": "4.16.0",
+      "licenseExpression": "MIT",
+      "licenseMetadata": null,
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "Documentation, https://anyio.readthedocs.io/en/latest/",
+        "Changelog, https://anyio.readthedocs.io/en/stable/versionhistory.html",
+        "Source code, https://github.com/agronholm/anyio",
+        "Issue tracker, https://github.com/agronholm/anyio/issues"
+      ],
+      "homepage": null,
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "anyio-4.16.0.dist-info/licenses/LICENSE",
+          "file": "texts/5361ac9dc58f2ef5fd2e9b09c68297c17f04950909bbc8023bdb82eacf22c2b0.txt",
+          "sha256": "5361ac9dc58f2ef5fd2e9b09c68297c17f04950909bbc8023bdb82eacf22c2b0"
+        }
+      ]
+    },
+    {
+      "name": "av",
+      "version": "18.1.0",
+      "licenseExpression": "BSD-3-Clause",
+      "licenseMetadata": null,
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "Bug Tracker, https://github.com/PyAV-Org/PyAV/issues",
+        "Source Code, https://github.com/PyAV-Org/PyAV",
+        "homepage, https://pyav.basswood.io"
+      ],
+      "homepage": null,
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "av-18.1.0.dist-info/licenses/LICENSE.txt",
+          "file": "texts/76af0461ffb92e19f1c14449e95557d83a2dfaa1baf202d49e5f1d8746c0da19.txt",
+          "sha256": "76af0461ffb92e19f1c14449e95557d83a2dfaa1baf202d49e5f1d8746c0da19"
+        }
+      ]
+    },
+    {
+      "name": "certifi",
+      "version": "2026.10.23",
+      "licenseExpression": null,
+      "licenseMetadata": "MPL-2.0",
+      "licenseClassifiers": [
+        "OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)"
+      ],
+      "projectURLs": [
+        "Source, https://github.com/certifi/python-certifi"
+      ],
+      "homepage": "https://github.com/certifi/python-certifi",
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "certifi-2026.10.23.dist-info/licenses/LICENSE",
+          "file": "texts/e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7.txt",
+          "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7"
+        }
+      ]
+    },
+    {
+      "name": "click",
+      "version": "8.5.1",
+      "licenseExpression": "BSD-3-Clause",
+      "licenseMetadata": null,
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "Changes, https://click.palletsprojects.com/page/changes/",
+        "Chat, https://discord.gg/pallets",
+        "Documentation, https://click.palletsprojects.com/",
+        "Donate, https://palletsprojects.com/donate",
+        "Source, https://github.com/pallets/click/"
+      ],
+      "homepage": null,
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "click-8.5.1.dist-info/licenses/LICENSE.txt",
+          "file": "texts/9a8ad106a394e853bfe21f42f4e72d592819a22805d991b5f3275029292b658d.txt",
+          "sha256": "9a8ad106a394e853bfe21f42f4e72d592819a22805d991b5f3275029292b658d"
+        }
+      ]
+    },
+    {
+      "name": "ctranslate2",
+      "version": "4.9.0",
+      "licenseExpression": null,
+      "licenseMetadata": "MIT",
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "Documentation, https://opennmt.net/CTranslate2",
+        "Forum, https://forum.opennmt.net",
+        "Gitter, https://gitter.im/OpenNMT/CTranslate2",
+        "Source, https://github.com/OpenNMT/CTranslate2"
+      ],
+      "homepage": "https://opennmt.net",
+      "environment": "Brev API container",
+      "notices": []
+    },
+    {
+      "name": "fastapi",
+      "version": "0.162.7",
+      "licenseExpression": "MIT",
+      "licenseMetadata": null,
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "Homepage, https://github.com/fastapi/fastapi",
+        "Documentation, https://fastapi.tiangolo.com/",
+        "Repository, https://github.com/fastapi/fastapi",
+        "Issues, https://github.com/fastapi/fastapi/issues",
+        "Changelog, https://fastapi.tiangolo.com/release-notes/"
+      ],
+      "homepage": null,
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "fastapi-0.162.7.dist-info/licenses/LICENSE",
+          "file": "texts/4ec89ffc81485b97fec584b2d4a961032eeffe834453894fd9c1274906cc744e.txt",
+          "sha256": "4ec89ffc81485b97fec584b2d4a961032eeffe834453894fd9c1274906cc744e"
+        }
+      ]
+    },
+    {
+      "name": "faster-whisper",
+      "version": "1.2.1",
+      "licenseExpression": null,
+      "licenseMetadata": "MIT",
+      "licenseClassifiers": [
+        "OSI Approved :: MIT License"
+      ],
+      "projectURLs": [],
+      "homepage": "https://github.com/SYSTRAN/faster-whisper",
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "faster_whisper-1.2.1.dist-info/LICENSE",
+          "file": "texts/af6798135e729f8aa6c853936d037dfdea449734d26b8ea6a89805fca758c0d5.txt",
+          "sha256": "af6798135e729f8aa6c853936d037dfdea449734d26b8ea6a89805fca758c0d5"
+        }
+      ]
+    },
+    {
+      "name": "filelock",
+      "version": "4.2.10",
+      "licenseExpression": "MIT",
+      "licenseMetadata": null,
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "Changelog, https://py-filelock.readthedocs.io/en/latest/changelog.html",
+        "Documentation, https://py-filelock.readthedocs.io",
+        "Homepage, https://github.com/tox-dev/filelock",
+        "Source, https://github.com/tox-dev/filelock",
+        "Tracker, https://github.com/tox-dev/filelock/issues"
+      ],
+      "homepage": null,
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "filelock-4.2.10.dist-info/licenses/LICENSE",
+          "file": "texts/608c89d5060ae9921adccf3236695bc654a9946e12323ef6c021dfa04e294d48.txt",
+          "sha256": "608c89d5060ae9921adccf3236695bc654a9946e12323ef6c021dfa04e294d48"
+        }
+      ]
+    },
+    {
+      "name": "flatbuffers",
+      "version": "25.12.19",
+      "licenseExpression": null,
+      "licenseMetadata": "Apache 2.0",
+      "licenseClassifiers": [
+        "OSI Approved :: Apache Software License"
+      ],
+      "projectURLs": [
+        "Documentation, https://google.github.io/flatbuffers/",
+        "Source, https://github.com/google/flatbuffers"
+      ],
+      "homepage": "https://google.github.io/flatbuffers/",
+      "environment": "Brev API container",
+      "notices": []
+    },
+    {
+      "name": "fsspec",
+      "version": "2026.9.0",
+      "licenseExpression": "BSD-3-Clause",
+      "licenseMetadata": null,
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "Changelog, https://filesystem-spec.readthedocs.io/en/latest/changelog.html",
+        "Documentation, https://filesystem-spec.readthedocs.io/en/latest/",
+        "Homepage, https://github.com/fsspec/filesystem_spec"
+      ],
+      "homepage": null,
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "fsspec-2026.9.0.dist-info/licenses/LICENSE",
+          "file": "texts/2dc35496ce53a7307915c008a844aad53e772b49b34cdd00445067691407ec94.txt",
+          "sha256": "2dc35496ce53a7307915c008a844aad53e772b49b34cdd00445067691407ec94"
+        }
+      ]
+    },
+    {
+      "name": "h11",
+      "version": "0.16.0",
+      "licenseExpression": null,
+      "licenseMetadata": "MIT",
+      "licenseClassifiers": [
+        "OSI Approved :: MIT License"
+      ],
+      "projectURLs": [],
+      "homepage": "https://github.com/python-hyper/h11",
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "h11-0.16.0.dist-info/licenses/LICENSE.txt",
+          "file": "texts/37db5bb85926db28a427a25867f10b1232003aea1be69ccb851138adb8e6f361.txt",
+          "sha256": "37db5bb85926db28a427a25867f10b1232003aea1be69ccb851138adb8e6f361"
+        }
+      ]
+    },
+    {
+      "name": "hf-xet",
+      "version": "1.8.0",
+      "licenseExpression": "Apache-2.0",
+      "licenseMetadata": null,
+      "licenseClassifiers": [
+        "OSI Approved :: Apache Software License"
+      ],
+      "projectURLs": [
+        "Documentation, https://huggingface.co/docs/hub/xet/index",
+        "Homepage, https://github.com/huggingface/xet-core",
+        "Issues, https://github.com/huggingface/xet-core/issues",
+        "Repository, https://github.com/huggingface/xet-core.git"
+      ],
+      "homepage": null,
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "hf_xet-1.8.0.dist-info/licenses/LICENSE",
+          "file": "texts/c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4.txt",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        }
+      ]
+    },
+    {
+      "name": "httpcore",
+      "version": "1.0.9",
+      "licenseExpression": "BSD-3-Clause",
+      "licenseMetadata": null,
+      "licenseClassifiers": [
+        "OSI Approved :: BSD License"
+      ],
+      "projectURLs": [
+        "Documentation, https://www.encode.io/httpcore",
+        "Homepage, https://www.encode.io/httpcore/",
+        "Source, https://github.com/encode/httpcore"
+      ],
+      "homepage": null,
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "httpcore-1.0.9.dist-info/licenses/LICENSE.md",
+          "file": "texts/fdcb59154c74cbaba16a11242f7740bea9f23d6feb5547917d8c5f94a80392a5.txt",
+          "sha256": "fdcb59154c74cbaba16a11242f7740bea9f23d6feb5547917d8c5f94a80392a5"
+        }
+      ]
+    },
+    {
+      "name": "httptools",
+      "version": "0.9.0",
+      "licenseExpression": "MIT",
+      "licenseMetadata": null,
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "Homepage, https://github.com/MagicStack/httptools"
+      ],
+      "homepage": null,
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "httptools-0.9.0.dist-info/licenses/LICENSE",
+          "file": "texts/f4573e7cb7676745fb5b8d36fa548aa93e391cfb6872ddacd65130c45ea6a92d.txt",
+          "sha256": "f4573e7cb7676745fb5b8d36fa548aa93e391cfb6872ddacd65130c45ea6a92d"
+        },
+        {
+          "sourcePath": "httptools-0.9.0.dist-info/licenses/vendor/http-parser/LICENSE-MIT",
+          "file": "texts/79e6ba8b687cb54786207342b9b6fcee0ac10218453ed9009b84d949b2233cc0.txt",
+          "sha256": "79e6ba8b687cb54786207342b9b6fcee0ac10218453ed9009b84d949b2233cc0"
+        },
+        {
+          "sourcePath": "httptools-0.9.0.dist-info/licenses/vendor/llhttp/LICENSE",
+          "file": "texts/628168d68bb5a8a17e0bbefb3bd74e326e1edc20583d76f52f457c82c921867d.txt",
+          "sha256": "628168d68bb5a8a17e0bbefb3bd74e326e1edc20583d76f52f457c82c921867d"
+        }
+      ]
+    },
+    {
+      "name": "httpx",
+      "version": "0.28.1",
+      "licenseExpression": null,
+      "licenseMetadata": "BSD-3-Clause",
+      "licenseClassifiers": [
+        "OSI Approved :: BSD License"
+      ],
+      "projectURLs": [
+        "Changelog, https://github.com/encode/httpx/blob/master/CHANGELOG.md",
+        "Documentation, https://www.python-httpx.org",
+        "Homepage, https://github.com/encode/httpx",
+        "Source, https://github.com/encode/httpx"
+      ],
+      "homepage": null,
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "httpx-0.28.1.dist-info/licenses/LICENSE.md",
+          "file": "texts/4ec59d544f12b5f539a3a716fd321ac58ccd8030b465221f2c880200cdf28d8d.txt",
+          "sha256": "4ec59d544f12b5f539a3a716fd321ac58ccd8030b465221f2c880200cdf28d8d"
+        }
+      ]
+    },
+    {
+      "name": "huggingface_hub",
+      "version": "1.33.0",
+      "licenseExpression": null,
+      "licenseMetadata": "Apache-2.0",
+      "licenseClassifiers": [
+        "OSI Approved :: Apache Software License"
+      ],
+      "projectURLs": [],
+      "homepage": "https://github.com/huggingface/huggingface_hub",
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "huggingface_hub-1.33.0.dist-info/licenses/LICENSE",
+          "file": "texts/c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4.txt",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        }
+      ]
+    },
+    {
+      "name": "idna",
+      "version": "3.20",
+      "licenseExpression": "BSD-3-Clause",
+      "licenseMetadata": null,
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "Changelog, https://github.com/kjd/idna/blob/master/HISTORY.md",
+        "Issue tracker, https://github.com/kjd/idna/issues",
+        "Source, https://github.com/kjd/idna"
+      ],
+      "homepage": null,
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "idna-3.20.dist-info/licenses/LICENSE.md",
+          "file": "texts/1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04.txt",
+          "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04"
+        }
+      ]
+    },
+    {
+      "name": "numpy",
+      "version": "2.4.6",
+      "licenseExpression": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+      "licenseMetadata": null,
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "homepage, https://numpy.org",
+        "documentation, https://numpy.org/doc/",
+        "source, https://github.com/numpy/numpy",
+        "download, https://pypi.org/project/numpy/#files",
+        "tracker, https://github.com/numpy/numpy/issues",
+        "release notes, https://numpy.org/doc/stable/release"
+      ],
+      "homepage": null,
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "numpy-2.4.6.dist-info/licenses/LICENSE.txt",
+          "file": "texts/4860083caa0de2ac3292ca98bd074bd8f45d8b32624e37b1e70a240bff61e488.txt",
+          "sha256": "4860083caa0de2ac3292ca98bd074bd8f45d8b32624e37b1e70a240bff61e488"
+        },
+        {
+          "sourcePath": "numpy-2.4.6.dist-info/licenses/numpy/_core/include/numpy/libdivide/LICENSE.txt",
+          "file": "texts/fbc539f47d0cf83bc61378080fb873d5c14630126cacbfe754035c3926daa5ec.txt",
+          "sha256": "fbc539f47d0cf83bc61378080fb873d5c14630126cacbfe754035c3926daa5ec"
+        },
+        {
+          "sourcePath": "numpy-2.4.6.dist-info/licenses/numpy/_core/src/common/pythoncapi-compat/COPYING",
+          "file": "texts/3f2c1ffa76383a55ae0aac01c9737cd70050dff63e1f026694fbe9d662573c98.txt",
+          "sha256": "3f2c1ffa76383a55ae0aac01c9737cd70050dff63e1f026694fbe9d662573c98"
+        },
+        {
+          "sourcePath": "numpy-2.4.6.dist-info/licenses/numpy/_core/src/highway/LICENSE",
+          "file": "texts/e340270d4f64384569a91d546acb5b094d69ce47f0c015db77abb74dc6f815af.txt",
+          "sha256": "e340270d4f64384569a91d546acb5b094d69ce47f0c015db77abb74dc6f815af"
+        },
+        {
+          "sourcePath": "numpy-2.4.6.dist-info/licenses/numpy/_core/src/multiarray/dragon4_LICENSE.txt",
+          "file": "texts/f7b14309e5f54e5022b26448eefd419988ada2aec01d3c1162d84a0ea8f21f2c.txt",
+          "sha256": "f7b14309e5f54e5022b26448eefd419988ada2aec01d3c1162d84a0ea8f21f2c"
+        },
+        {
+          "sourcePath": "numpy-2.4.6.dist-info/licenses/numpy/_core/src/npysort/x86-simd-sort/LICENSE.md",
+          "file": "texts/211e7d737d6179a08f791ebb0a99897ce7cd2457410c542876d125576edfe910.txt",
+          "sha256": "211e7d737d6179a08f791ebb0a99897ce7cd2457410c542876d125576edfe910"
+        },
+        {
+          "sourcePath": "numpy-2.4.6.dist-info/licenses/numpy/_core/src/umath/svml/LICENSE",
+          "file": "texts/c17011467b4fe6e20fbfbeda4df09e58c2bca5480a063e55735a4000a379aad9.txt",
+          "sha256": "c17011467b4fe6e20fbfbeda4df09e58c2bca5480a063e55735a4000a379aad9"
+        },
+        {
+          "sourcePath": "numpy-2.4.6.dist-info/licenses/numpy/fft/pocketfft/LICENSE.md",
+          "file": "texts/a85ca13fdf90160b64a0698215868c13b74d835ad0a4e2ba44713b8c5058a056.txt",
+          "sha256": "a85ca13fdf90160b64a0698215868c13b74d835ad0a4e2ba44713b8c5058a056"
+        },
+        {
+          "sourcePath": "numpy-2.4.6.dist-info/licenses/numpy/linalg/lapack_lite/LICENSE.txt",
+          "file": "texts/a14cc25e10d40a3aa705b7de2fb764a6535d8ee9b2db4e1724900585457dfd55.txt",
+          "sha256": "a14cc25e10d40a3aa705b7de2fb764a6535d8ee9b2db4e1724900585457dfd55"
+        },
+        {
+          "sourcePath": "numpy-2.4.6.dist-info/licenses/numpy/ma/LICENSE",
+          "file": "texts/05f3b88351988ecfad10abe92c0c50e5875c6452d5009a0084cc291551ffcca6.txt",
+          "sha256": "05f3b88351988ecfad10abe92c0c50e5875c6452d5009a0084cc291551ffcca6"
+        },
+        {
+          "sourcePath": "numpy-2.4.6.dist-info/licenses/numpy/random/LICENSE.md",
+          "file": "texts/103166b62b80443afb9eb3488e052ea06be0cff566b908f199e561fde49af19f.txt",
+          "sha256": "103166b62b80443afb9eb3488e052ea06be0cff566b908f199e561fde49af19f"
+        },
+        {
+          "sourcePath": "numpy-2.4.6.dist-info/licenses/numpy/random/src/distributions/LICENSE.md",
+          "file": "texts/469778be8f33d54e1bcaab28c281cc472916d2d273f835e55bc487d30503face.txt",
+          "sha256": "469778be8f33d54e1bcaab28c281cc472916d2d273f835e55bc487d30503face"
+        },
+        {
+          "sourcePath": "numpy-2.4.6.dist-info/licenses/numpy/random/src/mt19937/LICENSE.md",
+          "file": "texts/0e111337b25494a773106695f0e799f642b8567aaacca4f116a74a8177179156.txt",
+          "sha256": "0e111337b25494a773106695f0e799f642b8567aaacca4f116a74a8177179156"
+        },
+        {
+          "sourcePath": "numpy-2.4.6.dist-info/licenses/numpy/random/src/pcg64/LICENSE.md",
+          "file": "texts/e7d4f4fb20358f314210a892ae17351e04993813646f697ec387385ca2a36918.txt",
+          "sha256": "e7d4f4fb20358f314210a892ae17351e04993813646f697ec387385ca2a36918"
+        },
+        {
+          "sourcePath": "numpy-2.4.6.dist-info/licenses/numpy/random/src/philox/LICENSE.md",
+          "file": "texts/6f5828a57223d4cc7f8ea505a2623e7b978b242752c1515e355f46ba2cec1800.txt",
+          "sha256": "6f5828a57223d4cc7f8ea505a2623e7b978b242752c1515e355f46ba2cec1800"
+        },
+        {
+          "sourcePath": "numpy-2.4.6.dist-info/licenses/numpy/random/src/sfc64/LICENSE.md",
+          "file": "texts/9d4098846018319cd68e228ee6220361787f73bccbf00237a85e4fc9621b998f.txt",
+          "sha256": "9d4098846018319cd68e228ee6220361787f73bccbf00237a85e4fc9621b998f"
+        },
+        {
+          "sourcePath": "numpy-2.4.6.dist-info/licenses/numpy/random/src/splitmix64/LICENSE.md",
+          "file": "texts/268b0ca06759d31ea3ca68dd35f20e877916e927b1c2a835e4592a3c4354b1f9.txt",
+          "sha256": "268b0ca06759d31ea3ca68dd35f20e877916e927b1c2a835e4592a3c4354b1f9"
+        },
+        {
+          "sourcePath": "numpy/_core/include/numpy/random/LICENSE.txt",
+          "file": "texts/fbc539f47d0cf83bc61378080fb873d5c14630126cacbfe754035c3926daa5ec.txt",
+          "sha256": "fbc539f47d0cf83bc61378080fb873d5c14630126cacbfe754035c3926daa5ec"
+        },
+        {
+          "sourcePath": "numpy/ma/LICENSE",
+          "file": "texts/05f3b88351988ecfad10abe92c0c50e5875c6452d5009a0084cc291551ffcca6.txt",
+          "sha256": "05f3b88351988ecfad10abe92c0c50e5875c6452d5009a0084cc291551ffcca6"
+        },
+        {
+          "sourcePath": "numpy/random/LICENSE.md",
+          "file": "texts/103166b62b80443afb9eb3488e052ea06be0cff566b908f199e561fde49af19f.txt",
+          "sha256": "103166b62b80443afb9eb3488e052ea06be0cff566b908f199e561fde49af19f"
+        }
+      ]
+    },
+    {
+      "name": "onnxruntime",
+      "version": "1.32.0",
+      "licenseExpression": null,
+      "licenseMetadata": "MIT License",
+      "licenseClassifiers": [
+        "OSI Approved :: MIT License"
+      ],
+      "projectURLs": [],
+      "homepage": "https://onnxruntime.ai",
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "onnxruntime/LICENSE",
+          "file": "texts/2f07c72751aed99790b8a4869cf2311df85a860b22ded05fa22803587a48922c.txt",
+          "sha256": "2f07c72751aed99790b8a4869cf2311df85a860b22ded05fa22803587a48922c"
+        }
+      ]
+    },
+    {
+      "name": "opentelemetry-api",
+      "version": "1.45.2",
+      "licenseExpression": "Apache-2.0",
+      "licenseMetadata": null,
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "Homepage, https://github.com/open-telemetry/opentelemetry-python/tree/main/opentelemetry-api",
+        "Repository, https://github.com/open-telemetry/opentelemetry-python"
+      ],
+      "homepage": null,
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "opentelemetry_api-1.45.2.dist-info/licenses/LICENSE",
+          "file": "texts/c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4.txt",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        }
+      ]
+    },
+    {
+      "name": "packaging",
+      "version": "26.3",
+      "licenseExpression": "Apache-2.0 OR BSD-2-Clause",
+      "licenseMetadata": null,
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "Documentation, https://packaging.pypa.io/",
+        "Source, https://github.com/pypa/packaging"
+      ],
+      "homepage": null,
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "packaging-26.3.dist-info/licenses/LICENSE",
+          "file": "texts/cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48.txt",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "sourcePath": "packaging-26.3.dist-info/licenses/LICENSE.APACHE",
+          "file": "texts/0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594.txt",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "sourcePath": "packaging-26.3.dist-info/licenses/LICENSE.BSD",
+          "file": "texts/b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5.txt",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        }
+      ]
+    },
+    {
+      "name": "pip",
+      "version": "24.0",
+      "licenseExpression": null,
+      "licenseMetadata": "MIT",
+      "licenseClassifiers": [
+        "OSI Approved :: MIT License"
+      ],
+      "projectURLs": [
+        "Homepage, https://pip.pypa.io/",
+        "Documentation, https://pip.pypa.io",
+        "Source, https://github.com/pypa/pip",
+        "Changelog, https://pip.pypa.io/en/stable/news/"
+      ],
+      "homepage": null,
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "pip-24.0.dist-info/LICENSE.txt",
+          "file": "texts/634300a669d49aeae65b12c6c48c924c51a4cdf3d1ff086dc3456dc8bcaa2104.txt",
+          "sha256": "634300a669d49aeae65b12c6c48c924c51a4cdf3d1ff086dc3456dc8bcaa2104"
+        }
+      ]
+    },
+    {
+      "name": "protobuf",
+      "version": "7.36.2",
+      "licenseExpression": null,
+      "licenseMetadata": "3-Clause BSD License",
+      "licenseClassifiers": [],
+      "projectURLs": [],
+      "homepage": "https://developers.google.com/protocol-buffers/",
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "protobuf-7.36.2.dist-info/LICENSE",
+          "file": "texts/6e5e117324afd944dcf67f36cf329843bc1a92229a8cd9bb573d7a83130fea7d.txt",
+          "sha256": "6e5e117324afd944dcf67f36cf329843bc1a92229a8cd9bb573d7a83130fea7d"
+        }
+      ]
+    },
+    {
+      "name": "pydantic",
+      "version": "2.14.3",
+      "licenseExpression": "MIT",
+      "licenseMetadata": null,
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "Homepage, https://github.com/pydantic/pydantic",
+        "Documentation, https://pydantic.dev/docs/validation/latest/get-started/",
+        "Funding, https://github.com/sponsors/samuelcolvin",
+        "Source, https://github.com/pydantic/pydantic",
+        "Changelog, https://pydantic.dev/docs/validation/latest/get-started/changelog/"
+      ],
+      "homepage": null,
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "pydantic-2.14.3.dist-info/licenses/LICENSE",
+          "file": "texts/a9e186f3ca16b5eef84318e7a701721351a00cb7b8ae3a4394b67b49e3529ef3.txt",
+          "sha256": "a9e186f3ca16b5eef84318e7a701721351a00cb7b8ae3a4394b67b49e3529ef3"
+        }
+      ]
+    },
+    {
+      "name": "pydantic_core",
+      "version": "2.50.4",
+      "licenseExpression": "MIT",
+      "licenseMetadata": null,
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "Funding, https://github.com/sponsors/samuelcolvin",
+        "Homepage, https://github.com/pydantic",
+        "Source, https://github.com/pydantic/pydantic/tree/main/pydantic-core"
+      ],
+      "homepage": "https://github.com/pydantic/pydantic",
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "pydantic_core-2.50.4.dist-info/licenses/LICENSE",
+          "file": "texts/2afdd30d54b4d62b6f488a6bcc1546e84ec5061f13f4209c03d012348783795a.txt",
+          "sha256": "2afdd30d54b4d62b6f488a6bcc1546e84ec5061f13f4209c03d012348783795a"
+        }
+      ]
+    },
+    {
+      "name": "python-dotenv",
+      "version": "1.2.4",
+      "licenseExpression": null,
+      "licenseMetadata": "BSD-3-Clause",
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "Source, https://github.com/theskumar/python-dotenv"
+      ],
+      "homepage": null,
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "python_dotenv-1.2.4.dist-info/licenses/LICENSE",
+          "file": "texts/80619b7049f08c81683ad0e01f08f257a840652dd71ee83146d36658c7d2c2b9.txt",
+          "sha256": "80619b7049f08c81683ad0e01f08f257a840652dd71ee83146d36658c7d2c2b9"
+        }
+      ]
+    },
+    {
+      "name": "python-multipart",
+      "version": "0.0.33",
+      "licenseExpression": "Apache-2.0",
+      "licenseMetadata": null,
+      "licenseClassifiers": [
+        "OSI Approved :: Apache Software License"
+      ],
+      "projectURLs": [
+        "Homepage, https://github.com/Kludex/python-multipart",
+        "Documentation, https://kludex.github.io/python-multipart/",
+        "Changelog, https://github.com/Kludex/python-multipart/blob/master/CHANGELOG.md",
+        "Source, https://github.com/Kludex/python-multipart"
+      ],
+      "homepage": null,
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "python_multipart-0.0.33.dist-info/licenses/LICENSE.txt",
+          "file": "texts/cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30.txt",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        }
+      ]
+    },
+    {
+      "name": "PyYAML",
+      "version": "6.0.3",
+      "licenseExpression": null,
+      "licenseMetadata": "MIT",
+      "licenseClassifiers": [
+        "OSI Approved :: MIT License"
+      ],
+      "projectURLs": [
+        "Bug Tracker, https://github.com/yaml/pyyaml/issues",
+        "CI, https://github.com/yaml/pyyaml/actions",
+        "Documentation, https://pyyaml.org/wiki/PyYAMLDocumentation",
+        "Mailing lists, http://lists.sourceforge.net/lists/listinfo/yaml-core",
+        "Source Code, https://github.com/yaml/pyyaml"
+      ],
+      "homepage": "https://pyyaml.org/",
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "pyyaml-6.0.3.dist-info/licenses/LICENSE",
+          "file": "texts/8d3928f9dc4490fd635707cb88eb26bd764102a7282954307d3e5167a577e8a4.txt",
+          "sha256": "8d3928f9dc4490fd635707cb88eb26bd764102a7282954307d3e5167a577e8a4"
+        }
+      ]
+    },
+    {
+      "name": "setuptools",
+      "version": "79.0.1",
+      "licenseExpression": null,
+      "licenseMetadata": null,
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "Source, https://github.com/pypa/setuptools",
+        "Documentation, https://setuptools.pypa.io/",
+        "Changelog, https://setuptools.pypa.io/en/stable/history.html"
+      ],
+      "homepage": null,
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "setuptools-79.0.1.dist-info/licenses/LICENSE",
+          "file": "texts/86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741.txt",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "sourcePath": "setuptools/_vendor/autocommand-2.2.2.dist-info/LICENSE",
+          "file": "texts/ade78d04982d69972d444a8e14a94f87a2334dd3855cc80348ea8e240aa0df2d.txt",
+          "sha256": "ade78d04982d69972d444a8e14a94f87a2334dd3855cc80348ea8e240aa0df2d"
+        },
+        {
+          "sourcePath": "setuptools/_vendor/backports.tarfile-1.2.0.dist-info/LICENSE",
+          "file": "texts/86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741.txt",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "sourcePath": "setuptools/_vendor/importlib_metadata-8.0.0.dist-info/LICENSE",
+          "file": "texts/cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30.txt",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "sourcePath": "setuptools/_vendor/inflect-7.3.1.dist-info/LICENSE",
+          "file": "texts/86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741.txt",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "sourcePath": "setuptools/_vendor/jaraco.collections-5.1.0.dist-info/LICENSE",
+          "file": "texts/86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741.txt",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "sourcePath": "setuptools/_vendor/jaraco.context-5.3.0.dist-info/LICENSE",
+          "file": "texts/86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741.txt",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "sourcePath": "setuptools/_vendor/jaraco.functools-4.0.1.dist-info/LICENSE",
+          "file": "texts/86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741.txt",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "sourcePath": "setuptools/_vendor/jaraco.text-3.12.1.dist-info/LICENSE",
+          "file": "texts/86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741.txt",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "sourcePath": "setuptools/_vendor/more_itertools-10.3.0.dist-info/LICENSE",
+          "file": "texts/09f1c8c9e941af3e584d59641ea9b87d83c0cb0fd007eb5ef391a7e2643c1a46.txt",
+          "sha256": "09f1c8c9e941af3e584d59641ea9b87d83c0cb0fd007eb5ef391a7e2643c1a46"
+        },
+        {
+          "sourcePath": "setuptools/_vendor/packaging-24.2.dist-info/LICENSE",
+          "file": "texts/cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48.txt",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "sourcePath": "setuptools/_vendor/packaging-24.2.dist-info/LICENSE.APACHE",
+          "file": "texts/0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594.txt",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "sourcePath": "setuptools/_vendor/packaging-24.2.dist-info/LICENSE.BSD",
+          "file": "texts/b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5.txt",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        },
+        {
+          "sourcePath": "setuptools/_vendor/platformdirs-4.2.2.dist-info/licenses/LICENSE",
+          "file": "texts/29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6.txt",
+          "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6"
+        },
+        {
+          "sourcePath": "setuptools/_vendor/tomli-2.0.1.dist-info/LICENSE",
+          "file": "texts/b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe.txt",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe"
+        },
+        {
+          "sourcePath": "setuptools/_vendor/typeguard-4.3.0.dist-info/LICENSE",
+          "file": "texts/6163f7987dfb38d6bc320ce2b70b2f02b862bc41126516d552ef1cd43247e758.txt",
+          "sha256": "6163f7987dfb38d6bc320ce2b70b2f02b862bc41126516d552ef1cd43247e758"
+        },
+        {
+          "sourcePath": "setuptools/_vendor/typing_extensions-4.12.2.dist-info/LICENSE",
+          "file": "texts/3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf.txt",
+          "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+        },
+        {
+          "sourcePath": "setuptools/_vendor/wheel-0.45.1.dist-info/LICENSE.txt",
+          "file": "texts/30c23618679108f3e8ea1d2a658c7ca417bdfc891c98ef1a89fa4ff0c9828654.txt",
+          "sha256": "30c23618679108f3e8ea1d2a658c7ca417bdfc891c98ef1a89fa4ff0c9828654"
+        },
+        {
+          "sourcePath": "setuptools/_vendor/wheel/vendored/packaging/LICENSE",
+          "file": "texts/cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48.txt",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "sourcePath": "setuptools/_vendor/wheel/vendored/packaging/LICENSE.APACHE",
+          "file": "texts/0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594.txt",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "sourcePath": "setuptools/_vendor/wheel/vendored/packaging/LICENSE.BSD",
+          "file": "texts/b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5.txt",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        },
+        {
+          "sourcePath": "setuptools/_vendor/zipp-3.19.2.dist-info/LICENSE",
+          "file": "texts/86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741.txt",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "sourcePath": "setuptools/config/NOTICE",
+          "file": "texts/2dddf08818297a3b89d43d95ff659d8da85741108c9136dfa3a4d856c0623bd8.txt",
+          "sha256": "2dddf08818297a3b89d43d95ff659d8da85741108c9136dfa3a4d856c0623bd8"
+        },
+        {
+          "sourcePath": "setuptools/config/_validate_pyproject/NOTICE",
+          "file": "texts/5d300dbfa643138b013b75ac9caeee591f951b8b0ee24288c34ccd926c4780c8.txt",
+          "sha256": "5d300dbfa643138b013b75ac9caeee591f951b8b0ee24288c34ccd926c4780c8"
+        }
+      ]
+    },
+    {
+      "name": "starlette",
+      "version": "1.10.0",
+      "licenseExpression": "BSD-3-Clause",
+      "licenseMetadata": null,
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "Homepage, https://github.com/Kludex/starlette",
+        "Documentation, https://starlette.dev/",
+        "Changelog, https://starlette.dev/release-notes/",
+        "Funding, https://github.com/sponsors/Kludex",
+        "Source, https://github.com/Kludex/starlette"
+      ],
+      "homepage": null,
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "starlette-1.10.0.dist-info/licenses/LICENSE.md",
+          "file": "texts/dcb95677a02240243187e964f941847d19b17821cf99e5afae684fab328c19bf.txt",
+          "sha256": "dcb95677a02240243187e964f941847d19b17821cf99e5afae684fab328c19bf"
+        }
+      ]
+    },
+    {
+      "name": "tokenizers",
+      "version": "0.23.3",
+      "licenseExpression": null,
+      "licenseMetadata": null,
+      "licenseClassifiers": [
+        "OSI Approved :: Apache Software License"
+      ],
+      "projectURLs": [
+        "Homepage, https://github.com/huggingface/tokenizers",
+        "Source, https://github.com/huggingface/tokenizers"
+      ],
+      "homepage": null,
+      "environment": "Brev API container",
+      "notices": []
+    },
+    {
+      "name": "tqdm",
+      "version": "4.70.1",
+      "licenseExpression": null,
+      "licenseMetadata": "MPL-2.0 AND MIT",
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "homepage, https://tqdm.github.io",
+        "repository, https://github.com/tqdm/tqdm",
+        "changelog, https://tqdm.github.io/releases",
+        "wiki, https://github.com/tqdm/tqdm/wiki"
+      ],
+      "homepage": null,
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "tqdm-4.70.1.dist-info/licenses/LICENCE",
+          "file": "texts/fcff87c3a47ce8028a8512aa182d4fcf0ad1c90544ee75cf9b343684cac194de.txt",
+          "sha256": "fcff87c3a47ce8028a8512aa182d4fcf0ad1c90544ee75cf9b343684cac194de"
+        }
+      ]
+    },
+    {
+      "name": "typing-inspection",
+      "version": "0.4.5",
+      "licenseExpression": "MIT",
+      "licenseMetadata": null,
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "Homepage, https://github.com/pydantic/typing-inspection",
+        "Documentation, https://pydantic.github.io/typing-inspection/dev/",
+        "Source, https://github.com/pydantic/typing-inspection",
+        "Changelog, https://github.com/pydantic/typing-inspection/blob/main/HISTORY.md"
+      ],
+      "homepage": null,
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "typing_inspection-0.4.5.dist-info/licenses/LICENSE",
+          "file": "texts/804b59b25f2c31bd278f9202a19ae49a3945aa2664387e2d0a128c7cacc61ec3.txt",
+          "sha256": "804b59b25f2c31bd278f9202a19ae49a3945aa2664387e2d0a128c7cacc61ec3"
+        }
+      ]
+    },
+    {
+      "name": "typing_extensions",
+      "version": "4.16.0",
+      "licenseExpression": "PSF-2.0",
+      "licenseMetadata": null,
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "Bug Tracker, https://github.com/python/typing_extensions/issues",
+        "Changes, https://github.com/python/typing_extensions/blob/main/CHANGELOG.md",
+        "Documentation, https://typing-extensions.readthedocs.io/",
+        "Home, https://github.com/python/typing_extensions",
+        "Q & A, https://github.com/python/typing/discussions",
+        "Repository, https://github.com/python/typing_extensions"
+      ],
+      "homepage": null,
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "typing_extensions-4.16.0.dist-info/licenses/LICENSE",
+          "file": "texts/3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf.txt",
+          "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+        }
+      ]
+    },
+    {
+      "name": "uvicorn",
+      "version": "0.54.0",
+      "licenseExpression": "BSD-3-Clause",
+      "licenseMetadata": null,
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "Changelog, https://uvicorn.dev/release-notes",
+        "Funding, https://github.com/sponsors/Kludex",
+        "Homepage, https://uvicorn.dev/",
+        "Source, https://github.com/Kludex/uvicorn"
+      ],
+      "homepage": null,
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "uvicorn-0.54.0.dist-info/licenses/LICENSE.md",
+          "file": "texts/efe1acf3e62fb99c288b0ec73e5a773b7268ef4320fe757ea994214e4b63c371.txt",
+          "sha256": "efe1acf3e62fb99c288b0ec73e5a773b7268ef4320fe757ea994214e4b63c371"
+        }
+      ]
+    },
+    {
+      "name": "uvloop",
+      "version": "0.23.0",
+      "licenseExpression": null,
+      "licenseMetadata": "MIT License",
+      "licenseClassifiers": [
+        "OSI Approved :: Apache Software License",
+        "OSI Approved :: MIT License"
+      ],
+      "projectURLs": [
+        "github, https://github.com/MagicStack/uvloop"
+      ],
+      "homepage": null,
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "uvloop-0.23.0.dist-info/licenses/LICENSE-APACHE",
+          "file": "texts/377025287798f9dcd819e1f826fa5fc5e2f382528691ab0528c5cf8c8c282c27.txt",
+          "sha256": "377025287798f9dcd819e1f826fa5fc5e2f382528691ab0528c5cf8c8c282c27"
+        },
+        {
+          "sourcePath": "uvloop-0.23.0.dist-info/licenses/LICENSE-MIT",
+          "file": "texts/6dd4c399f26de043d77a2ad7e31db4cb5bf08ea8368b0a42d6e158635cc8ab62.txt",
+          "sha256": "6dd4c399f26de043d77a2ad7e31db4cb5bf08ea8368b0a42d6e158635cc8ab62"
+        }
+      ]
+    },
+    {
+      "name": "watchfiles",
+      "version": "1.3.0",
+      "licenseExpression": null,
+      "licenseMetadata": "MIT",
+      "licenseClassifiers": [
+        "OSI Approved :: MIT License"
+      ],
+      "projectURLs": [
+        "Changelog, https://github.com/samuelcolvin/watchfiles/releases",
+        "Documentation, https://watchfiles.helpmanual.io",
+        "Funding, https://github.com/sponsors/samuelcolvin",
+        "Homepage, https://github.com/samuelcolvin/watchfiles",
+        "Source, https://github.com/samuelcolvin/watchfiles"
+      ],
+      "homepage": "https://github.com/samuelcolvin/watchfiles",
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "watchfiles-1.3.0.dist-info/licenses/LICENSE",
+          "file": "texts/4fd78355b67ce2677ede9fb6f63a250f377bb7e22088136a5f4699adb4bc069f.txt",
+          "sha256": "4fd78355b67ce2677ede9fb6f63a250f377bb7e22088136a5f4699adb4bc069f"
+        }
+      ]
+    },
+    {
+      "name": "websockets",
+      "version": "17.4",
+      "licenseExpression": "BSD-3-Clause",
+      "licenseMetadata": null,
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "Homepage, https://github.com/python-websockets/websockets",
+        "Changelog, https://websockets.readthedocs.io/en/stable/project/changelog.html",
+        "Documentation, https://websockets.readthedocs.io/",
+        "Funding, https://tidelift.com/subscription/pkg/pypi-websockets?utm_source=pypi-websockets&utm_medium=referral&utm_campaign=readme",
+        "Tracker, https://github.com/python-websockets/websockets/issues"
+      ],
+      "homepage": null,
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "websockets-17.4.dist-info/licenses/LICENSE",
+          "file": "texts/3d6a0c050d8bec52fabad502e45fb25bd02bcadbd70dea34d447b6a0ff4e6da8.txt",
+          "sha256": "3d6a0c050d8bec52fabad502e45fb25bd02bcadbd70dea34d447b6a0ff4e6da8"
+        }
+      ]
+    },
+    {
+      "name": "wheel",
+      "version": "0.46.3",
+      "licenseExpression": "MIT",
+      "licenseMetadata": null,
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "Changelog, https://wheel.readthedocs.io/en/stable/news.html",
+        "Documentation, https://wheel.readthedocs.io/",
+        "Issue Tracker, https://github.com/pypa/wheel/issues",
+        "Source, https://github.com/pypa/wheel"
+      ],
+      "homepage": null,
+      "environment": "Brev API container",
+      "notices": [
+        {
+          "sourcePath": "wheel-0.46.3.dist-info/licenses/LICENSE.txt",
+          "file": "texts/30c23618679108f3e8ea1d2a658c7ca417bdfc891c98ef1a89fa4ff0c9828654.txt",
+          "sha256": "30c23618679108f3e8ea1d2a658c7ca417bdfc891c98ef1a89fa4ff0c9828654"
+        }
+      ]
+    },
+    {
+      "name": "annotated-doc",
+      "version": "0.0.6",
+      "licenseExpression": "MIT",
+      "licenseMetadata": null,
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "Homepage, https://github.com/fastapi/annotated-doc",
+        "Documentation, https://github.com/fastapi/annotated-doc",
+        "Repository, https://github.com/fastapi/annotated-doc",
+        "Issues, https://github.com/fastapi/annotated-doc/issues",
+        "Changelog, https://github.com/fastapi/annotated-doc/release-notes.md"
+      ],
+      "homepage": null,
+      "environment": "python-local-source",
+      "notices": [
+        {
+          "sourcePath": "annotated_doc-0.0.6.dist-info/licenses/LICENSE",
+          "file": "texts/fff170779a6acbf65abdb405c087f1cee1786691e4a96a4034517e4a504a0cdf.txt",
+          "sha256": "fff170779a6acbf65abdb405c087f1cee1786691e4a96a4034517e4a504a0cdf"
+        }
+      ]
+    },
+    {
+      "name": "annotated-types",
+      "version": "0.8.0",
+      "licenseExpression": "MIT",
+      "licenseMetadata": null,
+      "licenseClassifiers": [
+        "OSI Approved :: MIT License"
+      ],
+      "projectURLs": [
+        "Homepage, https://github.com/annotated-types/annotated-types",
+        "Source, https://github.com/annotated-types/annotated-types",
+        "Changelog, https://github.com/annotated-types/annotated-types/releases"
+      ],
+      "homepage": null,
+      "environment": "python-local-source",
+      "notices": [
+        {
+          "sourcePath": "annotated_types-0.8.0.dist-info/licenses/LICENSE",
+          "file": "texts/fe1049884b1a0d9342901e88e07f32925d24b3121d9972b6a6805fb9824b095d.txt",
+          "sha256": "fe1049884b1a0d9342901e88e07f32925d24b3121d9972b6a6805fb9824b095d"
+        }
+      ]
+    },
+    {
+      "name": "anyio",
+      "version": "4.16.0",
+      "licenseExpression": "MIT",
+      "licenseMetadata": null,
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "Documentation, https://anyio.readthedocs.io/en/latest/",
+        "Changelog, https://anyio.readthedocs.io/en/stable/versionhistory.html",
+        "Source code, https://github.com/agronholm/anyio",
+        "Issue tracker, https://github.com/agronholm/anyio/issues"
+      ],
+      "homepage": null,
+      "environment": "python-local-source",
+      "notices": [
+        {
+          "sourcePath": "anyio-4.16.0.dist-info/licenses/LICENSE",
+          "file": "texts/5361ac9dc58f2ef5fd2e9b09c68297c17f04950909bbc8023bdb82eacf22c2b0.txt",
+          "sha256": "5361ac9dc58f2ef5fd2e9b09c68297c17f04950909bbc8023bdb82eacf22c2b0"
+        }
+      ]
+    },
+    {
+      "name": "certifi",
+      "version": "2026.10.23",
+      "licenseExpression": null,
+      "licenseMetadata": "MPL-2.0",
+      "licenseClassifiers": [
+        "OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)"
+      ],
+      "projectURLs": [
+        "Source, https://github.com/certifi/python-certifi"
+      ],
+      "homepage": "https://github.com/certifi/python-certifi",
+      "environment": "python-local-source",
+      "notices": [
+        {
+          "sourcePath": "certifi-2026.10.23.dist-info/licenses/LICENSE",
+          "file": "texts/e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7.txt",
+          "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7"
+        }
+      ]
+    },
+    {
+      "name": "fastapi",
+      "version": "0.162.7",
+      "licenseExpression": "MIT",
+      "licenseMetadata": null,
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "Homepage, https://github.com/fastapi/fastapi",
+        "Documentation, https://fastapi.tiangolo.com/",
+        "Repository, https://github.com/fastapi/fastapi",
+        "Issues, https://github.com/fastapi/fastapi/issues",
+        "Changelog, https://fastapi.tiangolo.com/release-notes/"
+      ],
+      "homepage": null,
+      "environment": "python-local-source",
+      "notices": [
+        {
+          "sourcePath": "fastapi-0.162.7.dist-info/licenses/LICENSE",
+          "file": "texts/4ec89ffc81485b97fec584b2d4a961032eeffe834453894fd9c1274906cc744e.txt",
+          "sha256": "4ec89ffc81485b97fec584b2d4a961032eeffe834453894fd9c1274906cc744e"
+        }
+      ]
+    },
+    {
+      "name": "h11",
+      "version": "0.16.0",
+      "licenseExpression": null,
+      "licenseMetadata": "MIT",
+      "licenseClassifiers": [
+        "OSI Approved :: MIT License"
+      ],
+      "projectURLs": [],
+      "homepage": "https://github.com/python-hyper/h11",
+      "environment": "python-local-source",
+      "notices": [
+        {
+          "sourcePath": "h11-0.16.0.dist-info/licenses/LICENSE.txt",
+          "file": "texts/37db5bb85926db28a427a25867f10b1232003aea1be69ccb851138adb8e6f361.txt",
+          "sha256": "37db5bb85926db28a427a25867f10b1232003aea1be69ccb851138adb8e6f361"
+        }
+      ]
+    },
+    {
+      "name": "httpcore",
+      "version": "1.0.9",
+      "licenseExpression": "BSD-3-Clause",
+      "licenseMetadata": null,
+      "licenseClassifiers": [
+        "OSI Approved :: BSD License"
+      ],
+      "projectURLs": [
+        "Documentation, https://www.encode.io/httpcore",
+        "Homepage, https://www.encode.io/httpcore/",
+        "Source, https://github.com/encode/httpcore"
+      ],
+      "homepage": null,
+      "environment": "python-local-source",
+      "notices": [
+        {
+          "sourcePath": "httpcore-1.0.9.dist-info/licenses/LICENSE.md",
+          "file": "texts/fdcb59154c74cbaba16a11242f7740bea9f23d6feb5547917d8c5f94a80392a5.txt",
+          "sha256": "fdcb59154c74cbaba16a11242f7740bea9f23d6feb5547917d8c5f94a80392a5"
+        }
+      ]
+    },
+    {
+      "name": "httpx",
+      "version": "0.28.1",
+      "licenseExpression": null,
+      "licenseMetadata": "BSD-3-Clause",
+      "licenseClassifiers": [
+        "OSI Approved :: BSD License"
+      ],
+      "projectURLs": [
+        "Changelog, https://github.com/encode/httpx/blob/master/CHANGELOG.md",
+        "Documentation, https://www.python-httpx.org",
+        "Homepage, https://github.com/encode/httpx",
+        "Source, https://github.com/encode/httpx"
+      ],
+      "homepage": null,
+      "environment": "python-local-source",
+      "notices": [
+        {
+          "sourcePath": "httpx-0.28.1.dist-info/licenses/LICENSE.md",
+          "file": "texts/4ec59d544f12b5f539a3a716fd321ac58ccd8030b465221f2c880200cdf28d8d.txt",
+          "sha256": "4ec59d544f12b5f539a3a716fd321ac58ccd8030b465221f2c880200cdf28d8d"
+        }
+      ]
+    },
+    {
+      "name": "idna",
+      "version": "3.20",
+      "licenseExpression": "BSD-3-Clause",
+      "licenseMetadata": null,
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "Changelog, https://github.com/kjd/idna/blob/master/HISTORY.md",
+        "Issue tracker, https://github.com/kjd/idna/issues",
+        "Source, https://github.com/kjd/idna"
+      ],
+      "homepage": null,
+      "environment": "python-local-source",
+      "notices": [
+        {
+          "sourcePath": "idna-3.20.dist-info/licenses/LICENSE.md",
+          "file": "texts/1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04.txt",
+          "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04"
+        }
+      ]
+    },
+    {
+      "name": "opentelemetry-api",
+      "version": "1.45.2",
+      "licenseExpression": "Apache-2.0",
+      "licenseMetadata": null,
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "Homepage, https://github.com/open-telemetry/opentelemetry-python/tree/main/opentelemetry-api",
+        "Repository, https://github.com/open-telemetry/opentelemetry-python"
+      ],
+      "homepage": null,
+      "environment": "python-local-source",
+      "notices": [
+        {
+          "sourcePath": "opentelemetry_api-1.45.2.dist-info/licenses/LICENSE",
+          "file": "texts/c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4.txt",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        }
+      ]
+    },
+    {
+      "name": "pip",
+      "version": "24.3.1",
+      "licenseExpression": null,
+      "licenseMetadata": "MIT",
+      "licenseClassifiers": [
+        "OSI Approved :: MIT License"
+      ],
+      "projectURLs": [
+        "Homepage, https://pip.pypa.io/",
+        "Documentation, https://pip.pypa.io",
+        "Source, https://github.com/pypa/pip",
+        "Changelog, https://pip.pypa.io/en/stable/news/"
+      ],
+      "homepage": null,
+      "environment": "python-local-source",
+      "notices": [
+        {
+          "sourcePath": "pip-24.3.1.dist-info/LICENSE.txt",
+          "file": "texts/634300a669d49aeae65b12c6c48c924c51a4cdf3d1ff086dc3456dc8bcaa2104.txt",
+          "sha256": "634300a669d49aeae65b12c6c48c924c51a4cdf3d1ff086dc3456dc8bcaa2104"
+        }
+      ]
+    },
+    {
+      "name": "pydantic",
+      "version": "2.14.3",
+      "licenseExpression": "MIT",
+      "licenseMetadata": null,
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "Homepage, https://github.com/pydantic/pydantic",
+        "Documentation, https://pydantic.dev/docs/validation/latest/get-started/",
+        "Funding, https://github.com/sponsors/samuelcolvin",
+        "Source, https://github.com/pydantic/pydantic",
+        "Changelog, https://pydantic.dev/docs/validation/latest/get-started/changelog/"
+      ],
+      "homepage": null,
+      "environment": "python-local-source",
+      "notices": [
+        {
+          "sourcePath": "pydantic-2.14.3.dist-info/licenses/LICENSE",
+          "file": "texts/a9e186f3ca16b5eef84318e7a701721351a00cb7b8ae3a4394b67b49e3529ef3.txt",
+          "sha256": "a9e186f3ca16b5eef84318e7a701721351a00cb7b8ae3a4394b67b49e3529ef3"
+        }
+      ]
+    },
+    {
+      "name": "pydantic_core",
+      "version": "2.50.4",
+      "licenseExpression": "MIT",
+      "licenseMetadata": null,
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "Funding, https://github.com/sponsors/samuelcolvin",
+        "Homepage, https://github.com/pydantic",
+        "Source, https://github.com/pydantic/pydantic/tree/main/pydantic-core"
+      ],
+      "homepage": "https://github.com/pydantic/pydantic",
+      "environment": "python-local-source",
+      "notices": [
+        {
+          "sourcePath": "pydantic_core-2.50.4.dist-info/licenses/LICENSE",
+          "file": "texts/2afdd30d54b4d62b6f488a6bcc1546e84ec5061f13f4209c03d012348783795a.txt",
+          "sha256": "2afdd30d54b4d62b6f488a6bcc1546e84ec5061f13f4209c03d012348783795a"
+        }
+      ]
+    },
+    {
+      "name": "python-multipart",
+      "version": "0.0.33",
+      "licenseExpression": "Apache-2.0",
+      "licenseMetadata": null,
+      "licenseClassifiers": [
+        "OSI Approved :: Apache Software License"
+      ],
+      "projectURLs": [
+        "Homepage, https://github.com/Kludex/python-multipart",
+        "Documentation, https://kludex.github.io/python-multipart/",
+        "Changelog, https://github.com/Kludex/python-multipart/blob/master/CHANGELOG.md",
+        "Source, https://github.com/Kludex/python-multipart"
+      ],
+      "homepage": null,
+      "environment": "python-local-source",
+      "notices": [
+        {
+          "sourcePath": "python_multipart-0.0.33.dist-info/licenses/LICENSE.txt",
+          "file": "texts/cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30.txt",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        }
+      ]
+    },
+    {
+      "name": "starlette",
+      "version": "1.10.0",
+      "licenseExpression": "BSD-3-Clause",
+      "licenseMetadata": null,
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "Homepage, https://github.com/Kludex/starlette",
+        "Documentation, https://starlette.dev/",
+        "Changelog, https://starlette.dev/release-notes/",
+        "Funding, https://github.com/sponsors/Kludex",
+        "Source, https://github.com/Kludex/starlette"
+      ],
+      "homepage": null,
+      "environment": "python-local-source",
+      "notices": [
+        {
+          "sourcePath": "starlette-1.10.0.dist-info/licenses/LICENSE.md",
+          "file": "texts/dcb95677a02240243187e964f941847d19b17821cf99e5afae684fab328c19bf.txt",
+          "sha256": "dcb95677a02240243187e964f941847d19b17821cf99e5afae684fab328c19bf"
+        }
+      ]
+    },
+    {
+      "name": "typing-inspection",
+      "version": "0.4.5",
+      "licenseExpression": "MIT",
+      "licenseMetadata": null,
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "Homepage, https://github.com/pydantic/typing-inspection",
+        "Documentation, https://pydantic.github.io/typing-inspection/dev/",
+        "Source, https://github.com/pydantic/typing-inspection",
+        "Changelog, https://github.com/pydantic/typing-inspection/blob/main/HISTORY.md"
+      ],
+      "homepage": null,
+      "environment": "python-local-source",
+      "notices": [
+        {
+          "sourcePath": "typing_inspection-0.4.5.dist-info/licenses/LICENSE",
+          "file": "texts/804b59b25f2c31bd278f9202a19ae49a3945aa2664387e2d0a128c7cacc61ec3.txt",
+          "sha256": "804b59b25f2c31bd278f9202a19ae49a3945aa2664387e2d0a128c7cacc61ec3"
+        }
+      ]
+    },
+    {
+      "name": "typing_extensions",
+      "version": "4.16.0",
+      "licenseExpression": "PSF-2.0",
+      "licenseMetadata": null,
+      "licenseClassifiers": [],
+      "projectURLs": [
+        "Bug Tracker, https://github.com/python/typing_extensions/issues",
+        "Changes, https://github.com/python/typing_extensions/blob/main/CHANGELOG.md",
+        "Documentation, https://typing-extensions.readthedocs.io/",
+        "Home, https://github.com/python/typing_extensions",
+        "Q & A, https://github.com/python/typing/discussions",
+        "Repository, https://github.com/python/typing_extensions"
+      ],
+      "homepage": null,
+      "environment": "python-local-source",
+      "notices": [
+        {
+          "sourcePath": "typing_extensions-4.16.0.dist-info/licenses/LICENSE",
+          "file": "texts/3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf.txt",
+          "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+        }
+      ]
+    }
+  ]
+}
