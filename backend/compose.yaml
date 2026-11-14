@@ -1,31 +1,72 @@
+name: clearroom
 services:
   ollama:
-    image: ollama/ollama:latest
+    image: ollama/ollama:0.40.16
     restart: unless-stopped
-    gpus: all
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
     environment:
       OLLAMA_NUM_PARALLEL: "1"
       OLLAMA_MAX_LOADED_MODELS: "1"
       OLLAMA_CONTEXT_LENGTH: "8192"
       OLLAMA_FLASH_ATTENTION: "1"
+      OLLAMA_KEEP_ALIVE: "-1"
+      OLLAMA_NO_CLOUD: "1"
     volumes:
       - ollama:/root/.ollama
-    # Deliberately not published: the unauthenticated model service stays internal.
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "2"
+    # Never expose Ollama's unauthenticated port.
   api:
     build: .
     restart: unless-stopped
     depends_on:
-      - ollama
+      ollama:
+        condition: service_healthy
     environment:
       BREV_API_KEY: ${BREV_API_KEY:?Run python3 setup.py first}
       OLLAMA_URL: http://ollama:11434
-      QWEN_MODEL: qwen3:8b
+      QWEN_MODEL: qwen3:8b-q4_K_M
+      CLEARROOM_WARMUP: "1"
       WHISPER_MODEL: small.en
-      WHISPER_DEVICE: cpu
     ports:
       - "127.0.0.1:8000:8000"
     volumes:
       - whisper:/models/huggingface
+    healthcheck:
+      test: ["CMD", "python", "healthcheck.py"]
+      interval: 15s
+      timeout: 8s
+      start_period: 600s
+      retries: 4
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "2"
+  tunnel:
+    image: cloudflare/cloudflared:2026.11.0
+    profiles: ["tunnel"]
+    restart: unless-stopped
+    depends_on:
+      api:
+        condition: service_healthy
+    command: ["tunnel", "--no-autoupdate", "--protocol", "http2", "--url", "http://api:8000"]
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "2"
 volumes:
   ollama:
   whisper:

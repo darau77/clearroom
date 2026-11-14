@@ -3,7 +3,7 @@ WORKDIR /app
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 HF_HOME=/models/huggingface
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-COPY main.py policy.py ./
+COPY main.py policy.py config.py runtime.py budget.py healthcheck.py ./
 RUN useradd -m -u 10001 app && mkdir -p /models/huggingface && chown -R app:app /models
 USER app
 EXPOSE 8000
