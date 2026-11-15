@@ -20,7 +20,7 @@ export function usableHistory(history:DrillSession[],now=new Date()){
 export function courseProgress(history:DrillSession[],now=new Date()){
  const completed=new Set(usableHistory(history,now).filter(s=>s.mode==='course'&&courseLessons.some(l=>l.id===s.lessonId&&l.kind===s.kind&&l.unitId===s.unitId)).map(s=>s.lessonId!));
  const next=courseLessons.find(l=>!completed.has(l.id));
- return {completed,next,finished:!next,units:courseUnits.map(unit=>({...unit,completed:courseLessons.filter(l=>l.unitId===unit.id&&completed.has(l.id)).length})),unlocked:(lesson:CourseLesson)=>lesson.index===0||completed.has(lesson.id)||completed.has(courseLessons[lesson.index-1].id)};
+ return {completed,next,finished:!next,units:courseUnits.map(unit=>({...unit,completed:courseLessons.filter(l=>l.unitId===unit.id&&completed.has(l.id)).length}))};
 }
 export type CourseProgress=ReturnType<typeof courseProgress>;
 export type QuestionMemory={seen:number;lastAt:number;streak:number;dueAt:number;needsReview:boolean};

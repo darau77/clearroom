@@ -40,7 +40,8 @@ test('course contains 24 distinct lessons, progressing from recognition to indep
  const progress=courseProgress([],NOW);
  assert.equal(progress.next.id,courseLessons[0].id);
  assert.equal(progress.finished,false);
- assert.deepEqual(courseLessons.filter(progress.unlocked).map(lesson=>lesson.id),[courseLessons[0].id]);
+ assert.equal(progress.completed.size,0);
+ assert.ok(progress.units.every(unit=>unit.completed===0));
 });
 
 test('replaying one course lesson never substitutes for completing the next lesson',()=>{
@@ -50,8 +51,6 @@ test('replaying one course lesson never substitutes for completing the next less
  assert.equal(progress.completed.size,1);
  assert.equal(progress.next.id,courseLessons[1].id);
  assert.equal(progress.units[0].completed,1);
- assert.equal(progress.unlocked(courseLessons[1]),true);
- assert.equal(progress.unlocked(courseLessons[2]),false);
 });
 
 test('legacy rewards and free practice do not imply new course lesson completion',()=>{

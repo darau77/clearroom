@@ -15,7 +15,7 @@ Clearroom combines a maintained bank of **120 original questions** with optional
 | Agreements | Keep owners, actions, timing, and consent clear. |
 | Repair | Acknowledge a misstep and make a specific correction. |
 
-Each unit has four lessons in order: **missing words → choose a response → build a sentence → write a response**. That makes 24 lessons, each containing three distinct questions. Completing a lesson unlocks the next; replaying one does not complete a different lesson. Free practice lets the learner choose any skill, format, and challenge level. Earlier drill history keeps its XP and trophies without implying completion of this course.
+Each unit suggests four lessons in this order: **missing words → choose a response → build a sentence → write a response**. That makes 24 lessons, each containing three distinct questions. All lessons are available from the start and can be completed in any order. The first unfinished lesson is a suggested next step; replaying one does not complete a different lesson. Free practice lets the learner choose any skill, format, and challenge level. Earlier drill history keeps its XP and trophies without implying completion of this course.
 
 The bank has five questions for each skill/format pair, spread across levels 1–3. Selection prefers unseen questions near the requested level, then rotates through previously seen questions. A course lesson can include one due question of the same format from another skill. Review sessions prioritize due questions, then difficult material, then other seen questions; new questions can fill the remaining places. The options and word tiles are shuffled without modifying the shared bank.
 
@@ -105,7 +105,7 @@ The scheduler in [`lib/drill-course.ts`](../lib/drill-course.ts) uses elapsed ti
 | Third consecutive unaided first-try success | 7 days |
 | Fourth and later consecutive unaided first-try successes | 14 days |
 
-“Unaided first-try success” requires a rule or AI assessment and no hint. The schedule does not estimate a person's confidence or communication ability. Invalid, duplicate, and future-dated session records do not drive course progress or review scheduling. Trophies reward completed practice counts separately from course unlocks and question review.
+“Unaided first-try success” requires a rule or AI assessment and no hint. The schedule does not estimate a person's confidence or communication ability. Invalid, duplicate, and future-dated session records do not drive course progress or review scheduling. Trophies reward completed practice counts separately from course completion and question review.
 
 ## Guide, audio, and accessibility
 
@@ -135,6 +135,6 @@ cd backend
 .venv/bin/python -m unittest discover -s tests -p 'test_exercises.py'
 ```
 
-The bank tests check coverage, unique IDs, content constraints, option feedback, word inventories, and role-sensitive examples. Course tests cover unlocks, legacy history, selection, immutable shuffling, review intervals, saved AI-question validation, and malformed generated lessons. Backend tests exercise retrieval and mock the generation/review/assessment contracts. Passing these tests does not establish the live model's teaching quality.
+The bank tests check coverage, unique IDs, content constraints, option feedback, word inventories, and role-sensitive examples. Course tests cover completion tracking, legacy history, selection, immutable shuffling, review intervals, saved AI-question validation, and malformed generated lessons. Backend tests exercise retrieval and mock the generation/review/assessment contracts. Passing these tests does not establish the live model's teaching quality.
 
 Before publishing prompt or bank changes, try all four formats on the real backend, with both personal and workplace situations. Check a correct writing response and an unrelated one, then inspect language, roles, commitments, choices, retry feedback, and the explicit unavailable/self-review paths. Deploy the browser and backend together when their shared question contract changes.
